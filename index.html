@@ -375,12 +375,16 @@ section{padding-block:clamp(4rem,9vw,7.5rem)}
 .footer-bottom{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.12);display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.82rem;color:rgba(255,255,255,.55)}
 
 /* small screens: keep headlines and hero text inside the frame */
-h1,h2,h3,h4{overflow-wrap:break-word}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 .hero-content{grid-template-columns:minmax(0,1fr);min-width:0;width:100%}
+/* hero title: two locked lines, scaled down by script (--fit) when they don't fit */
+.hero-title .line{display:block;width:max-content;white-space:nowrap}
+.h-xl.hero-title{font-size:calc(clamp(2.6rem,7.4vw,6.2rem) * var(--fit,1))}
 @media (max-width:640px){
   .hero-meta{display:none}
   h1,h2,h3,h4{font-stretch:100%}
-  .h-xl{font-size:clamp(2rem,10.5vw,2.9rem)!important;letter-spacing:-.01em}
+  .h-xl{font-size:clamp(1.9rem,9vw,2.6rem)!important;letter-spacing:-.01em}
+  .h-xl.hero-title{font-size:calc(clamp(2rem,10.5vw,2.9rem) * var(--fit,1))!important}
   .h-lg{font-size:clamp(1.7rem,7.5vw,2.2rem)}
   .hero-frame{min-height:0}
   .hero-content{padding:4.5rem 1.4rem 1.6rem;gap:1rem}
@@ -467,7 +471,7 @@ h1,h2,h3,h4{overflow-wrap:break-word}
         <div class="hero-meta" aria-hidden="true"><span class="flag-rule"><i></i><i></i><i></i></span>Est. in Columbus</div>
         <div class="hero-content">
           <span class="eyebrow">Nigerian Football Club · Columbus, Ohio</span>
-          <h1 class="h-xl">NAIJA FC<br>COLUMBUS</h1>
+          <h1 class="h-xl hero-title" id="hero-title"><span class="line">NAIJA FC</span> <span class="line">COLUMBUS</span></h1>
           <p class="hero-sub">One Team. Many Backgrounds. <em>One Naija.</em></p>
           <p class="hero-text">Football, brotherhood and community in Columbus, Ohio.</p>
           <div class="btn-row">
@@ -1011,7 +1015,23 @@ h1,h2,h3,h4{overflow-wrap:break-word}
     setGallery(false); setMenu(false);
     if (!lb.hidden) closeLb();
     window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
+    if (page === "home") fitHero();
   };
+
+  /* keep "NAIJA FC" / "COLUMBUS" on one line each at any screen width or text size */
+  const heroTitle = document.getElementById("hero-title");
+  function fitHero() {
+    heroTitle.style.setProperty("--fit", 1);
+    const avail = heroTitle.clientWidth;
+    if (!avail) return; // home page hidden
+    const widest = Math.max(...[...heroTitle.querySelectorAll(".line")].map(l => l.getBoundingClientRect().width));
+    if (widest > avail) heroTitle.style.setProperty("--fit", ((avail / widest) * 0.97).toFixed(3));
+  }
+  let fitFrame = 0;
+  window.addEventListener("resize", () => { cancelAnimationFrame(fitFrame); fitFrame = requestAnimationFrame(fitHero); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitHero);
+  window.addEventListener("load", fitHero);
+
   window.addEventListener("hashchange", route);
   route();
 
