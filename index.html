@@ -1,0 +1,1022 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Naija FC Columbus</title>
+<meta name="description" content="Naija FC Columbus — Nigerian football, brotherhood and community in Columbus, Ohio. One Team. Many Backgrounds. One Naija.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --green:#008751; --green-deep:#005C3B; --green-ink:#003A26;
+  --ink:#0F1512; --ink-2:#3C4642; --ink-3:#6B7671;
+  --paper:#FBFCFB; --paper-2:#F2F6F3; --white:#FFFFFF;
+  --line:rgba(0,92,59,.14); --line-strong:rgba(0,92,59,.28);
+  --glow:rgba(0,135,81,.10);
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --wrap:1240px; --gut:clamp(16px,4vw,40px);
+  --r:14px; --shadow:0 1px 2px rgba(0,40,25,.05),0 18px 40px -22px rgba(0,40,25,.28);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;font-family:var(--body);font-size:16px;line-height:1.65;color:var(--ink);
+  background:
+    linear-gradient(90deg,rgba(0,135,81,.075) 0%,rgba(255,255,255,0) 26%,rgba(255,255,255,0) 74%,rgba(0,135,81,.075) 100%),
+    var(--paper);
+  background-attachment:fixed;
+  -webkit-font-smoothing:antialiased;
+}
+/* flowing atmosphere */
+body::before{
+  content:"";position:fixed;inset:-20% -10%;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(40% 32% at 8% 18%,rgba(0,135,81,.08),transparent 70%),
+    radial-gradient(36% 30% at 94% 70%,rgba(0,135,81,.07),transparent 70%),
+    radial-gradient(60% 40% at 50% 110%,rgba(0,92,59,.05),transparent 70%);
+}
+img{max-width:100%;display:block}
+a{color:var(--green);text-decoration:none}
+a:hover{color:var(--green-deep)}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gut)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* type */
+h1,h2,h3,h4{font-family:var(--display);font-stretch:108%;margin:0;line-height:1.02;letter-spacing:-.015em;text-wrap:balance;color:var(--ink)}
+.h-xl{font-size:clamp(2.6rem,7.4vw,6.2rem);font-weight:850;font-stretch:118%;letter-spacing:-.02em}
+.h-lg{font-size:clamp(2rem,4.6vw,3.6rem);font-weight:800}
+.h-md{font-size:clamp(1.35rem,2.2vw,1.75rem);font-weight:750}
+.h-sm{font-size:1.1rem;font-weight:750;letter-spacing:0}
+p{margin:0;text-wrap:pretty}
+.lede{font-size:clamp(1.08rem,1.5vw,1.25rem);color:var(--ink-2);max-width:62ch;line-height:1.6}
+.muted{color:var(--ink-3)}
+.eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--green)}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+.stack{display:grid;gap:1.25rem}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.5rem;border-radius:999px;font:600 .92rem/1 var(--body);letter-spacing:.02em;border:1px solid transparent;cursor:pointer;transition:background .25s var(--ease),color .25s,border-color .25s,transform .25s var(--ease),box-shadow .25s}
+.btn svg{width:16px;height:16px;transition:transform .25s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn-primary{background:var(--green);color:#fff}
+.btn-primary:hover{background:var(--green-deep);color:#fff;box-shadow:0 10px 24px -10px rgba(0,135,81,.6)}
+.btn-ghost{border-color:var(--line-strong);color:var(--ink);background:rgba(255,255,255,.6)}
+.btn-ghost:hover{border-color:var(--green);color:var(--green-deep)}
+.btn-light{background:#fff;color:var(--green-ink)}
+.btn-light:hover{background:var(--paper-2);color:var(--green-ink)}
+.btn-outline-light{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-outline-light:hover{background:rgba(255,255,255,.12);color:#fff;border-color:#fff}
+.btn-row{display:flex;flex-wrap:wrap;gap:.75rem}
+
+/* header */
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(251,252,251,.82);backdrop-filter:saturate(160%) blur(14px);-webkit-backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:72px}
+.brand{display:flex;align-items:center;gap:.7rem;color:var(--ink)}
+.brand:hover{color:var(--ink)}
+.crest{width:36px;height:40px;flex:none}
+.brand-name{font-family:var(--display);font-weight:800;font-stretch:112%;font-size:1.02rem;letter-spacing:.01em;line-height:1}
+.brand-name small{display:block;font:500 .66rem/1.4 var(--body);letter-spacing:.2em;color:var(--ink-3);margin-top:3px;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:.25rem;list-style:none;margin:0;padding:0}
+.nav-links a,.nav-links button.nav-link{display:inline-flex;align-items:center;gap:.35rem;padding:.55rem .85rem;border-radius:8px;font:600 .8rem/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);background:none;border:0;cursor:pointer;position:relative}
+.nav-links a:hover,.nav-links button.nav-link:hover{color:var(--green-deep)}
+.nav-links a.active,.nav-links button.nav-link.active{color:var(--green)}
+.nav-links a.active::after,.nav-links button.nav-link.active::after{content:"";position:absolute;left:.85rem;right:.85rem;bottom:.15rem;height:1px;background:var(--green)}
+.nav-links .btn{margin-left:.75rem;padding:.75rem 1.25rem;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}
+.nav-links .btn.active::after{display:none}
+.chev{width:12px;height:12px;transition:transform .2s}
+[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.dropdown{position:relative}
+.dropdown-menu{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);min-width:220px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:.5rem;list-style:none;margin:0}
+.dropdown-menu a{display:flex;flex-direction:column;align-items:flex-start;gap:.2rem;padding:.75rem .9rem;border-radius:8px;letter-spacing:.1em}
+.dropdown-menu a span{font:400 .8rem/1.3 var(--body);letter-spacing:0;text-transform:none;color:var(--ink-3)}
+.dropdown-menu a:hover{background:var(--paper-2)}
+.dropdown-menu a.active::after{display:none}
+.menu-toggle{display:none;width:44px;height:44px;border-radius:10px;border:1px solid var(--line);background:#fff;cursor:pointer;align-items:center;justify-content:center}
+.menu-toggle span{display:block;width:18px;height:1.5px;background:var(--ink);position:relative;transition:background .2s}
+.menu-toggle span::before,.menu-toggle span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;background:var(--ink);transition:transform .25s var(--ease)}
+.menu-toggle span::before{top:-6px}.menu-toggle span::after{top:6px}
+.menu-toggle[aria-expanded="true"] span{background:transparent}
+.menu-toggle[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg)}
+.menu-toggle[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg)}
+
+@media (max-width:920px){
+  .menu-toggle{display:inline-flex}
+  .nav-links{position:absolute;top:72px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:.75rem var(--gut) 1.5rem;background:rgba(251,252,251,.98);border-bottom:1px solid var(--line);box-shadow:0 20px 30px -24px rgba(0,40,25,.35)}
+  .nav-links:not(.open){display:none}
+  .nav-links > li{border-bottom:1px solid var(--line)}
+  .nav-links > li:last-child{border-bottom:0;padding-top:1rem}
+  .nav-links a,.nav-links button.nav-link{width:100%;justify-content:space-between;padding:1.05rem .25rem;font-size:.85rem}
+  .nav-links a.active::after,.nav-links button.nav-link.active::after{display:none}
+  .nav-links .btn{margin:0;justify-content:center;width:100%;padding:1rem}
+  .dropdown-menu{position:static;transform:none;box-shadow:none;border:0;padding:0 0 .75rem .75rem;background:transparent;min-width:0}
+  .dropdown-menu a{padding:.7rem .25rem}
+}
+
+/* pages */
+[data-page]{animation:pageIn .6s var(--ease) both}
+@keyframes pageIn{from{opacity:.001;transform:translateY(10px)}to{opacity:1;transform:none}}
+section{padding-block:clamp(4rem,9vw,7.5rem)}
+.section-head{display:grid;gap:1.1rem;margin-bottom:clamp(2.25rem,5vw,3.5rem);max-width:760px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--line-strong) 15%,var(--line-strong) 85%,transparent);border:0;margin:0}
+.flag-rule{display:flex;width:54px;height:4px;border-radius:2px;overflow:hidden}
+.flag-rule i{flex:1;background:var(--green)}.flag-rule i:nth-child(2){background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+
+/* photo frames (placeholder art sits behind real photos) */
+.ph{position:relative;overflow:hidden;background:var(--tone,radial-gradient(120% 100% at 20% 0%,#1d9765 0%,#0a6b45 42%,#03402a 100%));isolation:isolate}
+.ph::before{content:"";position:absolute;inset:0;z-index:0;opacity:.2;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1050 680' fill='none' stroke='white' stroke-width='3'%3E%3Crect x='25' y='25' width='1000' height='630'/%3E%3Cline x1='525' y1='25' x2='525' y2='655'/%3E%3Ccircle cx='525' cy='340' r='91.5'/%3E%3Ccircle cx='525' cy='340' r='4' fill='white'/%3E%3Crect x='25' y='138.5' width='165' height='403'/%3E%3Crect x='860' y='138.5' width='165' height='403'/%3E%3Crect x='25' y='248.5' width='55' height='183'/%3E%3Crect x='970' y='248.5' width='55' height='183'/%3E%3Ccircle cx='135' cy='340' r='4' fill='white'/%3E%3Ccircle cx='915' cy='340' r='4' fill='white'/%3E%3Cpath d='M190 267 A91.5 91.5 0 0 1 190 413'/%3E%3Cpath d='M860 267 A91.5 91.5 0 0 0 860 413'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-size:var(--pitch-size,140%);background-position:var(--pitch-pos,50% 50%)}
+.ph::after{content:"";position:absolute;inset:0;z-index:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 60px,transparent 60px 120px)}
+.ph > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.ph .ph-mark{position:absolute;right:1rem;top:1rem;z-index:0;width:44px;opacity:.35}
+.tone-1{--tone:radial-gradient(120% 100% at 18% 0%,#23a06d 0%,#0a6b45 45%,#03402a 100%)}
+.tone-2{--tone:radial-gradient(110% 110% at 90% 10%,#1b8f5f 0%,#075a3a 48%,#022d1e 100%)}
+.tone-3{--tone:linear-gradient(160deg,#0e7a4f 0%,#054a31 60%,#02281a 100%)}
+.tone-4{--tone:radial-gradient(90% 120% at 50% 100%,#2aa874 0%,#0b6a45 45%,#033a26 100%)}
+.tone-5{--tone:linear-gradient(200deg,#135f42 0%,#0b3b2a 55%,#08241a 100%)}
+.crop-a{--pitch-size:220%;--pitch-pos:50% 50%}
+.crop-b{--pitch-size:260%;--pitch-pos:0% 50%}
+.crop-c{--pitch-size:260%;--pitch-pos:100% 40%}
+.crop-d{--pitch-size:120%;--pitch-pos:50% 60%}
+.crop-e{--pitch-size:320%;--pitch-pos:20% 0%}
+
+/* hero */
+.hero{padding-block:clamp(1rem,2.4vw,1.75rem) 0}
+.hero-frame{position:relative;border-radius:clamp(14px,2vw,22px);overflow:hidden;min-height:clamp(520px,68vw,760px);display:flex;align-items:flex-end;box-shadow:var(--shadow)}
+.hero-frame .ph{position:absolute;inset:0}
+.hero-frame::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(2,30,20,.05) 0%,rgba(2,30,20,.1) 45%,rgba(2,24,16,.78) 100%),linear-gradient(90deg,rgba(2,24,16,.45),transparent 60%)}
+.hero-content{position:relative;z-index:3;padding:clamp(1.5rem,5vw,4.5rem);display:grid;gap:1.25rem;max-width:980px;color:#fff}
+.hero-content h1{color:#fff}
+.hero-content .eyebrow{color:rgba(255,255,255,.85)}
+.hero-sub{font-family:var(--display);font-stretch:110%;font-weight:600;font-size:clamp(1.2rem,2.4vw,1.8rem);line-height:1.2;color:#fff}
+.hero-sub em{font-style:normal;color:#8FE3B8}
+.hero-text{color:rgba(255,255,255,.82);font-size:1.05rem;max-width:44ch}
+.hero-content .btn-row{margin-top:.5rem}
+.hero-meta{position:absolute;z-index:3;right:clamp(1.5rem,4vw,3rem);top:clamp(1.5rem,4vw,3rem);display:flex;gap:.6rem;align-items:center;color:rgba(255,255,255,.8);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
+.hero-meta .flag-rule{width:36px}
+
+/* who we are */
+.split{display:grid;gap:clamp(2rem,6vw,6rem);grid-template-columns:1fr}
+@media (min-width:900px){.split{grid-template-columns:1fr 1fr;align-items:start}}
+.values-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.values-list li{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1.5rem;padding:1.5rem 0;border-bottom:1px solid var(--line);transition:padding .35s var(--ease)}
+.values-list li:hover{padding-left:.5rem}
+.values-list .v-mark{grid-row:span 2;width:10px;height:10px;margin-top:.55rem;border-radius:50%;border:1.5px solid var(--green);transition:background .3s}
+.values-list li:hover .v-mark{background:var(--green)}
+.values-list h3{font-size:1.2rem;font-weight:800;letter-spacing:.14em;font-stretch:115%}
+.values-list p{color:var(--ink-3);font-size:.96rem}
+
+/* cards */
+.moments{display:grid;gap:clamp(1rem,2vw,1.5rem);grid-template-columns:1fr}
+@media (min-width:760px){.moments{grid-template-columns:repeat(3,1fr)}}
+.moment{position:relative;display:block;border-radius:var(--r);overflow:hidden;color:#fff;aspect-ratio:3/4;max-width:100%;box-shadow:var(--shadow)}
+.moment .ph{position:absolute;inset:0;transition:transform 1.1s var(--ease)}
+.moment:hover .ph{transform:scale(1.045)}
+.moment::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,transparent 45%,rgba(2,24,16,.8))}
+.moment-body{position:absolute;z-index:3;left:0;right:0;bottom:0;padding:1.5rem;display:grid;gap:.35rem}
+.moment-body .tag{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#8FE3B8;font-weight:600}
+.moment-body h3{color:#fff;font-size:1.6rem;font-weight:800}
+.moment-body p{color:rgba(255,255,255,.78);font-size:.92rem}
+.moment:hover{color:#fff}
+.section-foot{margin-top:clamp(2rem,4vw,3rem);display:flex;justify-content:center}
+
+/* page heads */
+.page-head{padding-block:clamp(3.5rem,8vw,6.5rem) clamp(2rem,4vw,3rem)}
+.page-head .h-xl{font-size:clamp(2.4rem,6.4vw,5.2rem)}
+.page-head .stack{max-width:900px}
+
+/* about */
+.story-grid{display:grid;gap:clamp(2rem,5vw,4rem);grid-template-columns:1fr}
+@media (min-width:900px){.story-grid{grid-template-columns:1.05fr .95fr;align-items:center}}
+.story-img{border-radius:var(--r);aspect-ratio:4/5;max-width:100%;box-shadow:var(--shadow)}
+.story-copy{display:grid;gap:1.25rem}
+.story-copy p{color:var(--ink-2)}
+.pull{font-family:var(--display);font-stretch:108%;font-weight:700;font-size:clamp(1.35rem,2.4vw,1.8rem);line-height:1.25;color:var(--ink);border-left:2px solid var(--green);padding-left:1.25rem}
+.value-grid{display:grid;grid-template-columns:1fr;border-top:1px solid var(--line)}
+@media (min-width:640px){.value-grid{grid-template-columns:1fr 1fr}}
+@media (min-width:980px){.value-grid{grid-template-columns:repeat(3,1fr)}}
+.value-cell{padding:2rem 1.75rem 2.25rem 0;border-bottom:1px solid var(--line);display:grid;gap:.75rem;align-content:start}
+@media (min-width:640px){.value-cell{padding-right:2.5rem}}
+.value-cell h3{font-size:1.25rem;font-weight:800;letter-spacing:.12em;font-stretch:115%;text-transform:uppercase}
+.value-cell p{color:var(--ink-3);font-size:.97rem}
+.value-cell .v-line{width:32px;height:2px;background:var(--green)}
+.foundation{background:var(--green-deep);color:#fff;border-radius:clamp(16px,2vw,24px);padding:clamp(2rem,6vw,5rem);position:relative;overflow:hidden}
+.foundation::before{content:"";position:absolute;right:-12%;top:-30%;width:60%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(143,227,184,.16),transparent 65%)}
+.foundation > *{position:relative}
+.foundation h2{color:#fff}
+.foundation .eyebrow{color:#8FE3B8}
+.foundation .lede{color:rgba(255,255,255,.8)}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;margin:0;padding:0}
+.chips li{padding:.55rem 1rem;border:1px solid rgba(255,255,255,.25);border-radius:999px;font-size:.88rem;color:rgba(255,255,255,.92)}
+.foundation-grid{display:grid;gap:2.5rem}
+@media (min-width:900px){.foundation-grid{grid-template-columns:1.1fr .9fr;align-items:end}}
+
+/* gallery hub */
+.hub{display:grid;gap:clamp(1rem,2vw,1.5rem);grid-template-columns:1fr}
+@media (min-width:820px){.hub{grid-template-columns:1fr 1fr}}
+.hub-card{position:relative;display:flex;align-items:flex-end;border-radius:clamp(14px,2vw,20px);overflow:hidden;min-height:clamp(380px,48vw,560px);color:#fff;box-shadow:var(--shadow)}
+.hub-card .ph{position:absolute;inset:0;transition:transform 1.2s var(--ease)}
+.hub-card:hover .ph{transform:scale(1.04)}
+.hub-card::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,transparent 30%,rgba(2,24,16,.82))}
+.hub-body{position:relative;z-index:3;padding:clamp(1.5rem,4vw,2.75rem);display:grid;gap:.8rem;width:100%}
+.hub-body h2{color:#fff}
+.hub-body p{color:rgba(255,255,255,.8);max-width:40ch}
+.hub-body .go{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.9rem;letter-spacing:.06em;margin-top:.4rem}
+.hub-body .go svg{width:18px;height:18px;transition:transform .3s var(--ease)}
+.hub-card:hover .go svg{transform:translateX(5px)}
+.hub-card:hover{color:#fff}
+.hub-icon{width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.4);display:grid;place-items:center;margin-bottom:.4rem;backdrop-filter:blur(6px);background:rgba(255,255,255,.08)}
+.hub-icon svg{width:22px;height:22px}
+
+/* photos */
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+.filter{padding:.6rem 1.15rem;border-radius:999px;border:1px solid var(--line-strong);background:rgba(255,255,255,.7);font:600 .82rem/1 var(--body);letter-spacing:.06em;color:var(--ink-2);cursor:pointer;transition:all .2s}
+.filter:hover{border-color:var(--green);color:var(--green-deep)}
+.filter[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
+.masonry{columns:1;column-gap:1rem}
+@media (min-width:600px){.masonry{columns:2}}
+@media (min-width:1000px){.masonry{columns:3;column-gap:1.25rem}}
+.shot{break-inside:avoid;margin:0 0 1rem;display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;text-align:left;border-radius:12px;overflow:hidden;position:relative}
+@media (min-width:1000px){.shot{margin-bottom:1.25rem}}
+.shot .ph{width:100%;transition:transform .9s var(--ease)}
+.shot:hover .ph{transform:scale(1.03)}
+.shot figcaption{position:absolute;z-index:3;left:0;right:0;bottom:0;padding:1.5rem 1rem .9rem;background:linear-gradient(180deg,transparent,rgba(2,24,16,.75));color:#fff;font-size:.88rem;font-weight:500;display:flex;justify-content:space-between;gap:1rem;opacity:0;transform:translateY(6px);transition:all .35s var(--ease)}
+.shot:hover figcaption,.shot:focus-visible figcaption{opacity:1;transform:none}
+@media (hover:none){.shot figcaption{opacity:1;transform:none}}
+.shot figcaption span{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#8FE3B8;align-self:center}
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(6,16,12,.94);display:grid;grid-template-rows:auto 1fr auto;padding:calc(env(safe-area-inset-top,0px) + 1rem) 1rem calc(env(safe-area-inset-bottom,0px) + 1.25rem);animation:fade .3s ease both}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.lb-top{display:flex;justify-content:space-between;align-items:center;color:rgba(255,255,255,.7);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;padding-inline:.5rem}
+.lb-stage{display:flex;align-items:center;justify-content:center;gap:1rem;min-height:0;padding-block:1rem}
+.lb-stage .ph{width:min(1100px,100%);max-height:100%;aspect-ratio:var(--ar,3/2);border-radius:10px;max-width:100%}
+.lb-btn{width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#fff;display:grid;place-items:center;cursor:pointer;flex:none;transition:background .2s}
+.lb-btn:hover{background:rgba(255,255,255,.16)}
+.lb-btn svg{width:20px;height:20px}
+.lb-cap{text-align:center;color:#fff;font-size:1rem}
+.lb-cap small{display:block;color:#8FE3B8;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.3rem}
+@media (max-width:640px){.lb-stage .lb-btn{position:absolute;bottom:5.5rem}.lb-prev{left:1.25rem}.lb-next{right:1.25rem}}
+
+/* videos */
+.featured{display:grid;gap:clamp(1.5rem,4vw,3rem);grid-template-columns:1fr;align-items:center}
+@media (min-width:960px){.featured{grid-template-columns:1.5fr 1fr}}
+.vframe{position:relative;display:block;border-radius:var(--r);overflow:hidden;aspect-ratio:16/9;max-width:100%;box-shadow:var(--shadow);color:#fff}
+.vframe .ph{position:absolute;inset:0;transition:transform 1s var(--ease)}
+.vframe:hover .ph{transform:scale(1.03)}
+.vframe::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(2,24,16,.05),rgba(2,24,16,.45))}
+.play{position:absolute;z-index:3;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(56px,8vw,84px);aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.95);display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .35s var(--ease)}
+.play svg{width:36%;height:36%;margin-left:6%;fill:var(--green)}
+.vframe:hover .play{transform:translate(-50%,-50%) scale(1.08)}
+.vdur{position:absolute;z-index:3;right:.8rem;bottom:.8rem;background:rgba(0,0,0,.55);color:#fff;font-size:.74rem;padding:.25rem .5rem;border-radius:6px;font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.vgrid{display:grid;gap:clamp(1.5rem,3vw,2rem) clamp(1rem,2vw,1.5rem);grid-template-columns:1fr}
+@media (min-width:620px){.vgrid{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.vgrid{grid-template-columns:repeat(3,1fr)}}
+.vcard{display:grid;gap:.9rem;color:var(--ink)}
+.vcard:hover{color:var(--ink)}
+.vcard .vframe .play{width:52px}
+.vcard .tag{font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--green)}
+.vcard h3{font-size:1.12rem;font-weight:750;margin-top:.2rem}
+.social-band{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem;padding:clamp(1.75rem,4vw,2.5rem);border:1px solid var(--line);border-radius:var(--r);background:rgba(255,255,255,.7)}
+
+/* socials */
+.socials{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;margin:0;padding:0}
+.socials a{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line-strong);color:var(--ink-2);transition:all .25s var(--ease);background:rgba(255,255,255,.6)}
+.socials a:hover{background:var(--green);border-color:var(--green);color:#fff;transform:translateY(-2px)}
+.socials svg{width:18px;height:18px}
+
+/* community */
+.activity-grid{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--line)}
+@media (min-width:700px){.activity-grid{grid-template-columns:1fr 1fr;column-gap:3rem}}
+.activity{display:grid;grid-template-columns:auto 1fr;gap:.3rem 1.25rem;padding:1.6rem 0;border-bottom:1px solid var(--line)}
+.activity svg{grid-row:span 2;width:26px;height:26px;color:var(--green);margin-top:.1rem}
+.activity h3{font-size:1.1rem;font-weight:750}
+.activity p{color:var(--ink-3);font-size:.95rem}
+.involve{display:grid;gap:1rem;grid-template-columns:1fr}
+@media (min-width:620px){.involve{grid-template-columns:1fr 1fr}}
+@media (min-width:1040px){.involve{grid-template-columns:repeat(4,1fr)}}
+.inv-card{display:flex;flex-direction:column;gap:.9rem;padding:2rem 1.6rem;border:1px solid var(--line);border-radius:var(--r);background:rgba(255,255,255,.82);color:var(--ink);transition:all .35s var(--ease)}
+.inv-card:hover{border-color:var(--green);transform:translateY(-4px);box-shadow:var(--shadow);color:var(--ink)}
+.inv-card h3{font-size:1.45rem;font-weight:800}
+.inv-card p{color:var(--ink-3);font-size:.95rem;flex:1}
+.inv-card .go{display:inline-flex;align-items:center;gap:.45rem;color:var(--green);font-weight:600;font-size:.88rem}
+.inv-card .go svg{width:16px;height:16px;transition:transform .3s var(--ease)}
+.inv-card:hover .go svg{transform:translateX(4px)}
+.inv-card .inv-ico{width:46px;height:46px;border-radius:12px;background:var(--paper-2);display:grid;place-items:center;color:var(--green)}
+.inv-card .inv-ico svg{width:22px;height:22px}
+
+/* join */
+.join-grid{display:grid;gap:clamp(2rem,5vw,4.5rem);grid-template-columns:1fr}
+@media (min-width:960px){.join-grid{grid-template-columns:1fr 1fr}}
+.rules{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.rules li{padding:1.4rem 0;border-bottom:1px solid var(--line);display:grid;gap:.35rem}
+.rules h3{font-size:1.05rem;font-weight:750;display:flex;align-items:center;gap:.6rem}
+.rules h3 .num{font-family:var(--display);font-stretch:120%;font-weight:800;color:var(--green);font-size:1.05rem;min-width:2.2ch;font-variant-numeric:tabular-nums}
+.rules p{color:var(--ink-3);font-size:.95rem;padding-left:calc(2.2ch + .6rem + .1rem)}
+.not-tolerated{margin-top:1.75rem;padding:1.5rem;border-radius:12px;background:var(--paper-2);border:1px solid var(--line)}
+.not-tolerated h3{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-family:var(--body);font-weight:600;color:var(--green-deep);margin-bottom:.9rem}
+.not-tolerated ul{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;margin:0;padding:0}
+.not-tolerated li{font-size:.86rem;padding:.4rem .85rem;background:#fff;border:1px solid var(--line);border-radius:999px;color:var(--ink-2)}
+.form-card{background:#fff;border:1px solid var(--line);border-radius:clamp(14px,2vw,20px);padding:clamp(1.5rem,4vw,2.75rem);box-shadow:var(--shadow);display:grid;gap:1.25rem}
+.field{display:grid;gap:.45rem}
+.field label{font-size:.8rem;font-weight:600;letter-spacing:.06em;color:var(--ink-2)}
+.field input,.field select,.field textarea{width:100%;font:inherit;font-size:1rem;padding:.85rem 1rem;border:1px solid var(--line-strong);border-radius:10px;background:var(--paper);color:var(--ink);transition:border-color .2s,box-shadow .2s}
+.field textarea{min-height:130px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 4px var(--glow);background:#fff}
+.field-row{display:grid;gap:1.25rem;grid-template-columns:1fr}
+@media (min-width:560px){.field-row{grid-template-columns:1fr 1fr}}
+.check{display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:var(--ink-2)}
+.check input{width:18px;height:18px;margin-top:.2rem;accent-color:var(--green);flex:none}
+.form-note{font-size:.9rem;padding:.9rem 1rem;border-radius:10px;background:var(--paper-2);color:var(--green-ink);border:1px solid var(--line)}
+.connect-grid{display:grid;gap:clamp(2rem,5vw,4rem);grid-template-columns:1fr}
+@media (min-width:960px){.connect-grid{grid-template-columns:.85fr 1.15fr}}
+.contact-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.contact-list li{padding:1.1rem 0;border-bottom:1px solid var(--line);display:grid;gap:.15rem}
+.contact-list .k{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+.city{display:grid;gap:clamp(2rem,5vw,4rem);grid-template-columns:1fr;align-items:center}
+@media (min-width:900px){.city{grid-template-columns:1fr 1fr}}
+.city-map{position:relative;aspect-ratio:1/1;max-width:100%;border-radius:clamp(14px,2vw,20px);overflow:hidden;background:linear-gradient(160deg,#fff,var(--paper-2));border:1px solid var(--line)}
+.city-map svg{position:absolute;inset:0;width:100%;height:100%}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
+.facts div{padding:1.2rem 0;border-bottom:1px solid var(--line)}
+.facts dt{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+.facts dd{margin:.25rem 0 0;font-family:var(--display);font-stretch:110%;font-weight:750;font-size:1.15rem}
+
+/* constitution */
+.articles{display:grid;gap:0;border-top:1px solid var(--line);counter-reset:art}
+.article{display:grid;grid-template-columns:1fr;gap:.6rem 3rem;padding:2rem 0;border-bottom:1px solid var(--line)}
+@media (min-width:820px){.article{grid-template-columns:240px 1fr}}
+.article header{display:grid;gap:.3rem;align-content:start}
+.article .art-no{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--green);font-weight:600}
+.article h2{font-size:1.35rem;font-weight:800}
+.article ul{margin:0;padding-left:1.1rem;display:grid;gap:.55rem;color:var(--ink-2)}
+.article li::marker{color:var(--green)}
+.notice{padding:1.25rem 1.5rem;border-left:2px solid var(--green);background:rgba(255,255,255,.7);color:var(--ink-2);font-size:.95rem;max-width:760px}
+
+/* footer */
+.site-footer{background:var(--green-ink);color:rgba(255,255,255,.78);margin-top:clamp(3rem,6vw,5rem);padding-block:clamp(3.5rem,7vw,5.5rem) 2rem;position:relative;overflow:hidden}
+.site-footer::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--green) 33.3%,#fff 33.3% 66.6%,var(--green) 66.6%)}
+.footer-grid{display:grid;gap:2.5rem;grid-template-columns:1fr}
+@media (min-width:820px){.footer-grid{grid-template-columns:1.4fr 1fr 1fr}}
+.footer-brand{display:grid;gap:1rem;align-content:start}
+.footer-brand .name{font-family:var(--display);font-stretch:118%;font-weight:850;font-size:clamp(1.8rem,3.4vw,2.6rem);color:#fff;line-height:1}
+.footer-brand .motto{font-family:var(--display);font-stretch:108%;font-weight:600;font-size:1.1rem;color:#8FE3B8}
+.site-footer h4{font:600 .72rem/1 var(--body);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:1.1rem}
+.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
+.site-footer a{color:rgba(255,255,255,.85)}
+.site-footer a:hover{color:#fff}
+.site-footer .socials a{border-color:rgba(255,255,255,.25);color:#fff;background:transparent}
+.site-footer .socials a:hover{background:#fff;color:var(--green-ink);border-color:#fff}
+.footer-bottom{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.12);display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.82rem;color:rgba(255,255,255,.55)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<!-- icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M15 6l-6 6 6 6"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M3 8h4l2-3h6l2 3h4v11H3z"/><circle cx="12" cy="13" r="4"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3z"/></symbol>
+  <symbol id="i-ball" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5l4 2.9-1.5 4.7h-5L8 10.4z"/><path d="M12 3v4.5M16 10.4l4.3-1.4M14.5 15.1l2.7 3.8M9.5 15.1l-2.7 3.8M8 10.4L3.7 9"/></symbol>
+  <symbol id="i-youth" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="7" r="3"/><circle cx="17" cy="9" r="2.2"/><path d="M2.5 20c.5-4 2.8-6 5.5-6s5 2 5.5 6M13.5 20c.4-3 1.8-4.6 3.5-4.6s3.1 1.6 3.5 4.6"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0112 7.4 4.3 4.3 0 0119.5 10c0 5.4-7.5 10-7.5 10z"/></symbol>
+  <symbol id="i-drum" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><ellipse cx="12" cy="9" rx="8" ry="3"/><path d="M4 9v7c0 1.7 3.6 3 8 3s8-1.3 8-3V9M8 11.6v7M16 11.6v7M3 3l6 5M21 3l-6 5"/></symbol>
+  <symbol id="i-hands" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l4-4 5 3 5-3 4 4-9 8z"/><path d="M12 11l-3 3"/></symbol>
+  <symbol id="i-coin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M14.8 9.2c-.5-.8-1.5-1.2-2.8-1.2-1.7 0-2.8.8-2.8 2s1.2 1.6 2.8 2 2.8.8 2.8 2-1.1 2-2.8 2c-1.3 0-2.3-.4-2.8-1.2M12 6.5V8M12 16v1.5"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M5 21V4h14l-3 4.5 3 4.5H5"/></symbol>
+  <symbol id="i-ticket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M3 8a2 2 0 002-2h14a2 2 0 002 2v2a2 2 0 000 4v2a2 2 0 00-2 2H5a2 2 0 00-2-2v-2a2 2 0 000-4z"/><path d="M14 6v12" stroke-dasharray="2 2"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z"/></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2a2.5 2.5 0 00-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 002.4 7.2 26 26 0 002 12a26 26 0 00.4 4.8 2.5 2.5 0 001.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 001.8-1.8A26 26 0 0022 12a26 26 0 00-.4-4.8zM10 15V9l5.2 3z"/></symbol>
+  <symbol id="i-tt" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.3 2.2 1.6 3.6 3.9 3.8v2.8c-1.4.1-2.6-.3-3.9-1.1v5.4c0 6.8-7.4 8.9-10.4 4-1.9-3.1-.7-8.6 5.5-8.8v3c-.5.1-1 .2-1.4.4-1.4.5-2.2 1.3-2 2.8.4 2.9 5.7 3.7 5.2-1.9V3z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="currentColor"><path d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.2-8.3L2 3h6.4l4.4 5.8zm-1.1 16.2h1.7L7.4 4.7H5.6z"/></symbol>
+  <symbol id="crest" viewBox="0 0 36 40">
+    <path d="M18 1.5 33.5 6v14.2c0 8.6-6.4 15-15.5 18.3C8.9 35.2 2.5 28.8 2.5 20.2V6z" fill="#fff" stroke="#005C3B" stroke-width="1.5"/>
+    <clipPath id="crest-clip"><path d="M18 4.2 31 8v12.2c0 7.2-5.3 12.6-13 15.6-7.7-3-13-8.4-13-15.6V8z"/></clipPath>
+    <g clip-path="url(#crest-clip)"><rect x="4" y="3" width="9.4" height="36" fill="#008751"/><rect x="22.6" y="3" width="9.4" height="36" fill="#008751"/></g>
+    <circle cx="18" cy="21" r="5.2" fill="#fff" stroke="#005C3B" stroke-width="1.2"/>
+    <path d="M18 17.6l2.4 1.7-.9 2.8h-3l-.9-2.8z" fill="#005C3B"/>
+  </symbol>
+</svg>
+
+<a class="sr" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="#home" aria-label="Naija FC Columbus home">
+      <svg class="crest" aria-hidden="true"><use href="#crest"/></svg>
+      <span class="brand-name">Naija FC<small>Columbus · Ohio</small></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home" data-nav="home">Home</a></li>
+      <li><a href="#about" data-nav="about constitution">About</a></li>
+      <li class="dropdown">
+        <button class="nav-link" id="gallery-toggle" data-nav="gallery photos videos" aria-expanded="false" aria-controls="gallery-menu">Gallery <svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+        <ul class="dropdown-menu" id="gallery-menu" hidden>
+          <li><a href="#gallery" data-nav="gallery">Overview<span>Photos and videos in one place</span></a></li>
+          <li><a href="#photos" data-nav="photos">Photos<span>Matchday, training, events</span></a></li>
+          <li><a href="#videos" data-nav="videos">Videos<span>Highlights and interviews</span></a></li>
+        </ul>
+      </li>
+      <li><a href="#community" data-nav="community">Community</a></li>
+      <li><a class="btn btn-primary" href="#join" data-nav="join">Join Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- ============ HOME ============ -->
+<div data-page="home">
+  <section class="hero" aria-label="Welcome">
+    <div class="wrap">
+      <div class="hero-frame">
+        <div class="ph tone-1 crop-d"><img src="images/hero.jpg" alt="Naija FC Columbus players together on the pitch" onerror="this.remove()"></div>
+        <div class="hero-meta" aria-hidden="true"><span class="flag-rule"><i></i><i></i><i></i></span>Est. in Columbus</div>
+        <div class="hero-content">
+          <span class="eyebrow">Nigerian Football Club · Columbus, Ohio</span>
+          <h1 class="h-xl">NAIJA FC<br>COLUMBUS</h1>
+          <p class="hero-sub">One Team. Many Backgrounds. <em>One Naija.</em></p>
+          <p class="hero-text">Football, brotherhood and community in Columbus, Ohio.</p>
+          <div class="btn-row">
+            <a class="btn btn-light" href="#about">Meet the Club <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-outline-light" href="#gallery">Explore Gallery</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="who-h">
+    <div class="wrap split">
+      <div class="stack">
+        <span class="eyebrow">Who We Are</span>
+        <h2 class="h-lg" id="who-h">Nigerians and friends, brought together by the game.</h2>
+        <p class="lede">Naija FC Columbus is a football family. We meet on the pitch to play, compete and look out for one another, and we carry the same standards off it. Whatever state, tribe or background you come from, you play here as one of us.</p>
+        <div><a class="btn btn-ghost" href="#about">Our story <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      </div>
+      <ul class="values-list" aria-label="Our values">
+        <li><span class="v-mark"></span><h3>UNITY</h3><p>One team on and off the pitch. No tribe comes before the badge.</p></li>
+        <li><span class="v-mark"></span><h3>DISCIPLINE</h3><p>We arrive on time, train with purpose and keep our word.</p></li>
+        <li><span class="v-mark"></span><h3>RESPECT</h3><p>For teammates, opponents, referees, organizers and the facilities we use.</p></li>
+        <li><span class="v-mark"></span><h3>COMMUNITY</h3><p>Football is how we gather. Columbus is the home we give back to.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="wrap"><hr class="divider"></div>
+
+  <section aria-labelledby="moments-h">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Latest Moments</span>
+        <h2 class="h-lg" id="moments-h">From the pitch and beyond it.</h2>
+      </div>
+      <div class="moments">
+        <a class="moment" href="#photos" data-filter-link="matchday">
+          <div class="ph tone-2 crop-b"><img src="images/matchday.jpg" alt="Matchday" onerror="this.remove()"></div>
+          <div class="moment-body"><span class="tag">Matchday</span><h3>Game Day</h3><p>Eleven-a-side, full effort, one badge.</p></div>
+        </a>
+        <a class="moment" href="#photos" data-filter-link="training">
+          <div class="ph tone-4 crop-a"><img src="images/training.jpg" alt="Training session" onerror="this.remove()"></div>
+          <div class="moment-body"><span class="tag">Training</span><h3>The Work</h3><p>Where discipline gets built, session by session.</p></div>
+        </a>
+        <a class="moment" href="#photos" data-filter-link="community">
+          <div class="ph tone-3 crop-c"><img src="images/community.jpg" alt="Community gathering" onerror="this.remove()"></div>
+          <div class="moment-body"><span class="tag">Community</span><h3>Together</h3><p>Families, friends and neighbours around the club.</p></div>
+        </a>
+      </div>
+      <div class="section-foot"><a class="btn btn-primary" href="#gallery">View Gallery <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<div data-page="about" hidden>
+  <section class="page-head" aria-labelledby="story-h" style="padding-bottom:clamp(4rem,9vw,7rem)">
+    <div class="wrap story-grid">
+      <div class="story-copy">
+        <span class="eyebrow">Our Story</span>
+        <h1 class="h-xl" id="story-h" style="font-size:clamp(2.4rem,5.6vw,4.6rem)">A home for Nigerian football in Columbus.</h1>
+        <p class="lede">Naija FC Columbus began with a simple idea: Nigerians in Central Ohio should have a place to play the game we grew up with, the way we grew up playing it, with pride, energy and respect.</p>
+        <p>Today the club brings together Nigerians from every state and background, along with friends who share our love of football. We play organized practice games, train together and show up for one another beyond the final whistle. What holds us together is character: how we treat each other, how we compete and how we represent Nigeria in the city we now call home.</p>
+        <p class="pull">We are one team. We come from many backgrounds. On this pitch, we are one Naija.</p>
+      </div>
+      <div class="ph tone-5 crop-e story-img"><img src="images/story.jpg" alt="Naija FC Columbus team portrait" onerror="this.remove()"></div>
+    </div>
+  </section>
+
+  <div class="wrap"><hr class="divider"></div>
+
+  <section aria-labelledby="values-h">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Our Values</span>
+        <h2 class="h-lg" id="values-h">Six standards every member carries.</h2>
+      </div>
+      <div class="value-grid">
+        <div class="value-cell"><span class="v-line"></span><h3>Unity</h3><p>We play as one Naija. State, tribe and language never divide the team.</p></div>
+        <div class="value-cell"><span class="v-line"></span><h3>Discipline</h3><p>Punctuality, preparation and self-control, in training and in games.</p></div>
+        <div class="value-cell"><span class="v-line"></span><h3>Respect</h3><p>Every teammate, opponent, referee and organizer is treated with dignity.</p></div>
+        <div class="value-cell"><span class="v-line"></span><h3>Safety</h3><p>No dangerous play, no fighting and no threats. Everyone goes home well.</p></div>
+        <div class="value-cell"><span class="v-line"></span><h3>Integrity</h3><p>Opportunities are earned on merit. Club decisions and money are handled honestly.</p></div>
+        <div class="value-cell"><span class="v-line"></span><h3>Community</h3><p>We support one another and serve the wider Columbus community.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="found-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="foundation">
+        <div class="foundation-grid">
+          <div class="stack">
+            <span class="eyebrow">Our Foundation</span>
+            <h2 class="h-lg" id="found-h">Built on a written Constitution.</h2>
+            <p class="lede">Naija FC Columbus operates under a formal Constitution, Rules &amp; Regulations. It sets out how the club is run, how members are expected to behave and how every decision stays fair. Leadership and playing opportunities are based on character, commitment, competence, discipline, teamwork and service. Ethnicity, friendship and personal relationships play no part.</p>
+          </div>
+          <div class="stack">
+            <ul class="chips" aria-label="Areas covered by the Constitution">
+              <li>Membership</li><li>Leadership</li><li>Anti-Tribalism</li><li>Conduct</li><li>Safety</li><li>Attendance</li><li>Discipline</li><li>Financial Accountability</li><li>Fairness</li>
+            </ul>
+            <div><a class="btn btn-light" href="#constitution">View Club Constitution <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ GALLERY HUB ============ -->
+<div data-page="gallery" hidden>
+  <section class="page-head" aria-labelledby="gal-h">
+    <div class="wrap stack">
+      <span class="eyebrow">Gallery</span>
+      <h1 class="h-xl" id="gal-h">The Moments That Bring Us Together.</h1>
+      <p class="lede">Matchdays, training sessions, celebrations and community days. A record of the people who make Naija FC Columbus what it is.</p>
+    </div>
+  </section>
+  <section style="padding-top:0" aria-label="Gallery collections">
+    <div class="wrap hub">
+      <a class="hub-card" href="#photos">
+        <div class="ph tone-1 crop-b"><img src="images/gallery-photos.jpg" alt="" onerror="this.remove()"></div>
+        <div class="hub-body">
+          <span class="hub-icon"><svg aria-hidden="true"><use href="#i-camera"/></svg></span>
+          <h2 class="h-lg">Photo Gallery</h2>
+          <p>Matchday, training, events and community, sorted so you can find your moment.</p>
+          <span class="go">Browse photos <svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </div>
+      </a>
+      <a class="hub-card" href="#videos">
+        <div class="ph tone-2 crop-c"><img src="images/gallery-videos.jpg" alt="" onerror="this.remove()"></div>
+        <div class="hub-body">
+          <span class="hub-icon"><svg aria-hidden="true"><use href="#i-video"/></svg></span>
+          <h2 class="h-lg">Video Gallery</h2>
+          <p>Match highlights, training clips, interviews and community moments.</p>
+          <span class="go">Watch videos <svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PHOTOS ============ -->
+<div data-page="photos" hidden>
+  <section class="page-head" aria-labelledby="ph-h">
+    <div class="wrap stack">
+      <span class="eyebrow">Gallery · Photos</span>
+      <h1 class="h-xl" id="ph-h">Photos</h1>
+      <p class="lede">Select any image to view it full size. Use the arrow keys to move between photos.</p>
+    </div>
+  </section>
+  <section style="padding-top:0" aria-label="Photo grid">
+    <div class="wrap">
+      <div class="filters" role="group" aria-label="Filter photos">
+        <button class="filter" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter" data-filter="matchday" aria-pressed="false">Matchday</button>
+        <button class="filter" data-filter="training" aria-pressed="false">Training</button>
+        <button class="filter" data-filter="events" aria-pressed="false">Events</button>
+        <button class="filter" data-filter="community" aria-pressed="false">Community</button>
+      </div>
+      <div class="masonry" id="masonry"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ VIDEOS ============ -->
+<div data-page="videos" hidden>
+  <section class="page-head" aria-labelledby="vid-h">
+    <div class="wrap stack">
+      <span class="eyebrow">Gallery · Videos</span>
+      <h1 class="h-xl" id="vid-h">Videos</h1>
+    </div>
+  </section>
+  <section style="padding-top:0" aria-label="Featured video">
+    <div class="wrap featured">
+      <a class="vframe" href="https://www.youtube.com/" target="_blank" rel="noopener">
+        <div class="ph tone-1 crop-d"><img src="images/video-featured.jpg" alt="" onerror="this.remove()"></div>
+        <span class="play"><svg aria-hidden="true"><use href="#i-play"/></svg></span>
+        <span class="vdur">Watch on YouTube</span>
+      </a>
+      <div class="stack">
+        <span class="eyebrow">Featured</span>
+        <h2 class="h-lg">Season highlights</h2>
+        <p class="lede">The goals, the saves and the celebrations. The best of Naija FC Columbus on the pitch this season.</p>
+        <div><a class="btn btn-primary" href="https://www.youtube.com/" target="_blank" rel="noopener">Watch now <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      </div>
+    </div>
+  </section>
+  <section style="padding-top:0" aria-labelledby="more-vid-h">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:2rem"><h2 class="h-md" id="more-vid-h">More from the club</h2></div>
+      <div class="vgrid" id="vgrid"></div>
+      <div class="social-band" style="margin-top:clamp(3rem,6vw,4.5rem)">
+        <div class="stack" style="gap:.4rem">
+          <h3 class="h-md">Follow the club</h3>
+          <p class="muted">New clips every matchday on our social channels.</p>
+        </div>
+        <ul class="socials" data-socials></ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ COMMUNITY ============ -->
+<div data-page="community" hidden>
+  <section class="page-head" aria-labelledby="com-h" style="padding-bottom:clamp(4rem,9vw,7rem)">
+    <div class="wrap story-grid">
+      <div class="story-copy">
+        <span class="eyebrow">Football Beyond the Pitch</span>
+        <h1 class="h-xl" id="com-h" style="font-size:clamp(2.4rem,5.6vw,4.6rem)">The game is how we gather. Columbus is who we serve.</h1>
+        <p class="lede">Naija FC Columbus exists for more than ninety minutes. We use football to connect Nigerians across Central Ohio, welcome newcomers to the city and give our time to the neighbourhoods that have welcomed us.</p>
+        <p>From youth clinics to cultural celebrations, we show up as a club: organized, respectful and proud of where we come from.</p>
+      </div>
+      <div class="ph tone-4 crop-c story-img"><img src="images/community-hero.jpg" alt="Club members at a community event" onerror="this.remove()"></div>
+    </div>
+  </section>
+
+  <div class="wrap"><hr class="divider"></div>
+
+  <section aria-labelledby="act-h">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Community Activities</span>
+        <h2 class="h-lg" id="act-h">What we do together.</h2>
+      </div>
+      <div class="activity-grid">
+        <div class="activity"><svg aria-hidden="true"><use href="#i-ball"/></svg><h3>Football events</h3><p>Friendly matches, tournaments and open community games across Columbus.</p></div>
+        <div class="activity"><svg aria-hidden="true"><use href="#i-youth"/></svg><h3>Youth engagement</h3><p>Club members mentor and coach young players at clinics and school events.</p></div>
+        <div class="activity"><svg aria-hidden="true"><use href="#i-heart"/></svg><h3>Charity initiatives</h3><p>Drives and appeals for families and causes in Columbus and back home.</p></div>
+        <div class="activity"><svg aria-hidden="true"><use href="#i-drum"/></svg><h3>Cultural events</h3><p>Independence Day, festivals and gatherings that celebrate Nigerian culture.</p></div>
+        <div class="activity"><svg aria-hidden="true"><use href="#i-hands"/></svg><h3>Volunteering</h3><p>Members give their time to local clean-ups, food banks and community days.</p></div>
+        <div class="activity"><svg aria-hidden="true"><use href="#i-coin"/></svg><h3>Fundraising</h3><p>Transparent fundraising for kit, pitches and community projects.</p></div>
+        <div class="activity"><svg aria-hidden="true"><use href="#i-link"/></svg><h3>Community partnerships</h3><p>Working with local organizations, businesses and Nigerian associations in Ohio.</p></div>
+        <div class="activity"><svg aria-hidden="true"><use href="#i-flag"/></svg><h3>Welcoming newcomers</h3><p>A familiar face and a game for Nigerians who have just arrived in Columbus.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="inv-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Get Involved</span>
+        <h2 class="h-lg" id="inv-h">There is a place for you here.</h2>
+      </div>
+      <div class="involve">
+        <a class="inv-card" href="#join"><span class="inv-ico"><svg aria-hidden="true"><use href="#i-hands"/></svg></span><h3>Volunteer</h3><p>Help run matchdays, youth clinics and community events.</p><span class="go">Get in touch <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="inv-card" href="#join"><span class="inv-ico"><svg aria-hidden="true"><use href="#i-link"/></svg></span><h3>Partner</h3><p>Businesses and organizations can partner with the club on shared goals.</p><span class="go">Start a conversation <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="inv-card" href="#join"><span class="inv-ico"><svg aria-hidden="true"><use href="#i-heart"/></svg></span><h3>Support</h3><p>Contribute to kit, pitch fees and community projects.</p><span class="go">Ways to support <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <a class="inv-card" href="#join"><span class="inv-ico"><svg aria-hidden="true"><use href="#i-ticket"/></svg></span><h3>Attend</h3><p>Come to a game or event. Bring family and friends and cheer us on.</p><span class="go">Find out what's on <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ JOIN ============ -->
+<div data-page="join" hidden>
+  <section class="page-head" aria-labelledby="join-h" style="padding-bottom:clamp(4rem,9vw,7rem)">
+    <div class="wrap join-grid">
+      <div class="stack" style="align-content:start">
+        <span class="eyebrow">Join Naija FC Columbus</span>
+        <h1 class="h-xl" id="join-h" style="font-size:clamp(2.4rem,5.6vw,4.6rem)">Play with us. Stand with us.</h1>
+        <p class="lede">Membership is open to adults aged 18 and over who share our values and agree to follow the club Constitution, Rules &amp; Regulations. Members take part in organized practice games, training and club events, and have a voice in how the club grows.</p>
+        <p class="muted">Leadership and player opportunities are based on character, commitment, competence, discipline, teamwork and service. Ethnicity, friendship and personal relationships play no part.</p>
+        <div class="not-tolerated">
+          <h3>Not tolerated at Naija FC Columbus</h3>
+          <ul>
+            <li>Tribalism</li><li>Ethnic discrimination</li><li>Tribal insults</li><li>Fighting</li><li>Threats</li><li>Harassment</li><li>Dangerous play</li><li>Favoritism</li>
+          </ul>
+        </div>
+      </div>
+      <ol class="rules" aria-label="How participation works">
+        <li><h3><span class="num">01</span>Age 18 and over</h3><p>Membership and participation are for adults aged 18+.</p></li>
+        <li><h3><span class="num">02</span>Register as a member</h3><p>Send us your details below. A club organizer will follow up with the membership process and a copy of the Constitution.</p></li>
+        <li><h3><span class="num">03</span>Bring a friend</h3><p>A registered member may invite a non-Nigerian friend aged 18+ to approved practice games, subject to club, safety, facility and organizer rules.</p></li>
+        <li><h3><span class="num">04</span>First 22 to check in</h3><p>For organized 11-a-side practice games, the first 22 eligible players to physically arrive and check in form the initial 22-player group, subject to safety, eligibility, suspensions and organizer decisions.</p></li>
+        <li><h3><span class="num">05</span>Play by the rules</h3><p>Every member follows the Constitution on conduct, safety, attendance and discipline. <a href="#constitution">Read the key provisions</a>.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="wrap"><hr class="divider"></div>
+
+  <section aria-labelledby="connect-h">
+    <div class="wrap connect-grid">
+      <div class="stack" style="align-content:start">
+        <span class="eyebrow">Connect With Us</span>
+        <h2 class="h-lg" id="connect-h">Say hello.</h2>
+        <p class="lede">Interested in joining, volunteering or partnering with the club? Send a message and an organizer will get back to you.</p>
+        <ul class="contact-list">
+          <li><span class="k">Location</span><span>Columbus, Ohio</span></li>
+          <li><span class="k">Membership</span><span>Adults aged 18+</span></li>
+          <li><span class="k">Social</span><ul class="socials" data-socials style="margin-top:.5rem"></ul></li>
+        </ul>
+      </div>
+      <form class="form-card" id="contact-form" novalidate>
+        <div class="field-row">
+          <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="f-phone">Phone (optional)</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="f-topic">I'm interested in</label>
+            <select id="f-topic" name="topic">
+              <option>Becoming a member</option><option>Volunteering</option><option>Partnership</option><option>Supporting the club</option><option>Attending an event</option><option>Something else</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="Tell us a little about yourself and your football."></textarea></div>
+        <label class="check" for="f-age"><input id="f-age" name="adult" type="checkbox" required> I confirm I am 18 or older and agree to follow the club's values and Constitution.</label>
+        <div><button class="btn btn-primary" type="submit">Send message <svg aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+        <p class="form-note" id="form-note" role="status" hidden></p>
+      </form>
+    </div>
+  </section>
+
+  <section aria-labelledby="city-h" style="padding-top:0">
+    <div class="wrap city">
+      <div class="city-map" aria-hidden="true">
+        <svg viewBox="0 0 400 400" fill="none">
+          <defs><radialGradient id="cg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#008751" stop-opacity=".18"/><stop offset="1" stop-color="#008751" stop-opacity="0"/></radialGradient></defs>
+          <circle cx="200" cy="200" r="170" fill="url(#cg)"/>
+          <circle cx="200" cy="200" r="150" stroke="#005C3B" stroke-opacity=".22" stroke-dasharray="3 6"/>
+          <circle cx="200" cy="200" r="95" stroke="#005C3B" stroke-opacity=".18"/>
+          <path d="M200 20v360M20 200h360" stroke="#005C3B" stroke-opacity=".12"/>
+          <path d="M60 330C120 280 150 250 175 210s40-90 110-150" stroke="#008751" stroke-opacity=".45" stroke-width="3" stroke-linecap="round"/>
+          <path d="M80 90c50 40 90 70 120 110s60 110 120 140" stroke="#008751" stroke-opacity=".3" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="200" cy="200" r="9" fill="#008751"/><circle cx="200" cy="200" r="18" stroke="#008751" stroke-opacity=".4"/>
+          <text x="222" y="196" font-family="Archivo, Arial, sans-serif" font-weight="800" font-size="16" fill="#0F1512" letter-spacing="1">COLUMBUS</text>
+          <text x="222" y="214" font-family="Inter, Arial, sans-serif" font-size="11" fill="#6B7671" letter-spacing="2">OHIO · 39.96° N, 82.99° W</text>
+          <text x="186" y="44" font-family="Inter, Arial, sans-serif" font-size="11" fill="#6B7671" letter-spacing="2">N</text>
+          <text x="84" y="350" font-family="Inter, Arial, sans-serif" font-size="10" fill="#6B7671" letter-spacing="1.5">SCIOTO RIVER</text>
+        </svg>
+      </div>
+      <div class="stack">
+        <span class="eyebrow">Columbus, Ohio</span>
+        <h2 class="h-lg" id="city-h">Our home in Central Ohio.</h2>
+        <p class="lede">Columbus is home to a large and growing Nigerian community. Naija FC Columbus gives that community a pitch to meet on. Games and training take place at facilities in and around the city.</p>
+        <p class="muted">Match and training locations are shared with registered members and approved guests ahead of each session.</p>
+        <dl class="facts">
+          <div><dt>Base</dt><dd>Columbus, OH</dd></div>
+          <div><dt>Format</dt><dd>11-a-side</dd></div>
+          <div><dt>Membership</dt><dd>Ages 18+</dd></div>
+          <div><dt>Squad per game</dt><dd>First 22 to check in</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ CONSTITUTION ============ -->
+<div data-page="constitution" hidden>
+  <section class="page-head" aria-labelledby="con-h">
+    <div class="wrap stack">
+      <span class="eyebrow">Club Constitution</span>
+      <h1 class="h-xl" id="con-h">Constitution, Rules &amp; Regulations</h1>
+      <p class="lede">The written framework that governs Naija FC Columbus. These are its key provisions.</p>
+      <p class="notice">This page summarizes the Constitution. Registered members receive the full document, and any question about it can be raised with club leadership.</p>
+    </div>
+  </section>
+  <section style="padding-top:0" aria-label="Key provisions">
+    <div class="wrap articles">
+      <article class="article"><header><span class="art-no">Article I</span><h2>Membership</h2></header><ul><li>Membership is open to people aged 18 and over.</li><li>Members agree to follow the Constitution, Rules &amp; Regulations.</li><li>A registered member may invite a non-Nigerian friend aged 18+ to approved practice games, subject to club, safety, facility and organizer rules.</li></ul></article>
+      <article class="article"><header><span class="art-no">Article II</span><h2>Leadership</h2></header><ul><li>Leadership roles are based on character, commitment, competence, discipline, teamwork and service.</li><li>Ethnicity, friendship and personal relationships are never grounds for appointment.</li></ul></article>
+      <article class="article"><header><span class="art-no">Article III</span><h2>Anti-Tribalism</h2></header><ul><li>The club does not tolerate tribalism, ethnic discrimination or tribal insults of any kind.</li><li>Every member plays as one Naija, whatever their state, tribe or language.</li></ul></article>
+      <article class="article"><header><span class="art-no">Article IV</span><h2>Conduct</h2></header><ul><li>Fighting, threats and harassment are prohibited on and off the pitch at club activities.</li><li>Members treat teammates, opponents, referees, organizers and facilities with respect.</li></ul></article>
+      <article class="article"><header><span class="art-no">Article V</span><h2>Safety</h2></header><ul><li>Dangerous play is not tolerated.</li><li>Safety, facility rules and organizer decisions take priority at every session.</li></ul></article>
+      <article class="article"><header><span class="art-no">Article VI</span><h2>Attendance &amp; Check-in</h2></header><ul><li>For organized 11-a-side practice games, the first 22 eligible players to physically arrive and check in form the initial 22-player group.</li><li>This is subject to safety, eligibility, suspensions and organizer decisions.</li></ul></article>
+      <article class="article"><header><span class="art-no">Article VII</span><h2>Discipline</h2></header><ul><li>Breaches of the Constitution are handled through the club's disciplinary process.</li><li>Suspended members may not take part in games while a suspension is in effect.</li></ul></article>
+      <article class="article"><header><span class="art-no">Article VIII</span><h2>Financial Accountability</h2></header><ul><li>Club funds are handled transparently and accounted for to members.</li></ul></article>
+      <article class="article"><header><span class="art-no">Article IX</span><h2>Fairness</h2></header><ul><li>Player opportunities are based on character, commitment, competence, discipline, teamwork and service.</li><li>Favoritism is not tolerated.</li></ul></article>
+    </div>
+    <div class="wrap" style="margin-top:2.5rem"><div class="btn-row"><a class="btn btn-primary" href="#join">Join the club <svg aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="btn btn-ghost" href="#about">Back to About</a></div></div>
+  </section>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <svg class="crest" style="width:48px;height:54px" aria-hidden="true"><use href="#crest"/></svg>
+        <p class="name">Naija FC Columbus</p>
+        <p class="motto">One Team. Many Backgrounds. One Naija.</p>
+        <p>Columbus, Ohio</p>
+      </div>
+      <div>
+        <h4>Club</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#community">Community</a></li>
+          <li><a href="#join">Join Us</a></li>
+          <li><a href="#constitution">Constitution</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul class="socials" data-socials></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> Naija FC Columbus. All rights reserved.</span>
+      <span>Membership open to adults aged 18+.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+  <div class="lb-top"><span id="lb-count"></span><button class="lb-btn" id="lb-close" aria-label="Close"><svg><use href="#i-close"/></svg></button></div>
+  <div class="lb-stage">
+    <button class="lb-btn lb-prev" id="lb-prev" aria-label="Previous photo"><svg><use href="#i-left"/></svg></button>
+    <div class="ph" id="lb-img"></div>
+    <button class="lb-btn lb-next" id="lb-next" aria-label="Next photo"><svg><use href="#i-right"/></svg></button>
+  </div>
+  <p class="lb-cap" id="lb-cap"></p>
+</div>
+
+<script>
+(() => {
+  /* ---- Club config: update these with real links ---- */
+  const SOCIALS = [
+    { name: "Instagram", icon: "i-ig", url: "https://www.instagram.com/" },
+    { name: "Facebook",  icon: "i-fb", url: "https://www.facebook.com/" },
+    { name: "YouTube",   icon: "i-yt", url: "https://www.youtube.com/" },
+    { name: "TikTok",    icon: "i-tt", url: "https://www.tiktok.com/" },
+    { name: "X",         icon: "i-x",  url: "https://x.com/" }
+  ];
+  const FORM_ENDPOINT = ""; // e.g. a Formspree URL; leave empty until connected
+
+  // Photos: drop real files into images/gallery/ with these names.
+  const PHOTOS = [
+    { cat:"matchday",  title:"Kick-off",               ar:"4/5" },
+    { cat:"training",  title:"Passing drills",         ar:"3/2" },
+    { cat:"community", title:"Family day",             ar:"1/1" },
+    { cat:"matchday",  title:"Celebrating the opener", ar:"3/2" },
+    { cat:"events",    title:"Independence Day game",  ar:"4/5" },
+    { cat:"training",  title:"Pre-season fitness",     ar:"4/5" },
+    { cat:"matchday",  title:"Team huddle",            ar:"1/1" },
+    { cat:"community", title:"Youth clinic",           ar:"3/2" },
+    { cat:"events",    title:"End-of-season dinner",   ar:"3/2" },
+    { cat:"training",  title:"Goalkeeper session",     ar:"1/1" },
+    { cat:"matchday",  title:"Full-time",              ar:"4/5" },
+    { cat:"community", title:"Neighbourhood clean-up", ar:"3/2" }
+  ];
+  const VIDEOS = [
+    { cat:"Match highlights", title:"Matchday highlights",         dur:"4:12" },
+    { cat:"Training",         title:"Inside a training session",   dur:"2:48" },
+    { cat:"Interviews",       title:"Meet the organizers",         dur:"6:05" },
+    { cat:"Community",        title:"Youth clinic day",            dur:"3:20" },
+    { cat:"Match highlights", title:"Top goals of the season",     dur:"5:37" },
+    { cat:"Interviews",       title:"What One Naija means to us",  dur:"3:54" }
+  ];
+  const TONES = ["tone-1","tone-2","tone-3","tone-4","tone-5"];
+  const CROPS = ["crop-a","crop-b","crop-c","crop-d","crop-e"];
+  const icon = id => `<svg aria-hidden="true"><use href="#${id}"/></svg>`;
+  const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+  /* socials */
+  document.querySelectorAll("[data-socials]").forEach(ul => {
+    ul.innerHTML = SOCIALS.map(s => `<li><a href="${s.url}" target="_blank" rel="noopener" aria-label="${s.name}">${icon(s.icon)}</a></li>`).join("");
+  });
+
+  /* photos */
+  const masonry = document.getElementById("masonry");
+  masonry.innerHTML = PHOTOS.map((p, i) => `
+    <button class="shot" data-cat="${p.cat}" data-i="${i}" aria-label="Open photo: ${esc(p.title)}">
+      <figure style="margin:0">
+        <div class="ph ${TONES[i % 5]} ${CROPS[(i * 2) % 5]}" style="aspect-ratio:${p.ar}"><img src="images/gallery/photo-${i + 1}.jpg" alt="${esc(p.title)}" loading="lazy" onerror="this.remove()"></div>
+        <figcaption>${esc(p.title)}<span>${p.cat}</span></figcaption>
+      </figure>
+    </button>`).join("");
+
+  let filter = "all";
+  const setFilter = f => {
+    filter = f;
+    document.querySelectorAll(".filter").forEach(b => b.setAttribute("aria-pressed", b.dataset.filter === f));
+    masonry.querySelectorAll(".shot").forEach(s => { s.hidden = f !== "all" && s.dataset.cat !== f; });
+  };
+  document.querySelectorAll(".filter").forEach(b => b.addEventListener("click", () => setFilter(b.dataset.filter)));
+  document.querySelectorAll("[data-filter-link]").forEach(a => a.addEventListener("click", () => setFilter(a.dataset.filterLink)));
+
+  /* lightbox */
+  const lb = document.getElementById("lightbox"), lbImg = document.getElementById("lb-img");
+  let current = 0, lastFocus = null;
+  const visible = () => [...masonry.querySelectorAll(".shot:not([hidden])")].map(s => +s.dataset.i);
+  const render = () => {
+    const list = visible(), p = PHOTOS[current], pos = list.indexOf(current);
+    const src = masonry.querySelector(`[data-i="${current}"] .ph`);
+    lbImg.className = src.className;
+    lbImg.style.setProperty("--ar", p.ar);
+    lbImg.innerHTML = `<img src="images/gallery/photo-${current + 1}.jpg" alt="${esc(p.title)}" onerror="this.remove()">`;
+    document.getElementById("lb-cap").innerHTML = `<small>${p.cat}</small>${esc(p.title)}`;
+    document.getElementById("lb-count").textContent = `${pos + 1} / ${list.length}`;
+  };
+  const step = d => { const l = visible(); current = l[(l.indexOf(current) + d + l.length) % l.length]; render(); };
+  const openLb = i => { lastFocus = document.activeElement; current = i; render(); lb.hidden = false; document.body.style.overflow = "hidden"; document.getElementById("lb-close").focus(); };
+  const closeLb = () => { lb.hidden = true; document.body.style.overflow = ""; lastFocus && lastFocus.focus(); };
+  masonry.addEventListener("click", e => { const s = e.target.closest(".shot"); if (s) openLb(+s.dataset.i); });
+  document.getElementById("lb-close").onclick = closeLb;
+  document.getElementById("lb-prev").onclick = () => step(-1);
+  document.getElementById("lb-next").onclick = () => step(1);
+  lb.addEventListener("click", e => { if (e.target === lb || e.target.classList.contains("lb-stage")) closeLb(); });
+
+  /* videos */
+  const yt = (SOCIALS.find(s => s.name === "YouTube") || {}).url || "#";
+  document.getElementById("vgrid").innerHTML = VIDEOS.map((v, i) => `
+    <a class="vcard" href="${yt}" target="_blank" rel="noopener">
+      <span class="vframe"><span class="ph ${TONES[(i + 1) % 5]} ${CROPS[(i + 3) % 5]}"><img src="images/videos/video-${i + 1}.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="play">${icon("i-play")}</span><span class="vdur">${v.dur}</span></span>
+      <span><span class="tag">${v.cat}</span><h3>${esc(v.title)}</h3></span>
+    </a>`).join("");
+
+  /* nav: dropdown + mobile */
+  const gToggle = document.getElementById("gallery-toggle"), gMenu = document.getElementById("gallery-menu");
+  const mToggle = document.getElementById("menu-toggle"), links = document.getElementById("nav-links");
+  const setGallery = open => { gToggle.setAttribute("aria-expanded", open); gMenu.hidden = !open; };
+  const setMenu = open => { mToggle.setAttribute("aria-expanded", open); mToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu"); links.classList.toggle("open", open); };
+  gToggle.addEventListener("click", e => { e.stopPropagation(); setGallery(gMenu.hidden); });
+  mToggle.addEventListener("click", () => setMenu(!links.classList.contains("open")));
+  document.addEventListener("click", e => { if (!e.target.closest(".dropdown")) setGallery(false); });
+  document.addEventListener("keydown", e => {
+    if (!lb.hidden) {
+      if (e.key === "Escape") closeLb();
+      if (e.key === "ArrowRight") step(1);
+      if (e.key === "ArrowLeft") step(-1);
+      return;
+    }
+    if (e.key === "Escape") { setGallery(false); setMenu(false); }
+  });
+
+  /* router */
+  const pages = [...document.querySelectorAll("[data-page]")];
+  const route = () => {
+    const id = location.hash.slice(1);
+    if (id === "main") return;
+    const page = pages.find(p => p.dataset.page === id) ? id : "home";
+    pages.forEach(p => { p.hidden = p.dataset.page !== page; });
+    document.querySelectorAll("[data-nav]").forEach(a => a.classList.toggle("active", a.dataset.nav.split(" ").includes(page)));
+    setGallery(false); setMenu(false);
+    if (!lb.hidden) closeLb();
+    window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
+  };
+  window.addEventListener("hashchange", route);
+  route();
+
+  /* contact form */
+  const form = document.getElementById("contact-form"), note = document.getElementById("form-note");
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    const name = form.name.value.trim(), email = form.email.value.trim();
+    note.hidden = false;
+    if (!name || !/^\S+@\S+\.\S+$/.test(email)) { note.textContent = "Please add your name and a valid email address."; return; }
+    if (!form.adult.checked) { note.textContent = "Please confirm you are 18 or older to continue."; return; }
+    if (!FORM_ENDPOINT) { note.textContent = "Online messages aren't connected yet. Please reach the club through Instagram or Facebook in the meantime."; return; }
+    try {
+      const res = await fetch(FORM_ENDPOINT, { method: "POST", headers: { Accept: "application/json" }, body: new FormData(form) });
+      if (!res.ok) throw new Error();
+      form.reset();
+      note.textContent = `Thank you, ${name}. Your message reached the club and an organizer will reply by email.`;
+    } catch { note.textContent = "Your message didn't go through. Check your connection and try again."; }
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
