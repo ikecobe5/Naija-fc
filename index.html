@@ -373,6 +373,21 @@ section{padding-block:clamp(4rem,9vw,7.5rem)}
 .site-footer .socials a{border-color:rgba(255,255,255,.25);color:#fff;background:transparent}
 .site-footer .socials a:hover{background:#fff;color:var(--green-ink);border-color:#fff}
 .footer-bottom{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.12);display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.82rem;color:rgba(255,255,255,.55)}
+.footer-id{display:flex;align-items:center;gap:.9rem}
+.footer-crest{width:48px;height:54px}
+.site-footer ul.socials{display:flex;flex-wrap:wrap;gap:.6rem}
+/* phones and tablets: columns stack, so lay links out in a row and tighten spacing */
+@media (max-width:819px){
+  .site-footer{padding-block:2.75rem 1.5rem}
+  .footer-grid{gap:1.75rem}
+  .footer-brand{gap:.6rem}
+  .footer-crest{width:38px;height:43px}
+  .footer-brand .name{font-size:clamp(1.4rem,6vw,1.8rem)}
+  .site-footer h4{margin-bottom:.4rem}
+  .site-footer ul.footer-links{display:flex;flex-wrap:wrap;gap:0 1.4rem}
+  .footer-links a{display:inline-block;padding-block:.55rem}
+  .footer-bottom{margin-top:1.75rem;padding-top:1.25rem;gap:.4rem}
+}
 
 /* small screens: keep headlines and hero text inside the frame */
 h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
@@ -854,14 +869,16 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <svg class="crest" style="width:48px;height:54px" aria-hidden="true"><use href="#crest"/></svg>
-        <p class="name">Naija FC Columbus</p>
+        <div class="footer-id">
+          <svg class="crest footer-crest" aria-hidden="true"><use href="#crest"/></svg>
+          <p class="name">Naija FC Columbus</p>
+        </div>
         <p class="motto">One Team. Many Backgrounds. One Naija.</p>
         <p>Columbus, Ohio</p>
       </div>
       <div>
         <h4>Club</h4>
-        <ul>
+        <ul class="footer-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#gallery">Gallery</a></li>
