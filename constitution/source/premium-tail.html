@@ -1,0 +1,158 @@
+
+<!-- XVIII -->
+<section class="article" style="break-before:page;margin-top:0">
+  <div class="art-head"><span class="art-no">Article XVIII</span><h2>Signature &amp; Acknowledgment</h2><div class="rule"><i></i></div></div>
+  <p style="text-align:center;max-width:5.2in;margin:0 auto 12pt">By signing below, the member confirms that he has received, read and understood the Naija FC Columbus Constitution, Rules &amp; Regulations and agrees to follow them.</p>
+  <div class="certificate"><div class="in">
+    <div class="form"><h3>Member Information</h3>
+      <div class="fields">
+        <div class="field full"><span>Full Legal Name</span><i></i></div>
+        <div class="field"><span>Preferred Name</span><i></i></div>
+        <div class="field"><span>Date of Birth</span><i></i></div>
+        <div class="field"><span>Phone Number</span><i></i></div>
+        <div class="field"><span>Emergency Contact</span><i></i></div>
+        <div class="field full"><span>Emergency Contact Phone</span><i></i></div>
+      </div></div>
+    <div class="form"><h3>Acknowledgment</h3>
+      <div class="sign-row">
+        <div class="fields" style="grid-template-columns:1.6fr 1fr">
+          <div class="field"><span>Member Signature</span><i></i></div>
+          <div class="field"><span>Date</span><i></i></div>
+          <div class="field"><span>Club Representative</span><i></i></div>
+          <div class="field"><span>Date</span><i></i></div>
+        </div>
+        <div class="seal" aria-label="Official club seal area">
+          <svg viewBox="0 0 100 100">
+            <defs><path id="seal-top" d="M 16 50 A 34 34 0 0 1 84 50"/><path id="seal-bot" d="M 20 52 A 30 30 0 0 0 80 52"/></defs>
+            <circle cx="50" cy="50" r="48" fill="none" stroke="#B08D45" stroke-width=".9"/>
+            <circle cx="50" cy="50" r="45.5" fill="none" stroke="#D9BF7F" stroke-width=".4"/>
+            <circle cx="50" cy="50" r="27" fill="none" stroke="#D9BF7F" stroke-width=".35" stroke-dasharray="1 1.6"/>
+            <use href="#crest" x="38" y="36.5" width="24" height="27" opacity=".09"/>
+            <text font-family="Inter, Arial, sans-serif" font-size="6" font-weight="600" letter-spacing="2.2" fill="#8A6C2F"><textPath href="#seal-top" startOffset="50%" text-anchor="middle">OFFICIAL CLUB SEAL</textPath></text>
+            <text font-family="Inter, Arial, sans-serif" font-size="4.6" font-weight="600" letter-spacing="1.6" fill="#B08D45"><textPath href="#seal-bot" startOffset="50%" text-anchor="middle" dominant-baseline="hanging">◆ EST. 2026 ◆</textPath></text>
+          </svg>
+        </div>
+      </div></div>
+  </div></div>
+  <div class="final sec"><h3>Final Commitment</h3>
+    <p>I understand that the strength of Naija FC Columbus depends on every member doing his part. I will compete hard, respect others, protect the safety of my teammates and opponents, reject tribal division, respect the leadership structure, follow the rules, and help build a club culture of unity, discipline, fairness, accountability and brotherhood.</p>
+    <p class="quote">“One Team. Many Backgrounds. One Naija.”</p></div>
+  <div class="adopt">
+    <div class="ttl">Naija FC Columbus · Constitution &amp; Rules · Version 1.0 · Columbus, Ohio</div>
+    <div class="fields" style="text-align:left">
+      <div class="field full"><span>Adopted by the Members on</span><i></i></div>
+      <div class="field"><span>President</span><i></i></div>
+      <div class="field"><span>Secretary</span><i></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- BACK COVER -->
+<section class="back">
+  <div class="glow"></div>
+  <svg class="guilloche" viewBox="-100 -100 200 200" data-guilloche></svg>
+  <div class="inner">
+    <div class="medal"><svg><use href="#crest"/></svg></div>
+    <h2>NAIJA FC COLUMBUS</h2>
+    <div class="est">EST. SEPTEMBER 8, 2026 · COLUMBUS, OHIO</div>
+    <div class="rule"><i></i></div>
+    <p>Naija FC Columbus celebrates unity within Nigeria’s rich diversity, bringing together people from many ethnic, cultural and religious backgrounds through a shared love of football. Built on integrity, respect and discipline, the club values every member and turns rivalry into brotherhood. Together, we are stronger.</p>
+    <p class="motto">One Team. Many Backgrounds. One Naija.</p>
+  </div>
+</section>
+
+<script>window.TOC_PAGES = {"Preamble":3,"I":3,"II":4,"III":6,"IV":7,"V":8,"VI":10,"VII":11,"VIII":12,"IX":13,"X":13,"XI":14,"XII":15,"XIII":15,"XIV":16,"XV":18,"XVI":18,"XVII":19,"XVIII":21};</script>
+<script>
+(() => {
+  const NS = "http://www.w3.org/2000/svg";
+  const printEd = document.documentElement.classList.contains("print");
+
+  // guilloche rosettes (hypotrochoid curves) for the covers
+  document.querySelectorAll("[data-guilloche]").forEach(svg => {
+    const colour = printEd ? "#B08D45" : "#D9BF7F";
+    const curves = [[96, 31, 52], [88, 26, 44], [70, 19, 36], [52, 13, 26]];
+    curves.forEach(([R, r, d], k) => {
+      let pts = [];
+      const turns = r / gcd(R, r);
+      for (let t = 0; t <= Math.PI * 2 * turns + 0.001; t += 0.01) {
+        const x = (R - r) * Math.cos(t) + d * Math.cos(((R - r) / r) * t);
+        const y = (R - r) * Math.sin(t) - d * Math.sin(((R - r) / r) * t);
+        pts.push(x.toFixed(2) + "," + y.toFixed(2));
+      }
+      const scale = 96 / (Math.abs(R - r) + d);
+      const p = document.createElementNS(NS, "polyline");
+      p.setAttribute("points", pts.join(" "));
+      p.setAttribute("fill", "none");
+      p.setAttribute("stroke", colour);
+      p.setAttribute("stroke-width", (0.28 / scale).toFixed(3));
+      p.setAttribute("transform", `scale(${scale.toFixed(3)}) rotate(${k * 9})`);
+      svg.appendChild(p);
+    });
+    [99, 97.6].forEach(rad => {
+      const c = document.createElementNS(NS, "circle");
+      c.setAttribute("r", rad); c.setAttribute("fill", "none");
+      c.setAttribute("stroke", colour); c.setAttribute("stroke-width", rad > 98 ? ".5" : ".25");
+      svg.appendChild(c);
+    });
+  });
+  function gcd(a, b) { return b ? gcd(b, a % b) : a; }
+
+  // inside-page background: drawn as the page's own background so it reaches the paper edge.
+  // Units are points on a 612 x 792 Letter page; margins match @page (1.08in top, 1.02in sides).
+  const paper = printEd ? "#FFFFFF" : "#FBF9F3";
+  const f = 33.1, W = 612, H = 792; // frame inset 0.46in
+  const corner = (x, y, sx, sy) => `<g transform="translate(${x} ${y}) scale(${sx} ${sy})" fill="none" stroke="#B08D45">
+      <path d="M-9 21V-9H21" stroke-width=".9"/><path d="M-5 21V-5H21" stroke-width=".4"/>
+      <rect x="-2.5" y="-2.5" width="5" height="5" transform="rotate(45)" fill="#B08D45" stroke="none"/></g>`;
+  const crestPaths = `<path d="M18 1.5 33.5 6v14.2c0 8.6-6.4 15-15.5 18.3C8.9 35.2 2.5 28.8 2.5 20.2V6z" fill="#0B3D2C"/>
+      <path d="M13.4 5.6h9.2v32H13.4z" fill="#FFFFFF" opacity=".6"/><circle cx="18" cy="21" r="5.2" fill="#B08D45"/>`;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}">
+    <defs>
+      <linearGradient id="h" x1="0" x2="1"><stop offset="0" stop-color="#008751" stop-opacity="${printEd ? 0 : .085}"/><stop offset=".16" stop-color="#008751" stop-opacity="0"/><stop offset=".84" stop-color="#008751" stop-opacity="0"/><stop offset="1" stop-color="#008751" stop-opacity="${printEd ? 0 : .085}"/></linearGradient>
+      <linearGradient id="v" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#B08D45" stop-opacity="${printEd ? 0 : .06}"/><stop offset=".2" stop-color="#B08D45" stop-opacity="0"/><stop offset=".8" stop-color="#B08D45" stop-opacity="0"/><stop offset="1" stop-color="#B08D45" stop-opacity="${printEd ? 0 : .06}"/></linearGradient>
+    </defs>
+    <rect width="${W}" height="${H}" fill="${paper}"/><rect width="${W}" height="${H}" fill="url(#h)"/><rect width="${W}" height="${H}" fill="url(#v)"/>
+    <g transform="translate(${(W - 238) / 2} ${(H - 264) / 2}) scale(6.6)" opacity="${printEd ? .022 : .035}">${crestPaths}</g>
+    <rect x="${f}" y="${f}" width="${W - 2 * f}" height="${H - 2 * f}" fill="none" stroke="#B08D45" stroke-width=".7"/>
+    <rect x="${f + 3.2}" y="${f + 3.2}" width="${W - 2 * f - 6.4}" height="${H - 2 * f - 6.4}" fill="none" stroke="#D9BF7F" stroke-width=".35"/>
+    ${corner(f, f, 1, 1)}${corner(W - f, f, -1, 1)}${corner(f, H - f, 1, -1)}${corner(W - f, H - f, -1, -1)}
+    <circle cx="306" cy="${H - 73.4 + 14.6}" r="11" fill="none" stroke="#B08D45" stroke-width=".6"/>
+  </svg>`;
+  const pageStyle = document.createElement("style");
+  pageStyle.textContent = `@page{background-color:${paper};background-image:url("data:image/svg+xml,${encodeURIComponent(svg)}");background-size:8.5in 11in;background-position:-1.02in -1.08in;background-repeat:no-repeat}
+    @page cover{background:none}`;
+  document.head.appendChild(pageStyle);
+
+  // article openers: small "ARTICLE" label over a large gold numeral, plus a gold divider
+  document.querySelectorAll(".art-no").forEach(el => {
+    const m = el.textContent.trim().match(/^Article\s+([IVXL]+)$/);
+    if (m) el.innerHTML = `Article<span class="num">${m[1]}</span>`;
+  });
+  document.querySelectorAll(".art-head").forEach(h => {
+    if (!h.querySelector(".rule")) h.insertAdjacentHTML("beforeend", '<div class="rule"><i></i></div>');
+  });
+
+  // highlight the key rules
+  const KEY = ["First 22 Rule", "Physical Altercations", "Right to Appeal", "Major Constitutional Changes"];
+  document.querySelectorAll(".sec h3").forEach(h => {
+    if (KEY.some(k => h.textContent.includes(k))) h.parentElement.classList.add("key");
+  });
+
+  // keep each article heading on the same page as what follows it
+  document.querySelectorAll(".art-head").forEach(h => {
+    const next = h.nextElementSibling;
+    if (!next || next.classList.contains("commitment")) return;
+    const wrap = document.createElement("div");
+    wrap.className = "keep";
+    h.before(wrap); wrap.append(h, next);
+  });
+
+  // contents page numbers (filled in after the first render)
+  document.querySelectorAll(".toc li").forEach(li => {
+    const n = window.TOC_PAGES[li.dataset.target];
+    if (n) li.querySelector(".pg").textContent = n;
+  });
+})();
+</script>
+</body>
+</html>

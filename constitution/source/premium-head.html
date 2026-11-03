@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Naija FC Columbus Constitution, Rules &amp; Regulations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap">
+<script>if (location.hash === "#print") document.documentElement.classList.add("print");</script>
+<style>
+:root{
+  --ivory:#FBF9F3; --ivory-2:#F4F0E4; --emerald:#0B3D2C; --emerald-2:#0F5039; --green:#008751;
+  --gold:#B08D45; --gold-lt:#D9BF7F; --gold-dk:#8A6C2F; --gold-wash:#F6EEDC;
+  --ink:#16201B; --ink-2:#3C4741; --ink-3:#727A72; --line:#E3D9C2; --row:#F3F6F1;
+  --serif:"Cormorant Garamond","Garamond","Times New Roman",serif;
+  --sans:"Inter",Arial,sans-serif;
+}
+html.print{--ivory:#FFFFFF;--ivory-2:#FFFFFF;--row:#FAFAF7}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact;background:transparent}
+body{margin:0;font-family:var(--sans);font-size:9.6pt;line-height:1.55;color:var(--ink)}
+
+@page{size:Letter;margin:1.08in 1.02in 1.02in;
+  @top-center{content:"NAIJA FC COLUMBUS   ·   CONSTITUTION, RULES & REGULATIONS";font:600 6.6pt "Inter",Arial,sans-serif;letter-spacing:.28em;color:#B08D45;vertical-align:bottom;padding-bottom:12pt}
+  @bottom-center{content:counter(page);font:600 8pt "Cormorant Garamond",serif;color:#8A6C2F;vertical-align:top;padding-top:9pt}
+}
+@page cover{margin:0;background:none;@top-center{content:none}@bottom-center{content:none}}
+
+/* repeating page decoration (drawn on every inside page) */
+.page-deco{position:fixed;top:-1.08in;left:-1.02in;width:8.5in;height:11in;z-index:-1;pointer-events:none}
+.page-deco .wash{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,135,81,.075) 0,rgba(0,135,81,0) 15%,rgba(0,135,81,0) 85%,rgba(0,135,81,.075) 100%),linear-gradient(180deg,rgba(176,141,69,.05),rgba(176,141,69,0) 18%,rgba(176,141,69,0) 82%,rgba(176,141,69,.05)),var(--ivory)}
+.page-deco .frame{position:absolute;inset:.46in;border:.7pt solid var(--gold)}
+.page-deco .frame::after{content:"";position:absolute;inset:3.2pt;border:.35pt solid var(--gold-lt)}
+.page-deco .corner{position:absolute;width:30pt;height:30pt;color:var(--gold)}
+.page-deco .c1{left:calc(.46in - 9pt);top:calc(.46in - 9pt)}
+.page-deco .c2{right:calc(.46in - 9pt);top:calc(.46in - 9pt);transform:scaleX(-1)}
+.page-deco .c3{left:calc(.46in - 9pt);bottom:calc(.46in - 9pt);transform:scaleY(-1)}
+.page-deco .c4{right:calc(.46in - 9pt);bottom:calc(.46in - 9pt);transform:scale(-1,-1)}
+.page-deco .mark{position:absolute;left:50%;top:50%;width:3.3in;height:3.66in;transform:translate(-50%,-50%);opacity:.035}
+.page-deco .roundel{position:absolute;left:50%;bottom:calc(1.02in - 9pt - 19pt);width:24pt;height:24pt;margin-left:-12pt;border:.6pt solid var(--gold);border-radius:50%}
+html.print .page-deco .wash{background:#fff}
+html.print .page-deco .mark{opacity:.025}
+
+h1,h2,h3{margin:0;font-family:var(--serif);font-weight:600;line-height:1.08;color:var(--emerald)}
+p{margin:0 0 6pt}
+b{font-weight:600;color:var(--emerald)}
+ul,ol{margin:2pt 0 7pt;padding-left:15pt}
+li{margin:0 0 1.6pt}
+li::marker{color:var(--gold);font-weight:700}
+ul li::marker{content:"◆  ";font-size:6pt}
+.cols{columns:2;column-gap:24pt}
+.cols3{columns:3;column-gap:16pt}
+.cols li,.cols3 li{break-inside:avoid}
+
+/* gold divider with centre diamond */
+.rule{display:flex;align-items:center;gap:7pt;color:var(--gold);margin:9pt 0 0}
+.rule::before,.rule::after{content:"";flex:1;height:.6pt;background:var(--gold)}
+.rule i{width:5pt;height:5pt;background:var(--gold);transform:rotate(45deg)}
+
+/* ---------- cover ---------- */
+.cover{page:cover;width:8.5in;height:11in;position:relative;overflow:hidden;break-after:page;background:var(--emerald);color:var(--ivory);text-align:center}
+.cover .glow{position:absolute;inset:0;background:radial-gradient(70% 48% at 50% 34%,#136B4C 0%,#0E4C36 45%,#0B3D2C 75%)}
+.cover svg.guilloche{position:absolute;left:50%;top:34%;width:7.4in;height:7.4in;transform:translate(-50%,-50%);opacity:.22}
+.cover .frame{position:absolute;inset:.42in;border:1pt solid var(--gold-lt)}
+.cover .frame::after{content:"";position:absolute;inset:4.5pt;border:.4pt solid rgba(217,191,127,.7)}
+.cover .corner{position:absolute;width:40pt;height:40pt;color:var(--gold-lt)}
+.cover .c1{left:calc(.42in - 12pt);top:calc(.42in - 12pt)}
+.cover .c2{right:calc(.42in - 12pt);top:calc(.42in - 12pt);transform:scaleX(-1)}
+.cover .c3{left:calc(.42in - 12pt);bottom:calc(.42in - 12pt);transform:scaleY(-1)}
+.cover .c4{right:calc(.42in - 12pt);bottom:calc(.42in - 12pt);transform:scale(-1,-1)}
+.cover .inner{position:absolute;inset:1.15in .95in .95in;display:flex;flex-direction:column;align-items:center}
+.cover .est{font:600 7.4pt var(--sans);letter-spacing:.42em;color:var(--gold-lt);margin-bottom:22pt}
+.cover .medal{width:1.55in;height:1.55in;border-radius:50%;border:1.2pt solid var(--gold-lt);display:grid;place-items:center;position:relative;margin-bottom:26pt;background:radial-gradient(circle,rgba(255,255,255,.07),rgba(255,255,255,0) 70%)}
+.cover .medal::before{content:"";position:absolute;inset:4pt;border-radius:50%;border:.4pt solid rgba(217,191,127,.75)}
+.cover .medal svg{width:.82in;height:.91in}
+.cover .club{font:600 9pt var(--sans);letter-spacing:.5em;color:var(--gold-lt);margin-bottom:16pt;padding-left:.5em}
+.cover h1{font-family:var(--serif);font-weight:600;font-size:46pt;line-height:1;color:var(--ivory);letter-spacing:.01em}
+.cover h1 em{font-style:italic;font-weight:500;color:var(--gold-lt)}
+.cover .rule{width:2.6in;margin:22pt auto 18pt;color:var(--gold-lt)}
+.cover .rule i{background:var(--gold-lt)}
+.cover .rule::before,.cover .rule::after{background:var(--gold-lt)}
+.cover .sub{font:italic 500 15pt/1.35 var(--serif);color:rgba(251,249,243,.86);max-width:4.6in}
+.cover .motto{margin-top:auto;font:italic 600 17pt var(--serif);color:var(--gold-lt);letter-spacing:.01em}
+.cover .meta{display:grid;grid-template-columns:repeat(4,auto);justify-content:center;gap:0 26pt;margin-top:18pt;padding-top:14pt;border-top:.5pt solid rgba(217,191,127,.45);font-size:8.4pt;color:rgba(251,249,243,.8)}
+.cover .meta b{display:block;font:600 6pt var(--sans);letter-spacing:.3em;color:var(--gold-lt);margin-bottom:4pt;text-transform:uppercase}
+.cover .meta .blank{display:block;width:1.15in;border-bottom:.5pt solid rgba(251,249,243,.55);height:12pt}
+.cover .author{margin-top:16pt;font:500 6.6pt var(--sans);letter-spacing:.34em;color:rgba(251,249,243,.55)}
+/* print-edition cover: white paper, emerald + gold line work */
+html.print .cover{background:#fff;color:var(--emerald)}
+html.print .cover .glow{display:none}
+html.print .cover svg.guilloche{opacity:.14}
+html.print .cover .frame{border-color:var(--gold)}
+html.print .cover .frame::after{border-color:var(--gold-lt)}
+html.print .cover .corner,html.print .cover .est,html.print .cover .club,html.print .cover .motto,html.print .cover h1 em{color:var(--gold)}
+html.print .cover .medal{border-color:var(--gold);background:none}
+html.print .cover .medal::before{border-color:var(--gold-lt)}
+html.print .cover h1{color:var(--emerald)}
+html.print .cover .sub{color:var(--ink-2)}
+html.print .cover .rule{color:var(--gold)}
+html.print .cover .rule i{background:var(--gold)}
+html.print .cover .rule::before,html.print .cover .rule::after{background:var(--gold)}
+html.print .cover .meta{color:var(--ink-2);border-top-color:var(--line)}
+html.print .cover .meta b{color:var(--gold-dk)}
+html.print .cover .meta .blank{border-bottom-color:var(--ink-3)}
+html.print .cover .author{color:var(--ink-3)}
+
+/* ---------- contents ---------- */
+.contents{break-after:page;padding-top:6pt}
+.contents .kicker{font:600 6.8pt var(--sans);letter-spacing:.36em;color:var(--gold);text-transform:uppercase}
+.contents h2{font-size:34pt;margin:6pt 0 4pt}
+.contents .rule{margin:4pt 0 16pt;width:2.2in}
+.contents .rule::before{display:none}
+.toc{list-style:none;padding:0;margin:0}
+.toc li{display:flex;align-items:baseline;gap:8pt;padding:4.4pt 0;margin:0}
+.toc li::marker{content:none}
+.toc .no{width:44pt;flex:none;font:600 11pt var(--serif);color:var(--gold-dk)}
+.toc .t{font:500 12pt var(--serif);color:var(--ink)}
+.toc .dots{flex:1;border-bottom:.8pt dotted var(--gold-lt);transform:translateY(-3pt)}
+.toc .pg{font:600 11pt var(--serif);color:var(--emerald);min-width:16pt;text-align:right;font-variant-numeric:lining-nums tabular-nums}
+.howto{margin-top:20pt;padding:11pt 15pt;background:var(--gold-wash);border-left:1.5pt solid var(--gold);font-size:8.8pt;color:var(--ink-2)}
+html.print .howto{background:#fff;border:.5pt solid var(--line);border-left:1.5pt solid var(--gold)}
+
+/* ---------- articles ---------- */
+.article{margin-top:20pt}
+.keep{break-inside:avoid}
+.art-head{break-inside:avoid;break-after:avoid;margin-bottom:12pt;text-align:center}
+.art-no{display:block;font:600 6.8pt var(--sans);letter-spacing:.38em;text-transform:uppercase;color:var(--gold);margin-bottom:2pt}
+.art-no .num{display:block;font:600 27pt/1 var(--serif);letter-spacing:.02em;color:var(--gold);margin-top:3pt;text-transform:none}
+.art-head h2{font-size:21pt;font-weight:600;margin-top:4pt}
+.art-head .rule{width:2.4in;margin:9pt auto 0}
+.sec{break-inside:avoid;margin-bottom:8pt}
+.sec h3{font:700 12.6pt/1.2 var(--serif);color:var(--emerald);margin-bottom:3pt;display:flex;align-items:baseline;gap:8pt}
+.sec h3 small{font:600 6.2pt var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--gold-dk);white-space:nowrap}
+.lead{font:500 13pt/1.45 var(--serif);color:var(--emerald)}
+.quote{font:italic 600 15pt/1.35 var(--serif);color:var(--emerald);margin:14pt 0;text-align:center;padding:10pt 0;border-top:.5pt solid var(--line);border-bottom:.5pt solid var(--line)}
+.note{font-size:8.9pt;color:var(--ink-2);background:var(--gold-wash);padding:8pt 12pt;border-left:1.5pt solid var(--gold)}
+.sec.key{background:var(--gold-wash);border:.5pt solid var(--gold-lt);border-left:2pt solid var(--gold);padding:9pt 13pt 4pt;border-radius:1pt}
+.sec.key h3::after{content:"KEY RULE";font:600 5.8pt var(--sans);letter-spacing:.26em;color:var(--gold-dk);margin-left:auto;border:.5pt solid var(--gold);padding:2pt 5pt 1.5pt;border-radius:6pt}
+html.print .sec.key,html.print .note{background:#fff}
+
+table{width:100%;border-collapse:collapse;margin:5pt 0 9pt;font-size:9pt}
+th{text-align:left;font:600 6.6pt var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--gold-lt);background:var(--emerald);padding:6pt 9pt}
+td{padding:5pt 9pt;border-bottom:.5pt solid var(--line);vertical-align:top}
+tr{break-inside:avoid}
+tbody tr:nth-child(even) td{background:var(--row)}
+td.pts{width:84pt;font:700 11pt var(--serif);color:var(--emerald);white-space:nowrap;font-variant-numeric:lining-nums}
+.values td:first-child,.roles td:first-child{width:124pt;font:700 11.5pt var(--serif);color:var(--emerald)}
+.values{border-top:.8pt solid var(--gold)}
+html.print th{background:#fff;color:var(--gold-dk);border-top:.8pt solid var(--gold);border-bottom:.8pt solid var(--gold)}
+
+/* ---------- signature page ---------- */
+.certificate{border:.8pt solid var(--gold);padding:4pt;margin-top:4pt}
+.certificate > .in{border:.35pt solid var(--gold-lt);padding:12pt 18pt 2pt}
+.form{margin:0 0 8pt}
+.form h3{font:600 6.6pt var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:9pt}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:2pt 24pt}
+.field{display:flex;align-items:flex-end;gap:8pt;font-size:8.6pt;color:var(--ink-2);padding-bottom:7pt}
+.field span{white-space:nowrap}
+.field i{flex:1;border-bottom:.6pt solid var(--gold);height:15pt}
+.field.full{grid-column:1/-1}
+.sign-row{display:grid;grid-template-columns:1fr 1.45in;gap:22pt;align-items:center}
+.seal{width:1.2in;height:1.2in;position:relative}
+.seal svg{position:absolute;inset:0;width:100%;height:100%}
+.final{break-inside:avoid;margin-top:10pt}
+.final .quote{margin:6pt 0 0;padding:6pt 0;font-size:13pt}
+.adopt{margin-top:8pt;text-align:center}
+.adopt .ttl{font:600 6.6pt var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:10pt}
+
+/* ---------- back cover ---------- */
+.back{page:cover;break-before:page;width:8.5in;height:11in;position:relative;overflow:hidden;background:var(--emerald);color:var(--ivory);text-align:center}
+.back .glow{position:absolute;inset:0;background:radial-gradient(62% 44% at 50% 42%,#136B4C 0%,#0E4C36 45%,#0B3D2C 75%)}
+.back svg.guilloche{position:absolute;left:50%;top:42%;width:6.4in;height:6.4in;transform:translate(-50%,-50%);opacity:.16}
+.back .inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.4in}
+.back .medal{width:1.15in;height:1.15in;border-radius:50%;border:1pt solid var(--gold-lt);display:grid;place-items:center;margin-bottom:22pt}
+.back .medal svg{width:.6in;height:.67in}
+.back h2{color:var(--ivory);font-size:26pt;letter-spacing:.14em;margin-bottom:6pt}
+.back .est{font:600 7pt var(--sans);letter-spacing:.4em;color:var(--gold-lt)}
+.back .rule{width:2in;margin:18pt auto;color:var(--gold-lt)}
+.back .rule i{background:var(--gold-lt)}
+.back .rule::before,.back .rule::after{background:var(--gold-lt)}
+.back p{font:500 13pt/1.6 var(--serif);color:rgba(251,249,243,.85);max-width:4.6in}
+.back .motto{margin-top:20pt;font:italic 600 16pt var(--serif);color:var(--gold-lt)}
+html.print .back{background:#fff;color:var(--emerald)}
+html.print .back .glow{display:none}
+html.print .back svg.guilloche{opacity:.1}
+html.print .back .medal{border-color:var(--gold)}
+html.print .back h2{color:var(--emerald)}
+html.print .back .est,html.print .back .motto{color:var(--gold)}
+html.print .back p{color:var(--ink-2)}
+html.print .back .rule i{background:var(--gold)}
+html.print .back .rule::before,html.print .back .rule::after{background:var(--gold)}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="crest" viewBox="0 0 36 40">
+    <path d="M18 1.5 33.5 6v14.2c0 8.6-6.4 15-15.5 18.3C8.9 35.2 2.5 28.8 2.5 20.2V6z" fill="#fff" stroke="#B08D45" stroke-width="1.3"/>
+    <clipPath id="crest-clip"><path d="M18 4.2 31 8v12.2c0 7.2-5.3 12.6-13 15.6-7.7-3-13-8.4-13-15.6V8z"/></clipPath>
+    <g clip-path="url(#crest-clip)"><rect x="4" y="3" width="9.4" height="36" fill="#008751"/><rect x="22.6" y="3" width="9.4" height="36" fill="#008751"/></g>
+    <circle cx="18" cy="21" r="5.2" fill="#fff" stroke="#B08D45" stroke-width="1.1"/>
+    <path d="M18 17.6l2.4 1.7-.9 2.8h-3l-.9-2.8z" fill="#0B3D2C"/>
+  </symbol>
+  <symbol id="corner" viewBox="0 0 30 30" fill="none" stroke="currentColor">
+    <path d="M1 29V1h28" stroke-width=".9"/>
+    <path d="M5 29V5h24" stroke-width=".4"/>
+    <rect x="6.5" y="6.5" width="5" height="5" transform="rotate(45 9 9)" fill="currentColor" stroke="none"/>
+  </symbol>
+</svg>
+
+
+<!-- COVER -->
+<section class="cover">
+  <div class="glow"></div>
+  <svg class="guilloche" viewBox="-100 -100 200 200" data-guilloche></svg>
+  <div class="frame"></div>
+  <svg class="corner c1"><use href="#corner"/></svg><svg class="corner c2"><use href="#corner"/></svg>
+  <svg class="corner c3"><use href="#corner"/></svg><svg class="corner c4"><use href="#corner"/></svg>
+  <div class="inner">
+    <div class="est">EST. SEPTEMBER 8, 2026</div>
+    <div class="medal"><svg><use href="#crest"/></svg></div>
+    <div class="club">NAIJA FC COLUMBUS</div>
+    <h1>Constitution,<br><em>Rules &amp;</em> Regulations</h1>
+    <div class="rule"><i></i></div>
+    <p class="sub">A Constitution for Unity, Discipline, Safety, Fairness &amp; Brotherhood</p>
+    <p class="motto">“One Team. Many Backgrounds. One Naija.”</p>
+    <div class="meta">
+      <div><b>Location</b>Columbus, Ohio, USA</div>
+      <div><b>Version</b>1.0</div>
+      <div><b>Adopted</b><span class="blank"></span></div>
+      <div><b>Effective Date</b><span class="blank"></span></div>
+    </div>
+    <div class="author">NAIJA FC COLUMBUS</div>
+  </div>
+</section>
+
+<!-- CONTENTS -->
+<section class="contents">
+  <div class="kicker">Naija FC Columbus</div>
+  <h2>Contents</h2>
+  <div class="rule"><i></i></div>
+  <ol class="toc">
+    <li data-target="Preamble"><span class="no">—</span><span class="t">Preamble &amp; Foundational Principles</span><span class="dots"></span><span class="pg"></span></li>
+    <li data-target="I"><span class="no">I</span><span class="t">Mission, Vision &amp; Core Values</span><span class="dots"></span><span class="pg"></span></li>
+    <li data-target="II"><span class="no">II</span><span class="t">Membership &amp; Eligibility</span><span class="dots"></span><span class="pg"></span></li>
+    <li data-target="III"><span class="no">III</span><span class="t">Unity &amp; Anti-Tribalism Policy</span><span class="dots"></span><span class="pg"></span></li>
+    <li data-target="IV"><span class="no">IV</span><span class="t">Leadership &amp; Governance</span><span class="dots"></span><span class="pg"></span></li>
+    <li data-target="V"><span class="no">V</span><span class="t">Elections, Terms &amp; Accountability</span><span class="dots"></span><span class="pg"></span></li>
+    <li data-target="VI"><span class="no">VI</span><span class="t">Match-Day Operations</span><span class="dots"></span><span class="pg"></span></li>
+    <li data-target="VII"><span class="no">VII</span><span class="t">Player Safety &amp; On-Field Conduct</span><span class="dots"></span><span class="pg"></span></li>
+    <li data-target="VIII"><span class="no">VIII</span><span class="t">Verbal Abuse, Harassment &amp; Violence</span><span class="dots"></span><span class="pg"></span></li>
+    <li data-target="IX"><span class="no">IX</span><span class="t">Referees, Opponents &amp; Sportsmanship</span><span class="dots"></span><span class="pg"></span></li>
+    <li data-target="X"><span class="no">X</span><span class="t">Attendance, Commitment &amp; Player Selection</span><span class="dots"></span><span class="pg"></span></li>
+    <li data-target="XI"><span class="no">XI</span><span class="t">Finance &amp; Financial Transparency</span><span class="dots"></span><span class="pg"></span></li>
+    <li data-target="XII"><span class="no">XII</span><span class="t">Social Media, Substance Use &amp; Match Integrity</span><span class="dots"></span><span class="pg"></span></li>
+    <li data-target="XIII"><span class="no">XIII</span><span class="t">Complaints, Investigation &amp; Discipline</span><span class="dots"></span><span class="pg"></span></li>
+    <li data-target="XIV"><span class="no">XIV</span><span class="t">Disciplinary Points System</span><span class="dots"></span><span class="pg"></span></li>
+    <li data-target="XV"><span class="no">XV</span><span class="t">Appeals &amp; Fair Process</span><span class="dots"></span><span class="pg"></span></li>
+    <li data-target="XVI"><span class="no">XVI</span><span class="t">Meetings, Voting &amp; Amendments</span><span class="dots"></span><span class="pg"></span></li>
+    <li data-target="XVII"><span class="no">XVII</span><span class="t">Player Registration &amp; Commitment Agreement</span><span class="dots"></span><span class="pg"></span></li>
+    <li data-target="XVIII"><span class="no">XVIII</span><span class="t">Signature &amp; Acknowledgment</span><span class="dots"></span><span class="pg"></span></li>
+  </ol>
+  <p class="howto">In this Constitution, <b>“must”</b> and <b>“will”</b> mean something is required. <b>“Should”</b> means it is expected or recommended. <b>“May”</b> means it is allowed but not required.</p>
+</section>
+

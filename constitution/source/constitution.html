@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Naija FC Columbus Constitution, Rules &amp; Regulations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root{--green:#008751;--deep:#005C3B;--ink-green:#003A26;--ink:#111814;--ink-2:#39433E;--ink-3:#6B7671;--line:#D5E3DB;--wash:#F1F7F3}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;font-family:"Inter",Arial,sans-serif;font-size:9.8pt;line-height:1.5;color:var(--ink)}
+@page{size:Letter;margin:0.75in 0.8in 0.7in;
+  @top-left{content:"NAIJA FC COLUMBUS";font:700 7pt "Inter",Arial,sans-serif;letter-spacing:.2em;color:#008751;vertical-align:bottom;padding-bottom:10pt}
+  @top-right{content:"Constitution, Rules & Regulations  ·  Version 1.0";font:400 7pt "Inter",Arial,sans-serif;color:#6B7671;vertical-align:bottom;padding-bottom:10pt}
+  @bottom-left{content:"One Team. Many Backgrounds. One Naija.";font:italic 400 7pt "Inter",Arial,sans-serif;color:#6B7671;vertical-align:top;padding-top:10pt}
+  @bottom-right{content:counter(page);font:600 8pt "Inter",Arial,sans-serif;color:#005C3B;vertical-align:top;padding-top:10pt}
+}
+@page cover{margin:0;@top-left{content:none}@top-right{content:none}@bottom-left{content:none}@bottom-right{content:none}}
+@page back{margin:0;@top-left{content:none}@top-right{content:none}@bottom-left{content:none}@bottom-right{content:none}}
+
+h1,h2,h3{font-family:"Archivo",Arial,sans-serif;margin:0;line-height:1.1;color:var(--ink)}
+p{margin:0 0 6pt}
+ul,ol{margin:2pt 0 6pt;padding-left:15pt}
+li{margin:0 0 1.5pt}
+li::marker{color:var(--green);font-weight:600}
+.cols{columns:2;column-gap:22pt}
+.cols3{columns:3;column-gap:16pt}
+.cols li,.cols3 li{break-inside:avoid}
+
+/* cover */
+.cover{page:cover;width:8.5in;height:11in;background:var(--ink-green);color:#fff;position:relative;overflow:hidden;break-after:page;display:flex;flex-direction:column;padding:1in 0.9in 0.85in}
+.cover::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 45% at 85% 12%,rgba(0,135,81,.55),transparent 70%),radial-gradient(50% 40% at 0% 100%,rgba(0,135,81,.35),transparent 70%)}
+.cover > *{position:relative}
+.cover .flag{display:flex;width:84pt;height:6pt;border-radius:3pt;overflow:hidden;margin-bottom:26pt}
+.cover .flag i{flex:1;background:var(--green)}.cover .flag i:nth-child(2){background:#fff}
+.cover .crest{width:74pt;height:82pt;margin-bottom:30pt}
+.cover .club{font:700 10pt "Inter",Arial,sans-serif;letter-spacing:.28em;color:#8FE3B8;margin-bottom:12pt}
+.cover h1{color:#fff;font-size:44pt;font-weight:850;font-stretch:112%;letter-spacing:-.01em;line-height:1.02}
+.cover .sub{font:500 13pt/1.4 "Inter",Arial,sans-serif;color:rgba(255,255,255,.82);margin-top:16pt;max-width:4.6in}
+.cover .motto{font:600 15pt "Archivo",Arial,sans-serif;font-stretch:108%;color:#fff;margin-top:auto;padding-top:18pt;border-top:1px solid rgba(255,255,255,.22)}
+.cover .meta{display:grid;grid-template-columns:repeat(2,1fr);gap:12pt 28pt;margin-top:20pt;font-size:9pt;color:rgba(255,255,255,.75)}
+.cover .meta b{display:block;font-size:7pt;letter-spacing:.2em;text-transform:uppercase;color:#8FE3B8;font-weight:700;margin-bottom:3pt}
+.cover .meta .blank{display:block;border-bottom:1px solid rgba(255,255,255,.45);height:15pt}
+.cover .author{margin-top:22pt;font-size:8pt;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+
+/* contents */
+.contents h2{font-size:22pt;font-weight:800;font-stretch:110%;margin-bottom:14pt}
+.toc{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.toc li{display:grid;grid-template-columns:62pt 1fr;padding:5.2pt 0;border-bottom:1px solid var(--line);margin:0;font-size:9.6pt}
+.toc li span{color:var(--green);font-weight:700;font-size:8pt;letter-spacing:.1em;text-transform:uppercase;padding-top:1pt}
+.howto{margin-top:18pt;padding:11pt 14pt;background:var(--wash);border-left:3pt solid var(--green);font-size:9pt;color:var(--ink-2)}
+.contents{break-after:page}
+
+/* preamble & articles */
+.article{margin-top:22pt}
+.article:first-of-type{margin-top:0}
+.keep{break-inside:avoid}
+.art-head{break-inside:avoid;break-after:avoid;margin-bottom:9pt;padding-top:9pt;border-top:2pt solid var(--green)}
+.art-no{font:700 7.5pt "Inter",Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--green);display:block;margin-bottom:4pt}
+.art-head h2{font-size:16pt;font-weight:800;font-stretch:108%}
+.sec{break-inside:avoid;margin-bottom:8pt}
+.sec h3{font:700 10pt "Inter",Arial,sans-serif;color:var(--deep);margin-bottom:2.5pt}
+.sec h3 small{font-weight:600;color:var(--ink-3);font-size:8pt;letter-spacing:.06em;margin-right:5pt}
+.quote{font:600 12pt/1.35 "Archivo",Arial,sans-serif;font-stretch:105%;color:var(--deep);margin:10pt 0 12pt;padding-left:12pt;border-left:2pt solid var(--green)}
+.lead{font-size:10.4pt;color:var(--ink-2)}
+.note{font-size:9pt;color:var(--ink-2);background:var(--wash);padding:7pt 10pt;border-radius:3pt}
+
+table{width:100%;border-collapse:collapse;margin:4pt 0 8pt;font-size:9.2pt;break-inside:auto}
+th{text-align:left;font:700 7.5pt "Inter",Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--deep);padding:5pt 8pt}
+td{padding:4.5pt 8pt;border-bottom:1px solid var(--line);vertical-align:top}
+tr{break-inside:avoid}
+tbody tr:nth-child(even) td{background:#F7FAF8}
+td.pts{width:80pt;font-weight:700;color:var(--deep);font-variant-numeric:tabular-nums;white-space:nowrap}
+.values td:first-child,.roles td:first-child{width:118pt;font-weight:700;color:var(--deep)}
+
+/* forms */
+.form{border:1px solid var(--line);border-radius:4pt;padding:10pt 14pt 4pt;margin:6pt 0 10pt;break-inside:avoid}
+.form h3{font:700 7.5pt "Inter",Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:8pt}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:4pt 22pt}
+.field{display:flex;align-items:flex-end;gap:8pt;font-size:8.8pt;color:var(--ink-2);padding-bottom:9pt}
+.field span{white-space:nowrap}
+.field i{flex:1;border-bottom:1px solid #9FB3A8;height:14pt}
+.field.full{grid-column:1/-1}
+.commitment{break-inside:avoid}
+
+/* back cover */
+.back{page:back;break-before:page;width:8.5in;height:11in;background:var(--ink-green);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:1in 1.3in;position:relative;overflow:hidden}
+.back::before{content:"";position:absolute;inset:0;background:radial-gradient(55% 40% at 50% 30%,rgba(0,135,81,.45),transparent 70%)}
+.back > *{position:relative}
+.back .crest{width:64pt;height:71pt;margin-bottom:22pt}
+.back h2{color:#fff;font-size:24pt;font-weight:850;font-stretch:112%;margin-bottom:16pt}
+.back p{color:rgba(255,255,255,.8);font-size:11pt;line-height:1.6;max-width:4.6in}
+.back .motto{margin-top:24pt;color:#8FE3B8;font:600 13pt "Archivo",Arial,sans-serif;font-stretch:108%}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="crest" viewBox="0 0 36 40">
+    <path d="M18 1.5 33.5 6v14.2c0 8.6-6.4 15-15.5 18.3C8.9 35.2 2.5 28.8 2.5 20.2V6z" fill="#fff" stroke="#005C3B" stroke-width="1.5"/>
+    <clipPath id="crest-clip"><path d="M18 4.2 31 8v12.2c0 7.2-5.3 12.6-13 15.6-7.7-3-13-8.4-13-15.6V8z"/></clipPath>
+    <g clip-path="url(#crest-clip)"><rect x="4" y="3" width="9.4" height="36" fill="#008751"/><rect x="22.6" y="3" width="9.4" height="36" fill="#008751"/></g>
+    <circle cx="18" cy="21" r="5.2" fill="#fff" stroke="#005C3B" stroke-width="1.2"/>
+    <path d="M18 17.6l2.4 1.7-.9 2.8h-3l-.9-2.8z" fill="#005C3B"/>
+  </symbol>
+</svg>
+
+<!-- COVER -->
+<section class="cover">
+  <div class="flag"><i></i><i></i><i></i></div>
+  <svg class="crest"><use href="#crest"/></svg>
+  <div class="club">NAIJA FC COLUMBUS</div>
+  <h1>Constitution,<br>Rules &amp;<br>Regulations</h1>
+  <p class="sub">A Constitution for Unity, Discipline, Safety, Fairness &amp; Brotherhood</p>
+  <p class="motto">“One Team. Many Backgrounds. One Naija.”</p>
+  <div class="meta">
+    <div><b>Location</b>Columbus, Ohio, USA</div>
+    <div><b>Version</b>1.0</div>
+    <div><b>Adopted</b><span class="blank"></span></div>
+    <div><b>Effective Date</b><span class="blank"></span></div>
+  </div>
+  <div class="author">Kelechi Iwuafor</div>
+</section>
+
+<!-- CONTENTS -->
+<section class="contents">
+  <h2>Contents</h2>
+  <ol class="toc">
+    <li><span>Opening</span>Preamble · Foundational Principle · Supremacy of This Constitution</li>
+    <li><span>Art. I</span>Mission, Vision &amp; Core Values</li>
+    <li><span>Art. II</span>Membership &amp; Eligibility</li>
+    <li><span>Art. III</span>Unity &amp; Anti-Tribalism Policy</li>
+    <li><span>Art. IV</span>Leadership &amp; Governance</li>
+    <li><span>Art. V</span>Elections, Terms &amp; Accountability</li>
+    <li><span>Art. VI</span>Match-Day Operations</li>
+    <li><span>Art. VII</span>Player Safety &amp; On-Field Conduct</li>
+    <li><span>Art. VIII</span>Verbal Abuse, Harassment &amp; Violence</li>
+    <li><span>Art. IX</span>Referees, Opponents &amp; Sportsmanship</li>
+    <li><span>Art. X</span>Attendance, Commitment &amp; Player Selection</li>
+    <li><span>Art. XI</span>Finance &amp; Financial Transparency</li>
+    <li><span>Art. XII</span>Social Media, Substance Use &amp; Match Integrity</li>
+    <li><span>Art. XIII</span>Complaints, Investigation &amp; Discipline</li>
+    <li><span>Art. XIV</span>Disciplinary Points System</li>
+    <li><span>Art. XV</span>Appeals &amp; Fair Process</li>
+    <li><span>Art. XVI</span>Meetings, Voting &amp; Amendments</li>
+    <li><span>Art. XVII</span>Player Registration &amp; Commitment Agreement</li>
+    <li><span>Art. XVIII</span>Signature &amp; Acknowledgment</li>
+  </ol>
+  <p class="howto">In this Constitution, <b>“must”</b> and <b>“will”</b> mean something is required. <b>“Should”</b> means it is expected or recommended. <b>“May”</b> means it is allowed but not required.</p>
+</section>
+
+<!-- PREAMBLE -->
+<section class="article">
+  <div class="art-head"><span class="art-no">Opening</span><h2>Preamble</h2></div>
+  <p class="lead">We, the members of Naija FC Columbus, adopt this Constitution and Rules &amp; Regulations to build a football club founded on unity, discipline, respect, safety, fairness, accountability and brotherhood.</p>
+  <p>Naija FC Columbus is a community football club for Nigerian men in Columbus, Ohio. Nigeria is made up of many ethnic groups, languages, cultures, religions, regions and traditions. That diversity is a strength and must never be used to divide the club.</p>
+  <p>We will compete with passion, and we will not let football rivalry, personal disagreements, ethnic identity, friendship groups, money or leadership ambitions destroy our unity.</p>
+  <p>A respected club is built on the character of its members, not only their talent. Every member is responsible for protecting the safety, dignity, reputation and future of Naija FC Columbus.</p>
+  <p class="quote">“Football may bring us together, but character will keep us together.”</p>
+  <div class="sec"><h3>Foundational Principle</h3>
+    <p>The club belongs to all of its members together. No individual, family, friendship group, ethnic group or leadership faction owns Naija FC Columbus or has a permanent right to control it.</p></div>
+  <div class="sec"><h3>Supremacy of This Constitution</h3>
+    <p>All members, players, coaches, captains, officers and committee members are bound by this Constitution.</p>
+    <p>If a league, facility, referee authority, insurance requirement or law sets a stricter requirement on a specific matter, that stricter requirement applies to that matter.</p></div>
+</section>
+
+<!-- I -->
+<section class="article">
+  <div class="art-head"><span class="art-no">Article I</span><h2>Mission, Vision &amp; Core Values</h2></div>
+  <div class="sec"><h3><small>Section 1</small>Mission</h3>
+    <p>To provide a competitive, organized, safe, inclusive and respectful football environment for Nigerian men in Columbus, Ohio, while building lasting friendship, community and pride.</p></div>
+  <div class="sec"><h3><small>Section 2</small>Vision</h3>
+    <p>To be a respected Nigerian community football club known for excellent sportsmanship, disciplined players, transparent leadership, strong organization, player safety, and unity across ethnic and cultural backgrounds.</p></div>
+  <div class="sec"><h3><small>Section 3</small>Core Values</h3>
+    <table class="values"><tbody>
+      <tr><td>Unity</td><td>We stay one club, whatever our ethnic, cultural, religious, regional or personal background.</td></tr>
+      <tr><td>Respect</td><td>We treat teammates, opponents, officials, coaches, spectators and community members with dignity.</td></tr>
+      <tr><td>Discipline</td><td>We follow the rules, arrive prepared, control our behavior and accept accountability.</td></tr>
+      <tr><td>Safety</td><td>Football is never an excuse for dangerous or violent conduct.</td></tr>
+      <tr><td>Fairness</td><td>Club opportunities and decisions are based on legitimate criteria, not favoritism or tribal identity.</td></tr>
+      <tr><td>Brotherhood</td><td>We support one another on and off the field while respecting healthy boundaries.</td></tr>
+      <tr><td>Integrity</td><td>We are honest about money, membership, leadership, match conduct and club affairs.</td></tr>
+      <tr><td>Excellence</td><td>We keep improving our football, our organization and our character.</td></tr>
+    </tbody></table></div>
+  <div class="sec"><h3><small>Section 4</small>Club Motto</h3>
+    <p>“One Team. Many Backgrounds. One Naija.”</p></div>
+</section>
+
+<!-- II -->
+<section class="article">
+  <div class="art-head"><span class="art-no">Article II</span><h2>Membership &amp; Eligibility</h2></div>
+  <div class="sec"><h3><small>Section 1</small>Age Requirement</h3>
+    <p>Membership is open only to people aged 18 or older. No one under 18 may register as a player.</p></div>
+  <div class="sec"><h3><small>Section 2</small>Nigerian Membership</h3>
+    <p>The club’s primary membership is Nigerian men living in or around Columbus, Ohio. The club may set reasonable location or roster requirements when needed for league participation.</p></div>
+  <div class="sec"><h3><small>Section 3</small>Registration</h3>
+    <p>Before taking part in official club activities, every player must complete the official registration process and acknowledge this Constitution. Players must:</p>
+    <ol>
+      <li>Give accurate registration information.</li>
+      <li>Give an emergency contact when asked.</li>
+      <li>Pay approved registration, league, uniform or other required fees by the stated deadline.</li>
+      <li>Agree to follow the Constitution and disciplinary procedures.</li>
+    </ol></div>
+  <div class="sec"><h3><small>Section 4</small>Good Standing</h3>
+    <p>A member is in good standing when he:</p>
+    <ul class="cols">
+      <li>Is properly registered.</li>
+      <li>Has met required financial obligations.</li>
+      <li>Is not suspended.</li>
+      <li>Is following club rules.</li>
+      <li>Is making a reasonable effort to take part in club activities.</li>
+    </ul></div>
+  <div class="sec"><h3><small>Section 5</small>Non-Nigerian Friends at Practice</h3>
+    <p>A registered member may invite a non-Nigerian friend aged 18 or older to a practice, training session or informal practice game. Guest participation depends on:</p>
+    <ol class="cols">
+      <li>Approval by the coach, manager or designated organizer.</li>
+      <li>Available space.</li>
+      <li>Player safety.</li>
+      <li>Facility requirements.</li>
+      <li>Insurance requirements.</li>
+      <li>Applicable league or competition rules.</li>
+    </ol>
+    <p>The inviting member must introduce the guest to the organizer and make sure the guest understands the club’s basic rules.</p>
+    <p>A guest:</p>
+    <ul>
+      <li>Does not automatically become a club member.</li>
+      <li>Must follow the same safety and conduct rules while taking part.</li>
+      <li>May not play in an official league or tournament match unless the competition rules allow it and the club approves.</li>
+    </ul>
+    <p>The club may limit or refuse guest participation when needed for safety, space, insurance, facility or competition reasons.</p></div>
+  <div class="sec"><h3><small>Section 6</small>Suspension or Termination of Membership</h3>
+    <p>Membership may be suspended or terminated for serious or repeated violations of this Constitution.</p>
+    <p>A person may be removed from an activity immediately and temporarily when needed to protect the safety of players, officials or others.</p></div>
+</section>
+
+<!-- III -->
+<section class="article">
+  <div class="art-head"><span class="art-no">Article III</span><h2>Unity &amp; Anti-Tribalism Policy</h2></div>
+  <div class="sec"><h3><small>Section 1</small>Equal Membership</h3>
+    <p>No member may be given preferential treatment, excluded, intimidated, harassed or disadvantaged because of his:</p>
+    <ul class="cols">
+      <li>Ethnic group</li><li>State of origin</li><li>Language</li><li>Region</li>
+      <li>Religion</li><li>Political affiliation</li><li>Financial status</li><li>Social background</li>
+    </ul></div>
+  <div class="sec"><h3><small>Section 2</small>Tribal Pride vs. Tribalism</h3>
+    <p>Members may be proud of their ethnic, regional or cultural heritage. Tribalism becomes a club issue when ethnic identity is used to:</p>
+    <ul class="cols">
+      <li>Discriminate.</li><li>Exclude.</li><li>Intimidate.</li><li>Divide.</li>
+      <li>Control leadership.</li><li>Gain unfair advantage.</li><li>Attack another member.</li>
+    </ul></div>
+  <div class="sec"><h3><small>Section 3</small>Prohibited Conduct</h3>
+    <p>The following are prohibited:</p>
+    <ol>
+      <li>Tribal or ethnic slurs.</li>
+      <li>Ethnic insults.</li>
+      <li>Organized exclusion of members based on ethnicity.</li>
+      <li>Recruiting or campaigning for control of the club mainly through ethnic division.</li>
+      <li>Threatening or humiliating members because of their background.</li>
+      <li>Creating unofficial tribal factions to control club decisions.</li>
+      <li>Telling members that another ethnic group should not hold leadership positions.</li>
+      <li>Using club resources to promote ethnic division.</li>
+    </ol></div>
+  <div class="sec"><h3><small>Section 4</small>Leadership Representation</h3>
+    <p>No leadership office is reserved for any ethnic group. Leaders are chosen based on:</p>
+    <ul class="cols">
+      <li>Character</li><li>Integrity</li><li>Reliability</li><li>Commitment</li>
+      <li>Leadership ability</li><li>Competence</li><li>Ability to serve the entire club</li>
+    </ul>
+    <p>The club should also seek inclusive leadership and avoid structures that consistently make members feel the club belongs to one ethnic group.</p></div>
+  <div class="sec"><h3><small>Section 5</small>Tribal and Political Neutrality</h3>
+    <p>The club will not endorse tribal political campaigns or use club resources to promote ethnic factions.</p>
+    <p>Members are free to keep their personal cultural identities and relationships, but must not use them to divide or control the club.</p></div>
+  <div class="sec"><h3><small>Section 6</small>Enforcement</h3>
+    <p>Allegations of ethnic discrimination will be taken seriously and reviewed through the club’s complaint and disciplinary process. No one may be retaliated against for making a good-faith complaint.</p></div>
+</section>
+
+<!-- IV -->
+<section class="article">
+  <div class="art-head"><span class="art-no">Article IV</span><h2>Leadership &amp; Governance</h2></div>
+  <div class="sec"><h3><small>Section 1</small>Executive Structure</h3>
+    <p>The club may have the following leadership positions:</p>
+    <ol class="cols">
+      <li>President</li><li>Vice President</li><li>Secretary</li><li>Treasurer</li>
+      <li>General Coordinator</li><li>Head Coach / Team Manager</li><li>Disciplinary &amp; Welfare Officer</li>
+    </ol>
+    <p>The club may create additional positions when needed.</p></div>
+  <div class="sec"><h3><small>Section 2</small>Duties of Leadership</h3>
+    <table class="roles">
+      <thead><tr><th>Position</th><th>Responsibilities</th></tr></thead>
+      <tbody>
+        <tr><td>President</td><td>Provides overall leadership; represents the club; makes sure the Constitution is followed; promotes unity and fairness; coordinates major organizational decisions.</td></tr>
+        <tr><td>Vice President</td><td>Assists the President; carries out delegated responsibilities; takes on appropriate responsibilities when the President is unavailable.</td></tr>
+        <tr><td>Secretary</td><td>Keeps club records and membership documents; records important meeting decisions; handles official notices and communications.</td></tr>
+        <tr><td>Treasurer</td><td>Keeps financial records; tracks income and expenses; keeps receipts; prepares financial reports; helps prepare club budgets.</td></tr>
+        <tr><td>General Coordinator</td><td>Coordinates match schedules, training schedules, facilities, equipment, uniforms and match-day logistics.</td></tr>
+        <tr><td>Head Coach / Team Manager</td><td>Oversees training, football preparation, tactical organization, player readiness and match-day football operations.</td></tr>
+        <tr><td>Disciplinary &amp; Welfare Officer</td><td>Assists with player welfare, safety concerns, complaints, disciplinary matters and conflict resolution.</td></tr>
+      </tbody>
+    </table></div>
+  <div class="sec"><h3><small>Section 3</small>Duty to the Whole Club</h3>
+    <p>Leaders must act for the benefit of Naija FC Columbus as a whole. They must not use their positions to unfairly reward friends, family members, business partners, tribal groups, financial supporters or personal allies.</p></div>
+  <div class="sec"><h3><small>Section 4</small>Conflict of Interest</h3>
+    <p>A leader must disclose any personal, family, business or financial relationship that could reasonably affect a club decision. The leader may be required to stay out of that decision.</p></div>
+</section>
+
+<!-- V -->
+<section class="article">
+  <div class="art-head"><span class="art-no">Article V</span><h2>Elections, Terms &amp; Accountability</h2></div>
+  <div class="sec"><h3><small>Section 1</small>Elections</h3>
+    <p>Leadership positions are filled through a fair election process approved by the membership. The club may use secret ballots, open voting, electronic voting, or another documented voting method approved by the membership.</p></div>
+  <div class="sec"><h3><small>Section 2</small>Leadership Term</h3>
+    <p>Elected leadership positions have two-year terms, unless the membership approves otherwise.</p></div>
+  <div class="sec"><h3><small>Section 3</small>Eligibility for Office</h3>
+    <p>A candidate for leadership must:</p>
+    <ol>
+      <li>Be at least 18 years old.</li>
+      <li>Be a member in good standing.</li>
+      <li>Show reliable participation.</li>
+      <li>Show good character.</li>
+      <li>Not be serving a disciplinary suspension at the time of the election.</li>
+    </ol></div>
+  <div class="sec"><h3><small>Section 4</small>Campaigning</h3>
+    <p>Members may support candidates and discuss club priorities. Campaigning must not involve:</p>
+    <ul class="cols">
+      <li>Threats</li><li>Bribery</li><li>Intimidation</li><li>Tribal discrimination</li>
+      <li>Misuse of club funds</li><li>False accusations</li>
+      <li>Promises of special benefits to a tribal or personal faction</li>
+    </ul></div>
+  <div class="sec"><h3><small>Section 5</small>Removal of Leaders</h3>
+    <p>A leader may be removed for:</p>
+    <ul class="cols">
+      <li>Serious misconduct</li><li>Financial misconduct</li><li>Abuse of authority</li><li>Discrimination</li>
+      <li>Violence</li><li>Repeated neglect of duties</li><li>Serious ethical violations</li><li>Conduct that significantly harms the club</li>
+    </ul>
+    <p>The leader must be given a fair chance to respond before final removal, unless immediate temporary action is needed for safety or to protect the integrity of the club.</p></div>
+  <div class="sec"><h3><small>Section 6</small>Vacancies</h3>
+    <p>If an office becomes vacant, the Executive Committee may appoint an interim officer until the next reasonable election or membership vote.</p></div>
+</section>
+
+<!-- VI -->
+<section class="article">
+  <div class="art-head"><span class="art-no">Article VI</span><h2>Match-Day Operations</h2></div>
+  <div class="sec"><h3><small>Section 1</small>Match Check-In</h3>
+    <p>Players must check in with the designated match-day coordinator when they arrive. Arrival order is based on when a player is physically present and checked in, not when he sends a message saying he is on the way.</p></div>
+  <div class="sec"><h3><small>Section 2</small>First 22 Rule</h3>
+    <p>For organized full-sided practice games or internal scrimmages, <b>the first 22 eligible players to physically arrive and check in form the initial 22-player match group.</b> In an 11-versus-11 format, those 22 players form two teams of 11, using the method chosen by the coach or match organizer.</p>
+    <p>This rule is designed to encourage punctuality, reduce arguments, reward commitment, and create a clear and transparent system.</p>
+    <p>The First 22 Rule does not override safety requirements, suspensions, league rules, facility rules, eligibility requirements or referee decisions.</p></div>
+  <div class="sec"><h3><small>Section 3</small>More Than 22 Players</h3>
+    <p>When more than 22 eligible players arrive, those beyond the first 22 join the rotation/substitution group. The coach or match organizer will set a reasonable rotation system.</p></div>
+  <div class="sec"><h3><small>Section 4</small>Official League Matches</h3>
+    <p>For official league or tournament matches, the club follows the competition’s roster, eligibility, substitution and match-day rules. Where league rules differ from this internal practice-game policy, league rules take precedence.</p></div>
+  <div class="sec"><h3><small>Section 5</small>Late Arrival</h3>
+    <p>A player who arrives after the first 22 places are filled should not demand immediate inclusion or replace a player who arrived earlier. The organizer may make an exception when a change is needed because of injury, safety, team balance, competition requirements, or other legitimate organizational reasons.</p></div>
+</section>
+
+<!-- VII -->
+<section class="article">
+  <div class="art-head"><span class="art-no">Article VII</span><h2>Player Safety &amp; On-Field Conduct</h2></div>
+  <div class="sec"><h3><small>Section 1</small>No Sliding Tackles</h3>
+    <p>Sliding tackles are prohibited in club practices, internal games and organized scrimmages, unless the club formally adopts a different rule for a specific competition. A player may be disciplined for an intentional sliding challenge even if no one is injured.</p></div>
+  <div class="sec"><h3><small>Section 2</small>Dangerous Play</h3>
+    <p>The following are prohibited:</p>
+    <ol>
+      <li>Two-footed challenges.</li>
+      <li>High-foot challenges likely to endanger another player.</li>
+      <li>Late challenges intended to intimidate or injure.</li>
+      <li>Reckless tackles from behind.</li>
+      <li>Deliberate contact after the ball is no longer reasonably playable.</li>
+      <li>Any action reasonably intended to injure another person.</li>
+    </ol></div>
+  <div class="sec"><h3><small>Section 3</small>Safety Authority</h3>
+    <p>A referee, coach, manager or designated safety officer may remove a player from an activity when that player presents an immediate safety risk.</p></div>
+  <div class="sec"><h3><small>Section 4</small>Injuries</h3>
+    <p>Players must report significant injuries. Teammates must not pressure an injured player to continue when doing so may create more risk.</p></div>
+  <div class="sec"><h3><small>Section 5</small>Equipment</h3>
+    <p>Players must:</p>
+    <ul class="cols">
+      <li>Wear appropriate footwear.</li><li>Follow facility requirements.</li>
+      <li>Follow league equipment rules.</li><li>Remove jewelry or other unsafe items when required.</li>
+    </ul></div>
+</section>
+
+<!-- VIII -->
+<section class="article">
+  <div class="art-head"><span class="art-no">Article VIII</span><h2>Verbal Abuse, Harassment &amp; Violence</h2></div>
+  <div class="sec"><h3><small>Section 1</small>Verbal Abuse</h3>
+    <p>Frustration is a normal part of competitive football. However, the following are prohibited:</p>
+    <ul class="cols">
+      <li>Repeated personal abuse.</li><li>Threats.</li><li>Tribal slurs.</li><li>Ethnic insults.</li><li>Religious insults.</li>
+      <li>Sexual harassment.</li><li>Humiliating comments.</li><li>Threatening language.</li>
+      <li>Repeated abusive language directed at teammates or opponents.</li>
+    </ul></div>
+  <div class="sec"><h3><small>Section 2</small>Physical Altercations</h3>
+    <p>Naija FC Columbus has a <b>zero-tolerance</b> approach to fighting. The following are prohibited:</p>
+    <ul class="cols">
+      <li>Punching.</li><li>Kicking another person outside legitimate football play.</li><li>Choking.</li><li>Aggressive pushing.</li>
+      <li>Grabbing someone aggressively.</li><li>Striking another person.</li><li>Chasing someone with the intention of fighting.</li><li>Encouraging others to fight.</li>
+    </ul></div>
+  <div class="sec"><h3><small>Section 3</small>Players Not Involved in an Altercation</h3>
+    <p>Players who are not directly involved must not join the confrontation. They should follow the direction of the referee, captain, coach, manager or club official, and help calm the situation when it is safe to do so.</p></div>
+  <div class="sec"><h3><small>Section 4</small>Threats</h3>
+    <p>Threats of physical harm are serious violations wherever they happen: on the field, during practice, in the locker area, at club meetings, by text message or on social media.</p></div>
+  <div class="sec"><h3><small>Section 5</small>Harassment</h3>
+    <p>Repeated unwanted conduct that humiliates, intimidates or targets another member, or interferes with his participation, may count as harassment and may lead to disciplinary action.</p></div>
+</section>
+
+<!-- IX -->
+<section class="article">
+  <div class="art-head"><span class="art-no">Article IX</span><h2>Referees, Opponents &amp; Sportsmanship</h2></div>
+  <div class="sec"><h3><small>Section 1</small>Respect for Officials</h3>
+    <p>Players may disagree with a referee’s decision, but must do so respectfully. Players may not threaten, aggressively touch, surround, chase, insult or intimidate referees.</p></div>
+  <div class="sec"><h3><small>Section 2</small>Captain as Primary Communicator</h3>
+    <p>Where practical, the team captain is the main player who speaks with the referee about match decisions. Other players should let the captain handle routine clarification.</p></div>
+  <div class="sec"><h3><small>Section 3</small>Opponents</h3>
+    <p>Opponents are competitors, not enemies. Trash talk that crosses into threats, personal abuse, discriminatory language or deliberate provocation is prohibited.</p></div>
+  <div class="sec"><h3><small>Section 4</small>Post-Match Conduct</h3>
+    <p>Players are encouraged to acknowledge opponents and officials after matches. A player who is still angry after a match must walk away from the conflict rather than continue the argument.</p></div>
+  <div class="sec"><h3><small>Section 5</small>Club Reputation</h3>
+    <p>Members represent Naija FC Columbus whenever they take part in organized club activities. Conduct that repeatedly damages the club’s reputation may lead to disciplinary action.</p></div>
+</section>
+
+<!-- X -->
+<section class="article">
+  <div class="art-head"><span class="art-no">Article X</span><h2>Attendance, Commitment &amp; Player Selection</h2></div>
+  <div class="sec"><h3><small>Section 1</small>Attendance</h3>
+    <p>Players are expected to attend scheduled practices and matches, and should let the club know in advance when they cannot attend.</p></div>
+  <div class="sec"><h3><small>Section 2</small>Punctuality</h3>
+    <p>Players should normally arrive 30–45 minutes before kickoff, or at the time set by the match organizer.</p></div>
+  <div class="sec"><h3><small>Section 3</small>Repeated Absence</h3>
+    <p>Repeated unexcused absences may affect match eligibility, player selection, playing opportunities and membership status. The club should distinguish genuine emergencies from avoidable repeated absences.</p></div>
+  <div class="sec"><h3><small>Section 4</small>Player Selection</h3>
+    <p>For official matches, selection may consider attendance, fitness, training performance, tactical needs, position requirements, teamwork, discipline, match readiness and commitment.</p></div>
+  <div class="sec"><h3><small>Section 5</small>No Tribal or Personal Selection</h3>
+    <p>No player may be selected, excluded, benched or given special treatment because of tribe, friendship, family relationship, financial contribution or personal loyalty to a leader.</p></div>
+  <div class="sec"><h3><small>Section 6</small>Playing Time</h3>
+    <p>Membership does not guarantee unlimited playing time. Coaches and managers may make reasonable football decisions while treating all players with respect and applying the club’s fairness principles.</p></div>
+</section>
+
+<!-- XI -->
+<section class="article">
+  <div class="art-head"><span class="art-no">Article XI</span><h2>Finance &amp; Financial Transparency</h2></div>
+  <div class="sec"><h3><small>Section 1</small>Club Funds</h3>
+    <p>All money collected in the name of Naija FC Columbus belongs to the club and must be used for legitimate club purposes.</p></div>
+  <div class="sec"><h3><small>Section 2</small>Financial Records</h3>
+    <p>The club will keep appropriate records of income, expenses, receipts, club purchases, registration fees, match fees, tournament fees, uniform expenses and facility expenses. Club funds should be kept separate from personal funds whenever practical.</p></div>
+  <div class="sec"><h3><small>Section 3</small>Treasurer</h3>
+    <p>The Treasurer keeps accurate records and gives the membership periodic financial reports.</p></div>
+  <div class="sec"><h3><small>Section 4</small>Unauthorized Personal Use</h3>
+    <p>No officer or member may use club money for personal purposes without authorization. Misuse or theft of club funds is grounds for serious disciplinary action and may be reported to the appropriate authorities when necessary.</p></div>
+  <div class="sec"><h3><small>Section 5</small>Fees</h3>
+    <p>The club will clearly communicate registration, match, uniform, tournament and other required fees before collecting them.</p></div>
+  <div class="sec"><h3><small>Section 6</small>Financial Transparency</h3>
+    <p>Members in good standing may receive reasonable summaries of club finances. Individual members’ personal financial information should not be shared unnecessarily.</p></div>
+</section>
+
+<!-- XII -->
+<section class="article">
+  <div class="art-head"><span class="art-no">Article XII</span><h2>Social Media, Substance Use &amp; Match Integrity</h2></div>
+  <div class="sec"><h3><small>Section 1</small>Social Media</h3>
+    <p>Members may share personal opinions but must not falsely claim to speak for Naija FC Columbus. Official club announcements should be made only by authorized representatives. Members must not use social media to:</p>
+    <ul class="cols">
+      <li>Threaten teammates.</li><li>Threaten opponents.</li><li>Publicly harass teammates.</li>
+      <li>Publish confidential disciplinary matters without authorization.</li>
+      <li>Promote tribal attacks.</li><li>Misrepresent club decisions.</li><li>Intentionally damage the club’s reputation.</li>
+    </ul></div>
+  <div class="sec"><h3><small>Section 2</small>Alcohol &amp; Impairment</h3>
+    <p>No player may train or play while impaired by alcohol or drugs. A coach or organizer may remove an apparently impaired player for safety reasons.</p></div>
+  <div class="sec"><h3><small>Section 3</small>Gambling &amp; Match Integrity</h3>
+    <p>Players must not:</p>
+    <ul>
+      <li>Manipulate match results.</li>
+      <li>Deliberately underperform for improper reasons.</li>
+      <li>Offer or accept improper benefits to influence a match.</li>
+      <li>Engage in match fixing.</li>
+      <li>Take part in conduct that compromises the integrity of the team or competition.</li>
+    </ul></div>
+  <div class="sec"><h3><small>Section 4</small>Club Property</h3>
+    <p>Club uniforms, equipment, balls, cones, trophies, flags and other assets remain club property unless stated otherwise. Members must take reasonable care of club property.</p></div>
+</section>
+
+<!-- XIII -->
+<section class="article">
+  <div class="art-head"><span class="art-no">Article XIII</span><h2>Complaints, Investigation &amp; Discipline</h2></div>
+  <div class="sec"><h3><small>Section 1</small>Reporting</h3>
+    <p>A member may report suspected misconduct to the President, the Secretary, the Disciplinary &amp; Welfare Officer, or another designated leader when the usual person is involved in the complaint.</p></div>
+  <div class="sec"><h3><small>Section 2</small>Good-Faith Complaints</h3>
+    <p>No one may be retaliated against simply for reporting a concern in good faith.</p></div>
+  <div class="sec"><h3><small>Section 3</small>Preliminary Review</h3>
+    <p>The club may do an initial review to decide whether the matter is minor, can be resolved informally, or requires a formal disciplinary process.</p></div>
+  <div class="sec"><h3><small>Section 4</small>Right to Be Heard</h3>
+    <p>For serious allegations, the member should receive:</p>
+    <ul class="cols">
+      <li>Notice of the concern.</li><li>A reasonable chance to explain his side.</li>
+      <li>A chance to provide relevant information.</li><li>A chance to name relevant witnesses.</li>
+    </ul></div>
+  <div class="sec"><h3><small>Section 5</small>Confidentiality</h3>
+    <p>The club should protect the privacy of those involved as far as reasonably possible. Confidentiality cannot be guaranteed where disclosure is needed for safety, legal compliance, league requirements, facility requirements or a fair investigation.</p></div>
+  <div class="sec"><h3><small>Section 6</small>Interim Measures</h3>
+    <p>While a serious matter is being reviewed, a player may be temporarily removed from training or matches when needed to protect safety, preserve the integrity of an investigation, or comply with league requirements.</p></div>
+</section>
+
+<!-- XIV -->
+<section class="article">
+  <div class="art-head"><span class="art-no">Article XIV</span><h2>Disciplinary Points System</h2></div>
+  <p>This points system promotes consistency and accountability. Leadership may set the points within each range based on severity, intent, prior disciplinary history, injury caused, threats, cooperation and other relevant circumstances.</p>
+  <table>
+    <thead><tr><th>Violation</th><th>Suggested Points</th></tr></thead>
+    <tbody>
+      <tr><td>Minor disrespect / arguing after warning</td><td class="pts">1</td></tr>
+      <tr><td>Repeated lateness or avoidable unexcused absence</td><td class="pts">1</td></tr>
+      <tr><td>Unsportsmanlike conduct</td><td class="pts">1–2</td></tr>
+      <tr><td>Abusive language toward teammate/opponent</td><td class="pts">2–3</td></tr>
+      <tr><td>Disrespect toward referee after warning</td><td class="pts">2–3</td></tr>
+      <tr><td>Unsafe/reckless challenge</td><td class="pts">2–4</td></tr>
+      <tr><td>Prohibited sliding tackle</td><td class="pts">2–4</td></tr>
+      <tr><td>Tribal/ethnic insult or slur</td><td class="pts">3–5</td></tr>
+      <tr><td>Harassment or bullying</td><td class="pts">3–6</td></tr>
+      <tr><td>Threatening physical harm</td><td class="pts">5–8</td></tr>
+      <tr><td>Aggressive shove / attempt to start a fight</td><td class="pts">5–8</td></tr>
+      <tr><td>Physical fight / striking another person</td><td class="pts">8–12</td></tr>
+      <tr><td>Deliberate serious attempt to injure</td><td class="pts">8–12</td></tr>
+      <tr><td>Serious financial misconduct</td><td class="pts">8–12</td></tr>
+      <tr><td>Match manipulation / serious integrity violation</td><td class="pts">8–12</td></tr>
+    </tbody>
+  </table>
+  <div class="sec"><h3>Accumulated Points</h3>
+  <table>
+    <thead><tr><th>Total Points</th><th>Typical Consequence</th></tr></thead>
+    <tbody>
+      <tr><td class="pts">1–3</td><td>Warning / corrective action</td></tr>
+      <tr><td class="pts">4–6</td><td>Written warning and possible one-match suspension</td></tr>
+      <tr><td class="pts">7–9</td><td>Suspension of 1–3 matches and/or additional conditions</td></tr>
+      <tr><td class="pts">10–12</td><td>Extended suspension and disciplinary review</td></tr>
+      <tr><td class="pts">13+</td><td>Membership review; suspension or removal may be considered</td></tr>
+    </tbody>
+  </table>
+  <p class="note"><b>Serious misconduct</b> may result in immediate suspension or removal, regardless of accumulated points.</p></div>
+</section>
+
+<!-- XV -->
+<section class="article">
+  <div class="art-head"><span class="art-no">Article XV</span><h2>Appeals &amp; Fair Process</h2></div>
+  <div class="sec"><h3><small>Section 1</small>Right to Appeal</h3>
+    <p>A member who receives a significant suspension, removal or other serious sanction may appeal within <b>seven (7) calendar days</b> of receiving the decision.</p></div>
+  <div class="sec"><h3><small>Section 2</small>Appeal Review</h3>
+    <p>The appeal should be reviewed by people who were not directly responsible for the original decision, have no material conflict of interest, and can review the matter objectively.</p></div>
+  <div class="sec"><h3><small>Section 3</small>Grounds for Appeal</h3>
+    <p>An appeal may be based on:</p>
+    <ol class="cols">
+      <li>New relevant information.</li><li>A significant procedural error.</li>
+      <li>A conflict of interest.</li><li>A sanction that appears clearly out of proportion to the conduct.</li>
+    </ol></div>
+  <div class="sec"><h3><small>Section 4</small>Finality</h3>
+    <p>Once the club’s appeal process is complete, the decision is final within the club, unless another lawful review process has been established.</p></div>
+  <div class="sec"><h3><small>Section 5</small>External Rules</h3>
+    <p>Nothing in this Article prevents a player from using rights provided by law, league rules, facility rules or other governing authorities.</p></div>
+</section>
+
+<!-- XVI -->
+<section class="article">
+  <div class="art-head"><span class="art-no">Article XVI</span><h2>Meetings, Voting &amp; Amendments</h2></div>
+  <div class="sec"><h3><small>Section 1</small>Meetings</h3>
+    <p>The club should hold regular leadership meetings, membership meetings and an annual general meeting. The annual general meeting should review club direction, finances, leadership, membership, rules and future plans.</p></div>
+  <div class="sec"><h3><small>Section 2</small>Records</h3>
+    <p>The Secretary should keep records of major club decisions, elections, constitutional amendments, important membership matters and significant financial decisions.</p></div>
+  <div class="sec"><h3><small>Section 3</small>Voting</h3>
+    <p>Ordinary club decisions may be decided by a simple majority of eligible voting members present and voting, unless this Constitution requires a higher threshold.</p></div>
+  <div class="sec"><h3><small>Section 4</small>Major Constitutional Changes</h3>
+    <p>Amendments to fundamental provisions should require a <b>two-thirds (2/3) vote</b> of eligible voting members present and voting, provided reasonable notice of the proposed amendment has been given.</p></div>
+  <div class="sec"><h3><small>Section 5</small>Amendments</h3>
+    <p>Any member in good standing may propose an amendment in writing. Proposed amendments should be reviewed and shared with members before a vote.</p></div>
+  <div class="sec"><h3><small>Section 6</small>Emergency Rules</h3>
+    <p>The Executive Committee may adopt temporary operational rules when an immediate safety, facility, league or logistical issue requires action. Temporary rules should be shared with members and reviewed at the next appropriate meeting.</p></div>
+</section>
+
+<!-- XVII -->
+<section class="article">
+  <div class="art-head"><span class="art-no">Article XVII</span><h2>Player Registration &amp; Commitment Agreement</h2></div>
+  <div class="commitment">
+  <div class="sec"><h3>Naija FC Columbus — Player Commitment</h3>
+    <p>I confirm that I am 18 years of age or older and that the information I provide during registration is accurate.</p>
+    <p>I have received, read and agree to follow the Naija FC Columbus Constitution, Rules &amp; Regulations, including the club’s standards on:</p>
+    <ul class="cols3">
+      <li>Discipline.</li><li>Player safety.</li><li>Anti-tribalism.</li><li>Verbal abuse.</li><li>Physical altercations.</li>
+      <li>Attendance.</li><li>Financial obligations.</li><li>Match-day conduct.</li><li>Leadership accountability.</li>
+    </ul></div>
+  <div class="sec"><p>I understand that:</p>
+    <ol>
+      <li>Sliding tackles are prohibited in club practice games and scrimmages, unless a specific competition rule is adopted.</li>
+      <li>Fighting, threats, harassment, tribal discrimination and dangerous play may result in suspension or removal.</li>
+      <li>The first 22 eligible players to physically check in for an internal full-sided practice game form the initial 22-player group, subject to safety and competition rules.</li>
+      <li>I may invite an adult non-Nigerian friend to take part in a practice game, subject to club approval, safety, space and applicable rules.</li>
+      <li>I must respect referees, opponents, teammates, coaches and club leaders.</li>
+      <li>Club membership does not give me the right to use club property or money for personal purposes.</li>
+      <li>I may be disciplined if I violate the Constitution.</li>
+      <li>The rules apply equally to all members, regardless of tribe, position, friendships, leadership status, football ability or financial contribution.</li>
+    </ol>
+    <p>I agree to help make Naija FC Columbus a united, disciplined, safe, fair and respected football club.</p></div>
+  </div>
+</section>
+
+<!-- XVIII -->
+<section class="article" style="break-before:page">
+  <div class="art-head"><span class="art-no">Article XVIII</span><h2>Signature &amp; Acknowledgment</h2></div>
+  <p>By signing below, the member confirms that he has received, read and understood the Naija FC Columbus Constitution, Rules &amp; Regulations and agrees to follow them.</p>
+  <div class="form"><h3>Member Information</h3>
+    <div class="fields">
+      <div class="field full"><span>Full Legal Name</span><i></i></div>
+      <div class="field"><span>Preferred Name</span><i></i></div>
+      <div class="field"><span>Date of Birth</span><i></i></div>
+      <div class="field"><span>Phone Number</span><i></i></div>
+      <div class="field"><span>Emergency Contact</span><i></i></div>
+      <div class="field full"><span>Emergency Contact Phone</span><i></i></div>
+    </div></div>
+  <div class="form"><h3>Acknowledgment</h3>
+    <div class="fields">
+      <div class="field"><span>Member Signature</span><i></i></div>
+      <div class="field"><span>Date</span><i></i></div>
+      <div class="field"><span>Club Representative</span><i></i></div>
+      <div class="field"><span>Date</span><i></i></div>
+    </div></div>
+  <div class="sec"><h3>Final Commitment</h3>
+    <p>I understand that the strength of Naija FC Columbus depends on every member doing his part. I will compete hard, respect others, protect the safety of my teammates and opponents, reject tribal division, respect the leadership structure, follow the rules, and help build a club culture of unity, discipline, fairness, accountability and brotherhood.</p>
+    <p class="quote">“One Team. Many Backgrounds. One Naija.”</p></div>
+  <div class="form"><h3>Naija FC Columbus · Constitution &amp; Rules · Version 1.0 · Columbus, Ohio</h3>
+    <div class="fields">
+      <div class="field full"><span>Adopted by the Members on</span><i></i></div>
+      <div class="field"><span>President</span><i></i></div>
+      <div class="field"><span>Secretary</span><i></i></div>
+    </div></div>
+</section>
+
+<script>
+  // keep each article heading on the same page as the block that follows it
+  document.querySelectorAll(".art-head").forEach(h => {
+    const next = h.nextElementSibling;
+    if (!next || next.classList.contains("commitment")) return;
+    const wrap = document.createElement("div");
+    wrap.className = "keep";
+    h.before(wrap); wrap.append(h, next);
+  });
+</script>
+
+<!-- BACK COVER -->
+<section class="back">
+  <svg class="crest"><use href="#crest"/></svg>
+  <h2>NAIJA FC COLUMBUS</h2>
+  <p>Naija FC Columbus celebrates unity within Nigeria’s rich diversity, bringing together people from many ethnic, cultural and religious backgrounds through a shared love of football. Built on integrity, respect and discipline, the club values every member and turns rivalry into brotherhood. Together, we are stronger.</p>
+  <p class="motto">One Team. Many Backgrounds. One Naija.</p>
+</section>
+
+</body>
+</html>
