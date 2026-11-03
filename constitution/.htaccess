@@ -1,0 +1,20 @@
+# Only the official White Cover edition is served on the website.
+# The Premium and Print editions stay in the repository but are blocked here.
+<FilesMatch "^Naija-FC-Columbus-Constitution-(Premium|Print)\.pdf$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+<FilesMatch "^README\.md$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
