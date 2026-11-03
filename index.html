@@ -240,14 +240,32 @@ section{padding-block:clamp(4rem,9vw,7.5rem)}
 .masonry{columns:1;column-gap:1rem}
 @media (min-width:600px){.masonry{columns:2}}
 @media (min-width:1000px){.masonry{columns:3;column-gap:1.25rem}}
-.shot{break-inside:avoid;margin:0 0 1rem;display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;text-align:left;border-radius:12px;overflow:hidden;position:relative}
+.shot{break-inside:avoid;margin:0 0 1rem;display:block;width:100%;border-radius:12px;overflow:hidden;position:relative;background:rgba(255,255,255,.72);border:1px solid var(--sand-line)}
 @media (min-width:1000px){.shot{margin-bottom:1.25rem}}
+.shot-open{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;text-align:left;position:relative;overflow:hidden}
 .shot .ph{width:100%;transition:transform .9s var(--ease)}
-.shot:hover .ph{transform:scale(1.03)}
+.shot-open:hover .ph{transform:scale(1.03)}
 .shot figcaption{position:absolute;z-index:3;left:0;right:0;bottom:0;padding:1.5rem 1rem .9rem;background:linear-gradient(180deg,transparent,rgba(2,24,16,.75));color:#fff;font-size:.88rem;font-weight:500;display:flex;justify-content:space-between;gap:1rem;opacity:0;transform:translateY(6px);transition:all .35s var(--ease)}
-.shot:hover figcaption,.shot:focus-visible figcaption{opacity:1;transform:none}
+.shot-open:hover figcaption,.shot-open:focus-visible figcaption{opacity:1;transform:none}
 @media (hover:none){.shot figcaption{opacity:1;transform:none}}
-.shot figcaption span{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#8FE3B8;align-self:center}
+.shot figcaption span{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#8FE3B8;align-self:center;white-space:nowrap}
+.shot-info{padding:.7rem .9rem .8rem;display:grid;gap:.5rem}
+.shot-meta{font-size:.8rem;color:var(--ink-3)}
+.who{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem;font-size:.78rem;color:var(--ink-3)}
+.who-chip{padding:.38rem .75rem;border-radius:999px;border:1px solid rgba(0,135,81,.32);background:rgba(0,135,81,.07);color:var(--green-deep);font:600 .8rem/1 var(--body);cursor:pointer;transition:all .2s}
+.who-chip:hover{background:var(--green);border-color:var(--green);color:#fff}
+/* search & filters for photos and videos */
+.finder{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem;margin-bottom:1rem}
+.finder .f-search{grid-column:1/-1}
+@media (min-width:900px){.finder{grid-template-columns:2fr repeat(5,minmax(0,1fr))}.finder .f-search{grid-column:auto}}
+.finder input,.finder select{width:100%;min-width:0;height:46px;padding:0 1rem;border:1px solid var(--line-strong);border-radius:999px;background-color:rgba(255,255,255,.8);font:500 1rem/1 var(--body);color:var(--ink);-webkit-appearance:none;appearance:none}
+.finder select{padding-right:2.1rem;font-size:.88rem;text-overflow:ellipsis;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' fill='none' stroke='%23005C3B' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .95rem center;background-size:11px}
+.finder input::placeholder{color:var(--ink-3)}
+.finder input:focus,.finder select:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(0,135,81,.15)}
+.finder select.on{border-color:var(--green);color:var(--green-deep);font-weight:600}
+.finder-meta{display:flex;justify-content:space-between;align-items:center;gap:1rem;min-height:1.5rem;margin:-.25rem 0 1.25rem;font-size:.86rem;color:var(--ink-3)}
+.finder-clear{border:0;background:none;padding:.25rem 0;font:600 .86rem var(--body);color:var(--green);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.empty{padding:3rem 1rem;text-align:center;color:var(--ink-3);border:1px dashed var(--line-strong);border-radius:12px}
 .lightbox{position:fixed;inset:0;z-index:100;background:rgba(6,16,12,.94);display:grid;grid-template-rows:auto 1fr auto;padding:calc(env(safe-area-inset-top,0px) + 1rem) 1rem calc(env(safe-area-inset-bottom,0px) + 1.25rem);animation:fade .3s ease both}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 .lb-top{display:flex;justify-content:space-between;align-items:center;color:rgba(255,255,255,.7);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;padding-inline:.5rem}
@@ -256,9 +274,22 @@ section{padding-block:clamp(4rem,9vw,7.5rem)}
 .lb-btn{width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#fff;display:grid;place-items:center;cursor:pointer;flex:none;transition:background .2s}
 .lb-btn:hover{background:rgba(255,255,255,.16)}
 .lb-btn svg{width:20px;height:20px}
-.lb-cap{text-align:center;color:#fff;font-size:1rem}
+.lb-cap{text-align:center;color:#fff;font-size:1rem;display:grid;justify-items:center;gap:.6rem;margin:0}
 .lb-cap small{display:block;color:#8FE3B8;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.3rem}
-@media (max-width:640px){.lb-stage .lb-btn{position:absolute;bottom:5.5rem}.lb-prev{left:1.25rem}.lb-next{right:1.25rem}}
+.lb-cap .who{justify-content:center;color:rgba(255,255,255,.65)}
+.lb-cap .who-chip{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.3);color:#fff}
+.lb-cap .who-chip:hover{background:#fff;color:var(--green-deep)}
+.lb-cap .who-chip.toggle[aria-pressed="true"]{background:var(--green);border-color:var(--green)}
+/* full-size photo with tappable name tags (tag x/y are % of the photo) */
+.lb-photo{position:relative;min-width:0;max-width:100%;line-height:0}
+.lb-photo img{display:block;max-width:min(1100px,100%);max-height:calc(100vh - 15rem);max-height:calc(100dvh - 15rem);width:auto;height:auto;border-radius:10px}
+.tag-spot{position:absolute;width:clamp(48px,17%,110px);aspect-ratio:1;transform:translate(-50%,-50%);padding:0;border:0;border-radius:50%;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.tag-spot::before{content:"";position:absolute;inset:18%;border-radius:50%;border:2px solid transparent;transition:border-color .2s}
+.tag-spot span{position:absolute;left:50%;top:88%;transform:translate(var(--tx,-50%),4px);white-space:nowrap;padding:.5rem .8rem;border-radius:999px;background:#fff;color:var(--green-deep);font:700 .85rem/1 var(--body);box-shadow:0 8px 22px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.tag-spot:hover::before,.tag-spot.on::before,.lb-photo.names .tag-spot::before{border-color:rgba(255,255,255,.9)}
+.tag-spot:hover span,.tag-spot.on span,.lb-photo.names .tag-spot span{opacity:1;transform:translate(var(--tx,-50%),0)}
+.tag-spot.l span{--tx:-88%} .tag-spot.r span{--tx:-12%} /* nudge a label left or right when heads are close */
+@media (max-width:640px){.lb-stage{position:relative}.lb-stage .lb-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:42px;height:42px;background:rgba(6,16,12,.55)}.lb-prev{left:.25rem}.lb-next{right:.25rem}}
 
 /* videos */
 .featured{display:grid;gap:clamp(1.5rem,4vw,3rem);grid-template-columns:1fr;align-items:center}
@@ -632,19 +663,23 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
     <div class="wrap stack">
       <span class="eyebrow">Gallery · Photos</span>
       <h1 class="h-xl" id="ph-h">Photos</h1>
-      <p class="lede">Select any image to view it full size. Use the arrow keys to move between photos.</p>
+      <p class="lede">Search by player, opponent or date. Open any photo and tap a player to see his name.</p>
     </div>
   </section>
   <section class="band" aria-label="Photo grid">
     <div class="wrap">
+      <div class="finder" id="photo-finder" role="search" aria-label="Search photos"></div>
       <div class="filters" role="group" aria-label="Filter photos">
         <button class="filter" data-filter="all" aria-pressed="true">All</button>
         <button class="filter" data-filter="matchday" aria-pressed="false">Matchday</button>
+        <button class="filter" data-filter="fixtures" aria-pressed="false">Fixtures &amp; Results</button>
         <button class="filter" data-filter="training" aria-pressed="false">Training</button>
         <button class="filter" data-filter="events" aria-pressed="false">Events</button>
         <button class="filter" data-filter="community" aria-pressed="false">Community</button>
       </div>
+      <div class="finder-meta"><span id="photo-count" aria-live="polite"></span><button class="finder-clear" id="photo-clear" hidden>Clear filters</button></div>
       <div class="masonry" id="masonry"></div>
+      <p class="empty" id="photo-empty" hidden>No photos match yet. Try another filter or clear the search.</p>
     </div>
   </section>
 </div>
@@ -675,7 +710,10 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   <section class="band" aria-labelledby="more-vid-h">
     <div class="wrap">
       <div class="section-head" style="margin-bottom:2rem"><h2 class="h-md" id="more-vid-h">More from the club</h2></div>
+      <div class="finder" id="video-finder" role="search" aria-label="Search videos"></div>
+      <div class="finder-meta"><span id="video-count" aria-live="polite"></span><button class="finder-clear" id="video-clear" hidden>Clear filters</button></div>
       <div class="vgrid" id="vgrid"></div>
+      <p class="empty" id="video-empty" hidden>No videos match yet. Try another filter or clear the search.</p>
       <div class="social-band" style="margin-top:clamp(3rem,6vw,4.5rem)">
         <div class="stack" style="gap:.4rem">
           <h3 class="h-md">Follow the club</h3>
@@ -898,10 +936,10 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   <div class="lb-top"><span id="lb-count"></span><button class="lb-btn" id="lb-close" aria-label="Close"><svg><use href="#i-close"/></svg></button></div>
   <div class="lb-stage">
     <button class="lb-btn lb-prev" id="lb-prev" aria-label="Previous photo"><svg><use href="#i-left"/></svg></button>
-    <div class="ph" id="lb-img"></div>
+    <div class="lb-photo" id="lb-img"></div>
     <button class="lb-btn lb-next" id="lb-next" aria-label="Next photo"><svg><use href="#i-right"/></svg></button>
   </div>
-  <p class="lb-cap" id="lb-cap"></p>
+  <div class="lb-cap" id="lb-cap"></div>
 </div>
 
 <script>
@@ -916,21 +954,30 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   ];
   const FORM_ENDPOINT = ""; // e.g. a Formspree URL; leave empty until connected
 
-  // Photos: drop real files into images/gallery/ with these names.
+  /* ---- Matches, photos and videos ----
+     Add a match once here, then point photos/videos at it with `match`.
+     Photos live in images/gallery/. `ar` is the photo's width/height.
+     `tags` put a name on a person: x and y are % from the photo's left and top edge (aim at the face). */
+  const MATCHES = {
+    "sierra-rangers-2026-10-12": { opponent:"Sierra Rangers FC", date:"2026-10-12" },
+    "syli-of-guinea-2026-10-31": { opponent:"Syli of Guinea",    date:"2026-10-31", result:"Won 4–2" }
+  };
+  const CATS = { matchday:"Matchday", fixtures:"Fixtures & Results", training:"Training", events:"Events", community:"Community" };
   const PHOTOS = [
-    { cat:"matchday",  title:"Kick-off",               ar:"4/5" },
-    { cat:"training",  title:"Passing drills",         ar:"3/2" },
-    { cat:"community", title:"Family day",             ar:"1/1" },
-    { cat:"matchday",  title:"Celebrating the opener", ar:"3/2" },
-    { cat:"events",    title:"Independence Day game",  ar:"4/5" },
-    { cat:"training",  title:"Pre-season fitness",     ar:"4/5" },
-    { cat:"matchday",  title:"Team huddle",            ar:"1/1" },
-    { cat:"community", title:"Youth clinic",           ar:"3/2" },
-    { cat:"events",    title:"End-of-season dinner",   ar:"3/2" },
-    { cat:"training",  title:"Goalkeeper session",     ar:"1/1" },
-    { cat:"matchday",  title:"Full-time",              ar:"4/5" },
-    { cat:"community", title:"Neighbourhood clean-up", ar:"3/2" }
+    { file:"2026-10-31-result-syli-of-guinea.jpg", match:"syli-of-guinea-2026-10-31", cat:"fixtures", ar:"900/1600",  title:"Full time: Naija FC 4–2 Syli of Guinea" },
+    { file:"2026-10-12-team-photo.jpg",            match:"sierra-rangers-2026-10-12", cat:"matchday", ar:"880/1168",  title:"Team photo" },
+    { file:"2026-10-12-chris.jpg",                 match:"sierra-rangers-2026-10-12", cat:"matchday", ar:"510/680",   title:"Thumbs up",
+      tags:[{ name:"Chris", x:50, y:21 }] },
+    { file:"2026-10-12-peter.jpg",                 match:"sierra-rangers-2026-10-12", cat:"matchday", ar:"510/680",   title:"On the bench",
+      tags:[{ name:"Peter", x:48, y:29 }] },
+    { file:"2026-10-12-chris-kc-bishop-1.jpg",     match:"sierra-rangers-2026-10-12", cat:"matchday", ar:"510/680",   title:"Touchline talk",
+      tags:[{ name:"Chris", x:34, y:32 }, { name:"KC", x:58, y:42, side:"l" }, { name:"Bishop", x:70, y:40, side:"r" }] },
+    { file:"2026-10-12-chris-kc-bishop-2.jpg",     match:"sierra-rangers-2026-10-12", cat:"matchday", ar:"510/680",   title:"Before kick-off",
+      tags:[{ name:"Chris", x:16, y:38 }, { name:"KC", x:51, y:46 }, { name:"Bishop", x:78, y:44 }] },
+    { file:"2026-10-12-matchday-kit.jpg",          match:"sierra-rangers-2026-10-12", cat:"matchday", ar:"510/680",   title:"Matchday kit" },
+    { file:"2026-10-12-fixture-sierra-rangers.jpg",match:"sierra-rangers-2026-10-12", cat:"fixtures", ar:"1130/1600", title:"Matchday: Naija FC vs Sierra Rangers FC" }
   ];
+  // Videos: add `match` and `players` the same way so they can be searched.
   const VIDEOS = [
     { cat:"Match highlights", title:"Matchday highlights",         dur:"4:12" },
     { cat:"Training",         title:"Inside a training session",   dur:"2:48" },
@@ -949,42 +996,135 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
     ul.innerHTML = SOCIALS.map(s => `<li><a href="${s.url}" target="_blank" rel="noopener" aria-label="${s.name}">${icon(s.icon)}</a></li>`).join("");
   });
 
+  /* search details shared by photos and videos */
+  const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const ymd = t => `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, "0")}-${String(t.getDate()).padStart(2, "0")}`;
+  const day = d => new Date(d + "T12:00:00");
+  const fmtDay = d => day(d).toLocaleDateString("en-US", { month:"short", day:"numeric", year:"numeric" });
+  const weekOf = d => { const t = day(d); t.setDate(t.getDate() - (t.getDay() + 6) % 7); return ymd(t); }; // weeks start Monday
+  const describe = item => {
+    const m = MATCHES[item.match] || {}, date = item.date || m.date || "";
+    const players = [...new Set([...(item.tags || []).map(t => t.name), ...(item.players || [])])];
+    const out = { date, opponent: item.opponent || m.opponent || "", result: m.result || "", players };
+    out.meta = [date && fmtDay(date), out.opponent && `vs ${out.opponent}`, out.result].filter(Boolean).join(" · ");
+    out.text = [item.title, CATS[item.cat] || item.cat, out.opponent, out.result, ...players,
+      date && MONTHS[+date.slice(5, 7) - 1], date && date.slice(0, 4), date && fmtDay(date), date && `week of ${fmtDay(weekOf(date))}`].join(" ").toLowerCase();
+    return out;
+  };
+  const uniq = a => [...new Set(a.filter(Boolean))];
+
+  // Builds the search box + Year / Month / Week / Opponent / Player menus and reports changes.
+  function makeFinder(box, infos, noun, onChange) {
+    const dates = infos.map(f => f.date).filter(Boolean);
+    const menus = {
+      year:     { label:"Any year",     opts: uniq(dates.map(d => d.slice(0, 4))).sort().reverse().map(y => [y, y]) },
+      month:    { label:"Any month",    opts: uniq(dates.map(d => d.slice(5, 7))).sort().map(m => [m, MONTHS[+m - 1]]) },
+      week:     { label:"Any week",     opts: uniq(dates.map(weekOf)).sort().reverse().map(w => [w, `Week of ${fmtDay(w)}`]) },
+      opponent: { label:"Any opponent", opts: uniq(infos.map(f => f.opponent)).sort().map(o => [o, `vs ${o}`]) },
+      player:   { label:"Any player",   opts: uniq(infos.flatMap(f => f.players)).sort().map(p => [p, p]) }
+    };
+    box.innerHTML = `<input class="f-search" type="search" placeholder="Search player, opponent, month…" aria-label="Search ${noun}">` +
+      Object.entries(menus).map(([k, m]) => `<select data-k="${k}" aria-label="Filter by ${k}"${m.opts.length ? "" : " hidden"}><option value="">${m.label}</option>${m.opts.map(([v, l]) => `<option value="${esc(v)}">${esc(l)}</option>`).join("")}</select>`).join("");
+    const state = { q:"", year:"", month:"", week:"", opponent:"", player:"" };
+    const input = box.querySelector("input"), selects = [...box.querySelectorAll("select")];
+    const sync = () => { selects.forEach(s => { s.value = state[s.dataset.k]; s.classList.toggle("on", !!s.value); }); onChange(); };
+    input.addEventListener("input", () => { state.q = input.value.trim().toLowerCase(); onChange(); });
+    selects.forEach(s => s.addEventListener("change", () => { state[s.dataset.k] = s.value; sync(); }));
+    return {
+      state,
+      active: () => Object.values(state).some(Boolean),
+      matches: f => (!state.q || state.q.split(/\s+/).every(w => f.text.includes(w))) &&
+        (!state.year || f.date.slice(0, 4) === state.year) && (!state.month || f.date.slice(5, 7) === state.month) &&
+        (!state.week || (f.date && weekOf(f.date) === state.week)) && (!state.opponent || f.opponent === state.opponent) &&
+        (!state.player || f.players.includes(state.player)),
+      set: (k, v) => { state[k] = v; sync(); },
+      clear: () => { Object.keys(state).forEach(k => state[k] = ""); input.value = ""; sync(); }
+    };
+  }
+  const plural = (n, w) => `${n} ${w}${n === 1 ? "" : "s"}`;
+  const chips = names => names.length ? `<div class="who">In this photo: ${names.map(n => `<button class="who-chip" data-player="${esc(n)}" aria-label="Show all photos of ${esc(n)}">${esc(n)}</button>`).join("")}</div>` : "";
+
   /* photos */
   const masonry = document.getElementById("masonry");
+  const PINFO = PHOTOS.map(describe);
   masonry.innerHTML = PHOTOS.map((p, i) => `
-    <button class="shot" data-cat="${p.cat}" data-i="${i}" aria-label="Open photo: ${esc(p.title)}">
-      <figure style="margin:0">
-        <div class="ph ${TONES[i % 5]} ${CROPS[(i * 2) % 5]}" style="aspect-ratio:${p.ar}"><img src="images/gallery/photo-${i + 1}.jpg" alt="${esc(p.title)}" loading="lazy" onerror="this.remove()"></div>
-        <figcaption>${esc(p.title)}<span>${p.cat}</span></figcaption>
-      </figure>
-    </button>`).join("");
+    <article class="shot" data-cat="${p.cat}" data-i="${i}">
+      <button class="shot-open" aria-label="Open photo: ${esc(p.title)}">
+        <figure style="margin:0">
+          <div class="ph ${TONES[i % 5]}" style="aspect-ratio:${p.ar}"><img src="images/gallery/${p.file}" alt="${esc(p.title)}${PINFO[i].players.length ? ", with " + esc(PINFO[i].players.join(", ")) : ""}" loading="lazy" onerror="this.remove()"></div>
+          <figcaption>${esc(p.title)}<span>${esc(CATS[p.cat] || p.cat)}</span></figcaption>
+        </figure>
+      </button>
+      <div class="shot-info"><span class="shot-meta">${esc(PINFO[i].meta)}</span>${chips(PINFO[i].players)}</div>
+    </article>`).join("");
 
   let filter = "all";
+  const photoCount = document.getElementById("photo-count"), photoClear = document.getElementById("photo-clear");
+  const applyPhotos = () => {
+    let n = 0;
+    masonry.querySelectorAll(".shot").forEach(s => {
+      const show = (filter === "all" || s.dataset.cat === filter) && photoFinder.matches(PINFO[+s.dataset.i]);
+      s.hidden = !show; n += show;
+    });
+    const who = photoFinder.state.player;
+    photoCount.textContent = who ? `${plural(n, "photo")} of ${who}` : `Showing ${plural(n, "photo")}`;
+    document.getElementById("photo-empty").hidden = n > 0;
+    photoClear.hidden = !photoFinder.active() && filter === "all";
+  };
+  const photoFinder = makeFinder(document.getElementById("photo-finder"), PINFO, "photos", applyPhotos);
   const setFilter = f => {
     filter = f;
     document.querySelectorAll(".filter").forEach(b => b.setAttribute("aria-pressed", b.dataset.filter === f));
-    masonry.querySelectorAll(".shot").forEach(s => { s.hidden = f !== "all" && s.dataset.cat !== f; });
+    applyPhotos();
   };
   document.querySelectorAll(".filter").forEach(b => b.addEventListener("click", () => setFilter(b.dataset.filter)));
   document.querySelectorAll("[data-filter-link]").forEach(a => a.addEventListener("click", () => setFilter(a.dataset.filterLink)));
+  photoClear.addEventListener("click", () => { photoFinder.clear(); setFilter("all"); });
+  const showPlayer = name => {
+    photoFinder.clear(); setFilter("all"); photoFinder.set("player", name);
+    document.getElementById("photo-finder").scrollIntoView({ behavior:"smooth", block:"start" });
+  };
+  applyPhotos();
 
   /* lightbox */
-  const lb = document.getElementById("lightbox"), lbImg = document.getElementById("lb-img");
+  const lb = document.getElementById("lightbox"), lbImg = document.getElementById("lb-img"), lbCap = document.getElementById("lb-cap");
   let current = 0, lastFocus = null;
   const visible = () => [...masonry.querySelectorAll(".shot:not([hidden])")].map(s => +s.dataset.i);
   const render = () => {
-    const list = visible(), p = PHOTOS[current], pos = list.indexOf(current);
-    const src = masonry.querySelector(`[data-i="${current}"] .ph`);
-    lbImg.className = src.className;
-    lbImg.style.setProperty("--ar", p.ar);
-    lbImg.innerHTML = `<img src="images/gallery/photo-${current + 1}.jpg" alt="${esc(p.title)}" onerror="this.remove()">`;
-    document.getElementById("lb-cap").innerHTML = `<small>${p.cat}</small>${esc(p.title)}`;
+    const list = visible(), p = PHOTOS[current], info = PINFO[current], pos = list.indexOf(current);
+    lbImg.classList.remove("names");
+    lbImg.innerHTML = `<img src="images/gallery/${p.file}" alt="${esc(p.title)}">` +
+      (p.tags || []).map(t => `<button class="tag-spot${t.side ? " " + t.side : ""}" style="left:${t.x}%;top:${t.y}%" aria-label="${esc(t.name)}"><span>${esc(t.name)}</span></button>`).join("");
+    const tagged = (p.tags || []).length;
+    lbCap.innerHTML = `<div><small>${esc(CATS[p.cat] || p.cat)}${info.meta ? " · " + esc(info.meta) : ""}</small>${esc(p.title)}</div>` +
+      (tagged ? `<div class="who"><button class="who-chip toggle" id="lb-names" aria-pressed="false">Show names</button>${info.players.map(n => `<button class="who-chip" data-player="${esc(n)}" aria-label="Show all photos of ${esc(n)}">${esc(n)}</button>`).join("")}</div>` : "");
     document.getElementById("lb-count").textContent = `${pos + 1} / ${list.length}`;
   };
   const step = d => { const l = visible(); current = l[(l.indexOf(current) + d + l.length) % l.length]; render(); };
   const openLb = i => { lastFocus = document.activeElement; current = i; render(); lb.hidden = false; document.body.style.overflow = "hidden"; document.getElementById("lb-close").focus(); };
   const closeLb = () => { lb.hidden = true; document.body.style.overflow = ""; lastFocus && lastFocus.focus(); };
-  masonry.addEventListener("click", e => { const s = e.target.closest(".shot"); if (s) openLb(+s.dataset.i); });
+  masonry.addEventListener("click", e => {
+    const chip = e.target.closest("[data-player]");
+    if (chip) return showPlayer(chip.dataset.player);
+    const s = e.target.closest(".shot-open");
+    if (s) openLb(+s.closest(".shot").dataset.i);
+  });
+  // tap a person to show (or hide) their name; tap the photo elsewhere to hide it
+  lbImg.addEventListener("click", e => {
+    const spot = e.target.closest(".tag-spot"), wasOn = spot && spot.classList.contains("on");
+    lbImg.querySelectorAll(".tag-spot.on").forEach(s => s.classList.remove("on"));
+    if (spot && !wasOn) spot.classList.add("on");
+  });
+  lbCap.addEventListener("click", e => {
+    if (e.target.closest("#lb-names")) {
+      const on = lbImg.classList.toggle("names");
+      e.target.closest("#lb-names").setAttribute("aria-pressed", on);
+      e.target.closest("#lb-names").textContent = on ? "Hide names" : "Show names";
+      return;
+    }
+    const chip = e.target.closest("[data-player]");
+    if (chip) { closeLb(); showPlayer(chip.dataset.player); }
+  });
   document.getElementById("lb-close").onclick = closeLb;
   document.getElementById("lb-prev").onclick = () => step(-1);
   document.getElementById("lb-next").onclick = () => step(1);
@@ -992,11 +1132,24 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 
   /* videos */
   const yt = (SOCIALS.find(s => s.name === "YouTube") || {}).url || "#";
-  document.getElementById("vgrid").innerHTML = VIDEOS.map((v, i) => `
-    <a class="vcard" href="${yt}" target="_blank" rel="noopener">
+  const VINFO = VIDEOS.map(describe);
+  const vgrid = document.getElementById("vgrid");
+  vgrid.innerHTML = VIDEOS.map((v, i) => `
+    <a class="vcard" href="${v.url || yt}" target="_blank" rel="noopener" data-i="${i}">
       <span class="vframe"><span class="ph ${TONES[(i + 1) % 5]} ${CROPS[(i + 3) % 5]}"><img src="images/videos/video-${i + 1}.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="play">${icon("i-play")}</span><span class="vdur">${v.dur}</span></span>
-      <span><span class="tag">${v.cat}</span><h3>${esc(v.title)}</h3></span>
+      <span><span class="tag">${v.cat}</span><h3>${esc(v.title)}</h3>${VINFO[i].meta ? `<span class="shot-meta">${esc(VINFO[i].meta)}</span>` : ""}</span>
     </a>`).join("");
+  const videoClear = document.getElementById("video-clear");
+  const applyVideos = () => {
+    let n = 0;
+    vgrid.querySelectorAll(".vcard").forEach(c => { const show = videoFinder.matches(VINFO[+c.dataset.i]); c.hidden = !show; n += show; });
+    document.getElementById("video-count").textContent = `Showing ${plural(n, "video")}`;
+    document.getElementById("video-empty").hidden = n > 0;
+    videoClear.hidden = !videoFinder.active();
+  };
+  const videoFinder = makeFinder(document.getElementById("video-finder"), VINFO, "videos", applyVideos);
+  videoClear.addEventListener("click", () => videoFinder.clear());
+  applyVideos();
 
   /* nav: dropdown + mobile */
   const gToggle = document.getElementById("gallery-toggle"), gMenu = document.getElementById("gallery-menu");
