@@ -6,7 +6,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap">
-<script>if (location.hash === "#print") document.documentElement.classList.add("print");</script>
+<script>if (location.hash === "#print") document.documentElement.classList.add("print"); if (location.hash === "#light") document.documentElement.classList.add("lightcover");</script>
 <style>
 :root{
   --ivory:#FBF9F3; --ivory-2:#F4F0E4; --emerald:#0B3D2C; --emerald-2:#0F5039; --green:#008751;
@@ -86,23 +86,23 @@ ul li::marker{content:"◆  ";font-size:6pt}
 .cover .meta .blank{display:block;width:1.15in;border-bottom:.5pt solid rgba(251,249,243,.55);height:12pt}
 .cover .author{margin-top:16pt;font:500 6.6pt var(--sans);letter-spacing:.34em;color:rgba(251,249,243,.55)}
 /* print-edition cover: white paper, emerald + gold line work */
-html.print .cover{background:#fff;color:var(--emerald)}
-html.print .cover .glow{display:none}
-html.print .cover svg.guilloche{opacity:.14}
-html.print .cover .frame{border-color:var(--gold)}
-html.print .cover .frame::after{border-color:var(--gold-lt)}
-html.print .cover .corner,html.print .cover .est,html.print .cover .club,html.print .cover .motto,html.print .cover h1 em{color:var(--gold)}
-html.print .cover .medal{border-color:var(--gold);background:none}
-html.print .cover .medal::before{border-color:var(--gold-lt)}
-html.print .cover h1{color:var(--emerald)}
-html.print .cover .sub{color:var(--ink-2)}
-html.print .cover .rule{color:var(--gold)}
-html.print .cover .rule i{background:var(--gold)}
-html.print .cover .rule::before,html.print .cover .rule::after{background:var(--gold)}
-html.print .cover .meta{color:var(--ink-2);border-top-color:var(--line)}
-html.print .cover .meta b{color:var(--gold-dk)}
-html.print .cover .meta .blank{border-bottom-color:var(--ink-3)}
-html.print .cover .author{color:var(--ink-3)}
+html.print .cover,html.lightcover .cover{background:#fff;color:var(--emerald)}
+html.print .cover .glow,html.lightcover .cover .glow{display:none}
+html.print .cover svg.guilloche,html.lightcover .cover svg.guilloche{opacity:.14}
+html.print .cover .frame,html.lightcover .cover .frame{border-color:var(--gold)}
+html.print .cover .frame::after,html.lightcover .cover .frame::after{border-color:var(--gold-lt)}
+html.print .cover .corner,html.print .cover .est,html.print .cover .club,html.print .cover .motto,html.print .cover h1 em,html.lightcover .cover .corner,html.lightcover .cover .est,html.lightcover .cover .club,html.lightcover .cover .motto,html.lightcover .cover h1 em{color:var(--gold)}
+html.print .cover .medal,html.lightcover .cover .medal{border-color:var(--gold);background:none}
+html.print .cover .medal::before,html.lightcover .cover .medal::before{border-color:var(--gold-lt)}
+html.print .cover h1,html.lightcover .cover h1{color:var(--emerald)}
+html.print .cover .sub,html.lightcover .cover .sub{color:var(--ink-2)}
+html.print .cover .rule,html.lightcover .cover .rule{color:var(--gold)}
+html.print .cover .rule i,html.lightcover .cover .rule i{background:var(--gold)}
+html.print .cover .rule::before,html.print .cover .rule::after,html.lightcover .cover .rule::before,html.lightcover .cover .rule::after{background:var(--gold)}
+html.print .cover .meta,html.lightcover .cover .meta{color:var(--ink-2);border-top-color:var(--line)}
+html.print .cover .meta b,html.lightcover .cover .meta b{color:var(--gold-dk)}
+html.print .cover .meta .blank,html.lightcover .cover .meta .blank{border-bottom-color:var(--ink-3)}
+html.print .cover .author,html.lightcover .cover .author{color:var(--ink-3)}
 
 /* ---------- contents ---------- */
 .contents{break-after:page;padding-top:6pt}
@@ -180,15 +180,26 @@ html.print th{background:#fff;color:var(--gold-dk);border-top:.8pt solid var(--g
 .back .rule::before,.back .rule::after{background:var(--gold-lt)}
 .back p{font:500 13pt/1.6 var(--serif);color:rgba(251,249,243,.85);max-width:4.6in}
 .back .motto{margin-top:20pt;font:italic 600 16pt var(--serif);color:var(--gold-lt)}
-html.print .back{background:#fff;color:var(--emerald)}
-html.print .back .glow{display:none}
-html.print .back svg.guilloche{opacity:.1}
-html.print .back .medal{border-color:var(--gold)}
-html.print .back h2{color:var(--emerald)}
-html.print .back .est,html.print .back .motto{color:var(--gold)}
-html.print .back p{color:var(--ink-2)}
-html.print .back .rule i{background:var(--gold)}
-html.print .back .rule::before,html.print .back .rule::after{background:var(--gold)}
+html.print .back,html.lightcover .back{background:#fff;color:var(--emerald)}
+html.print .back .glow,html.lightcover .back .glow{display:none}
+html.print .back svg.guilloche,html.lightcover .back svg.guilloche{opacity:.1}
+html.print .back .medal,html.lightcover .back .medal{border-color:var(--gold)}
+html.print .back h2,html.lightcover .back h2{color:var(--emerald)}
+html.print .back .est,html.print .back .motto,html.lightcover .back .est,html.lightcover .back .motto{color:var(--gold)}
+html.print .back p,html.lightcover .back p{color:var(--ink-2)}
+html.print .back .rule i,html.lightcover .back .rule i{background:var(--gold)}
+html.print .back .rule::before,html.print .back .rule::after,html.lightcover .back .rule::before,html.lightcover .back .rule::after{background:var(--gold)}
+/* white-cover edition: covers on the same warm ivory as the inside pages */
+html.lightcover .cover,html.lightcover .back{background:var(--ivory)}
+.back-frame{display:none}
+.back .frame{position:absolute;inset:.42in;border:1pt solid var(--gold)}
+.back .frame::after{content:"";position:absolute;inset:4.5pt;border:.4pt solid var(--gold-lt)}
+.back .corner{position:absolute;width:40pt;height:40pt;color:var(--gold)}
+.back .c1{left:calc(.42in - 12pt);top:calc(.42in - 12pt)}
+.back .c2{right:calc(.42in - 12pt);top:calc(.42in - 12pt);transform:scaleX(-1)}
+.back .c3{left:calc(.42in - 12pt);bottom:calc(.42in - 12pt);transform:scaleY(-1)}
+.back .c4{right:calc(.42in - 12pt);bottom:calc(.42in - 12pt);transform:scale(-1,-1)}
+html.lightcover .back-frame{display:block}
 </style>
 </head>
 <body>

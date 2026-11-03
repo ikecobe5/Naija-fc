@@ -51,6 +51,9 @@
 <section class="back">
   <div class="glow"></div>
   <svg class="guilloche" viewBox="-100 -100 200 200" data-guilloche></svg>
+  <div class="frame back-frame"></div>
+  <svg class="corner back-frame c1"><use href="#corner"/></svg><svg class="corner back-frame c2"><use href="#corner"/></svg>
+  <svg class="corner back-frame c3"><use href="#corner"/></svg><svg class="corner back-frame c4"><use href="#corner"/></svg>
   <div class="inner">
     <div class="medal"><svg><use href="#crest"/></svg></div>
     <h2>NAIJA FC COLUMBUS</h2>
@@ -66,10 +69,11 @@
 (() => {
   const NS = "http://www.w3.org/2000/svg";
   const printEd = document.documentElement.classList.contains("print");
+  const lightCover = document.documentElement.classList.contains("lightcover");
 
   // guilloche rosettes (hypotrochoid curves) for the covers
   document.querySelectorAll("[data-guilloche]").forEach(svg => {
-    const colour = printEd ? "#B08D45" : "#D9BF7F";
+    const colour = (printEd || lightCover) ? "#B08D45" : "#D9BF7F";
     const curves = [[96, 31, 52], [88, 26, 44], [70, 19, 36], [52, 13, 26]];
     curves.forEach(([R, r, d], k) => {
       let pts = [];
