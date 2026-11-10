@@ -158,22 +158,38 @@ section{padding-block:clamp(4rem,9vw,7.5rem)}
 .hero-content .btn-row{margin-top:.5rem}
 .hero-meta{position:absolute;z-index:3;right:clamp(1.5rem,4vw,3rem);top:clamp(1.5rem,4vw,3rem);display:flex;gap:.6rem;align-items:center;color:rgba(255,255,255,.8);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
 .hero-meta .flag-rule{width:36px}
-/* hero video: a soft blurred copy fills the frame, the sharp clip sits in a tall panel on the right */
+/* hero video fills the frame; the shade layer lets taps through to the controls */
 .hero-frame .ph video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
-.hero-panel{--pw:clamp(220px,26vw,340px);position:absolute;z-index:3;right:clamp(1.5rem,4vw,3rem);bottom:clamp(1.5rem,4vw,3rem);width:var(--pw);aspect-ratio:9/16;margin:0;border-radius:16px;overflow:hidden;background:#06281b;box-shadow:0 24px 60px -20px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.18)}
-.hero-panel video{display:block;width:100%;height:100%;object-fit:cover}
-.hero-frame.has-video .hero-content{padding-right:calc(var(--pw,0px) + clamp(3rem,7vw,6rem))}
-.hero-frame.has-video{--pw:clamp(220px,26vw,340px)}
-.hero-pause{position:absolute;z-index:4;right:.75rem;bottom:.75rem;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(6,16,12,.5);color:#fff;display:grid;place-items:center;cursor:pointer;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.hero-frame::after{pointer-events:none}
+.hero-row,.hero-copy{display:grid;gap:inherit}
+.hero-top{position:absolute;z-index:4;top:clamp(1rem,3vw,2.4rem);right:clamp(1rem,3vw,2.4rem);display:flex;align-items:center;gap:.9rem}
+.hero-top .hero-meta{position:static}
+.hero-cap{color:#fff;font-size:.78rem;font-weight:600;letter-spacing:.04em;padding:.45rem .8rem;border-radius:999px;background:rgba(6,16,12,.45);border:1px solid rgba(255,255,255,.25);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);white-space:nowrap}
+.hero-cap:hover{color:#fff;background:rgba(6,16,12,.65)}
+.hero-pause{width:40px;height:40px;flex:none;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(6,16,12,.5);color:#fff;display:grid;place-items:center;cursor:pointer;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 .hero-pause svg{width:16px;height:16px}
+.hero-scroll{display:none}
 @media (max-width:819px){
-  /* phones and small tablets: the clip itself fills the hero */
+  /* phones and small tablets: same look as before, controls at the top */
   .hero-frame.has-video{min-height:min(150vw,640px)}
-  .hero-frame.has-video .hero-content{padding-right:clamp(1.4rem,5vw,2rem)}
-  .hero-frame .ph video.hero-blur{display:none}
-  .hero-panel{inset:0;width:auto;aspect-ratio:auto;border-radius:0;box-shadow:none;z-index:1}
-  .hero-pause{top:.9rem;bottom:auto;right:.9rem;z-index:4}
+  .hero-top{top:.9rem;right:.9rem;left:1.4rem;justify-content:flex-end}
+  .hero-cap{margin-right:auto;overflow:hidden;text-overflow:ellipsis}
 }
+@media (min-width:820px){
+  /* laptops: full-screen video, words across the bottom on a shade that fades upward */
+  .hero-frame.has-video{min-height:clamp(560px,calc(100vh - 6.5rem),980px);min-height:clamp(560px,calc(100svh - 6.5rem),980px)}
+  .hero-frame.has-video .ph video{object-position:50% var(--focus,40%)}
+  .hero-frame.has-video::after{background:linear-gradient(0deg,rgba(2,22,15,.86) 0%,rgba(2,22,15,.66) 22%,rgba(2,22,15,.3) 42%,rgba(2,22,15,.08) 56%,transparent 66%)}
+  .hero-frame.has-video .hero-content{max-width:none;padding:clamp(2rem,4vw,3.5rem) clamp(2rem,4.5vw,4rem) clamp(4.2rem,6vw,5rem)}
+  .hero-frame.has-video .hero-content :is(h1,.eyebrow,.hero-sub,.hero-text){text-shadow:0 2px 18px rgba(0,0,0,.45)}
+  .hero-row{grid-template-columns:minmax(0,1fr) auto;align-items:end;column-gap:3rem}
+  .hero-row .btn-row{margin-top:0;flex-wrap:nowrap}
+  .hero-scroll{display:grid;place-items:center;position:absolute;z-index:4;left:50%;bottom:1.1rem;transform:translateX(-50%);width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:none;color:#fff;cursor:pointer;animation:nudge 2.4s ease-in-out infinite}
+  .hero-scroll svg{width:16px;height:16px;transform:rotate(90deg)}
+}
+@media (min-width:1100px){.hero-frame.has-video .hero-title{white-space:nowrap}.hero-frame.has-video .hero-title .line{display:inline-block}}
+@media (min-width:820px) and (max-width:1099px){.hero-row{grid-template-columns:minmax(0,1fr)}}
+@keyframes nudge{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,5px)}}
 
 /* who we are */
 .split{display:grid;gap:clamp(2rem,6vw,6rem);grid-template-columns:1fr}
@@ -528,22 +544,27 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   <section class="hero" aria-label="Welcome">
     <div class="wrap">
       <div class="hero-frame has-video">
-        <div class="ph tone-1 crop-d"><video class="hero-blur" id="hero-blur" muted playsinline loop preload="none" poster="videos/hero-blur-poster.jpg" aria-hidden="true"><source src="videos/hero-blur.mp4" type="video/mp4"></video></div>
-        <figure class="hero-panel">
-          <video id="hero-video" muted playsinline loop preload="auto" poster="videos/hero-poster.jpg" aria-label="Naija FC Columbus players on the pitch"><source src="videos/hero.mp4" type="video/mp4"></video>
+        <div class="ph tone-1"><video id="hero-video" muted playsinline loop preload="auto" aria-label="Naija FC Columbus players on the pitch"></video></div>
+        <div class="hero-top">
+          <a class="hero-cap" id="hero-cap" href="#photos" hidden></a>
+          <div class="hero-meta" aria-hidden="true"><span class="flag-rule"><i></i><i></i><i></i></span>Est. in Columbus</div>
           <button class="hero-pause" id="hero-pause" aria-label="Pause video"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
-        </figure>
-        <div class="hero-meta" aria-hidden="true"><span class="flag-rule"><i></i><i></i><i></i></span>Est. in Columbus</div>
+        </div>
         <div class="hero-content">
           <span class="eyebrow">Nigerian Football Club · Columbus, Ohio</span>
           <h1 class="h-xl hero-title" id="hero-title"><span class="line">NAIJA FC</span> <span class="line">COLUMBUS</span></h1>
-          <p class="hero-sub">One Team. Many Backgrounds. <em>One Naija.</em></p>
-          <p class="hero-text">Football, brotherhood and community in Columbus, Ohio.</p>
-          <div class="btn-row">
-            <a class="btn btn-light" href="#about">Meet the Club <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="btn btn-outline-light" href="#gallery">Explore Gallery</a>
+          <div class="hero-row">
+            <div class="hero-copy">
+              <p class="hero-sub">One Team. Many Backgrounds. <em>One Naija.</em></p>
+              <p class="hero-text">Football, brotherhood and community in Columbus, Ohio.</p>
+            </div>
+            <div class="btn-row">
+              <a class="btn btn-light" href="#about">Meet the Club <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <a class="btn btn-outline-light" href="#gallery">Explore Gallery</a>
+            </div>
           </div>
         </div>
+        <button class="hero-scroll" id="hero-scroll" aria-label="Scroll to the next section"><svg aria-hidden="true"><use href="#i-right"/></svg></button>
       </div>
     </div>
   </section>
@@ -998,8 +1019,17 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
     { file:"2026-10-12-matchday-kit.jpg",          match:"sierra-rangers-2026-10-12", cat:"matchday", ar:"510/680",   title:"Matchday kit" },
     { file:"2026-10-12-fixture-sierra-rangers.jpg",match:"sierra-rangers-2026-10-12", cat:"fixtures", ar:"1130/1600", title:"Matchday: Naija FC vs Sierra Rangers FC" }
   ];
+  /* Home page hero videos (files in videos/hero/). Each one shows for HERO_DAYS days in list order;
+     a video shows first for its first HERO_DAYS days after `added`. `focus` moves the laptop framing
+     (0% = top of the clip, 100% = bottom). `match` (optional) adds a caption linking to that match's photos.
+     `pin:"YYYY-MM-DD"` keeps a video up until that date. Every hero video is also listed on the Videos page. */
+  const HERO_DAYS = 3;
+  const HERO_VIDEOS = [
+    { file:"2026-10-12-matchday.mp4", poster:"2026-10-12-matchday.jpg", added:"2026-11-10", date:"2026-10-12", title:"Matchday action", dur:"0:28", focus:"38%" }
+  ];
   // Videos: add `match` and `players` the same way so they can be searched.
   const VIDEOS = [
+    ...HERO_VIDEOS.map(h => ({ cat:"Match highlights", title:h.title, dur:h.dur, date:h.date, match:h.match, players:h.players, src:`videos/hero/${h.file}`, thumb:`videos/hero/${h.poster}` })),
     { cat:"Match highlights", title:"Matchday highlights",         dur:"4:12" },
     { cat:"Training",         title:"Inside a training session",   dur:"2:48" },
     { cat:"Interviews",       title:"Meet the organizers",         dur:"6:05" },
@@ -1156,8 +1186,8 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   const VINFO = VIDEOS.map(describe);
   const vgrid = document.getElementById("vgrid");
   vgrid.innerHTML = VIDEOS.map((v, i) => `
-    <a class="vcard" href="${v.url || yt}" target="_blank" rel="noopener" data-i="${i}">
-      <span class="vframe"><span class="ph ${TONES[(i + 1) % 5]} ${CROPS[(i + 3) % 5]}"><img src="images/videos/video-${i + 1}.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="play">${icon("i-play")}</span><span class="vdur">${v.dur}</span></span>
+    <a class="vcard" href="${v.url || v.src || yt}" target="_blank" rel="noopener" data-i="${i}">
+      <span class="vframe"><span class="ph ${TONES[(i + 1) % 5]} ${CROPS[(i + 3) % 5]}"><img src="${v.thumb || `images/videos/video-${i + 1}.jpg`}" alt="" loading="lazy" onerror="this.remove()"></span><span class="play">${icon("i-play")}</span><span class="vdur">${v.dur}</span></span>
       <span><span class="tag">${v.cat}</span><h3>${esc(v.title)}</h3>${VINFO[i].meta ? `<span class="shot-meta">${esc(VINFO[i].meta)}</span>` : ""}</span>
     </a>`).join("");
   const videoClear = document.getElementById("video-clear");
@@ -1172,26 +1202,46 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   videoClear.addEventListener("click", () => videoFinder.clear());
   applyVideos();
 
-  /* hero video: plays silently on a loop, pauses off-screen, stays still for "reduce motion" */
-  const heroVid = document.getElementById("hero-video"), heroBlur = document.getElementById("hero-blur"), heroBtn = document.getElementById("hero-pause");
-  const wide = matchMedia("(min-width:820px)");
+  /* hero video: picks today's clip, plays silently on a loop, pauses off-screen, stays still for "reduce motion" */
+  const heroVid = document.getElementById("hero-video"), heroBtn = document.getElementById("hero-pause"), heroCap = document.getElementById("hero-cap");
+  const columbusToday = () => {
+    try { return new Intl.DateTimeFormat("en-CA", { timeZone:"America/New_York", year:"numeric", month:"2-digit", day:"2-digit" }).format(new Date()); }
+    catch { return ymd(new Date()); }
+  };
+  const dayNum = d => Math.floor(Date.UTC(+d.slice(0, 4), +d.slice(5, 7) - 1, +d.slice(8, 10)) / 864e5);
+  const pickHero = () => {
+    const forced = +new URLSearchParams(location.search).get("hero"); // ?hero=2 previews the 2nd video
+    if (forced && HERO_VIDEOS[forced - 1]) return HERO_VIDEOS[forced - 1];
+    const today = columbusToday(), t = dayNum(today);
+    const pinned = HERO_VIDEOS.find(v => v.pin && today <= v.pin);
+    if (pinned) return pinned;
+    const fresh = HERO_VIDEOS.filter(v => v.added && t - dayNum(v.added) >= 0 && t - dayNum(v.added) < HERO_DAYS)
+      .sort((a, b) => b.added.localeCompare(a.added))[0];
+    return fresh || HERO_VIDEOS[Math.floor(t / HERO_DAYS) % HERO_VIDEOS.length];
+  };
+  const hero = pickHero();
+  heroVid.poster = `videos/hero/${hero.poster}`;
+  heroVid.src = `videos/hero/${hero.file}`;
+  heroVid.closest(".hero-frame").style.setProperty("--focus", hero.focus || "40%");
+  const heroMatch = hero.match && MATCHES[hero.match];
+  if (heroMatch) {
+    heroCap.textContent = `vs ${heroMatch.opponent} · ${day(heroMatch.date).toLocaleDateString("en-US", { month:"short", day:"numeric" })}`;
+    heroCap.setAttribute("aria-label", `See photos from the match against ${heroMatch.opponent}`);
+    heroCap.hidden = false;
+    heroCap.addEventListener("click", () => { photoFinder.clear(); setFilter("all"); photoFinder.set("opponent", heroMatch.opponent); });
+  }
   let heroWanted = !matchMedia("(prefers-reduced-motion: reduce)").matches, heroInView = true;
   const heroSync = () => {
-    const play = heroWanted && heroInView && !document.hidden;
-    if (play) {
-      heroVid.play().catch(() => {});
-      if (wide.matches) { heroBlur.preload = "auto"; heroBlur.currentTime = heroVid.currentTime; heroBlur.play().catch(() => {}); }
-    } else { heroVid.pause(); heroBlur.pause(); }
+    if (heroWanted && heroInView && !document.hidden) heroVid.play().catch(() => {}); else heroVid.pause();
     heroBtn.setAttribute("aria-label", heroWanted ? "Pause video" : "Play video");
     heroBtn.innerHTML = icon(heroWanted ? "i-pause" : "i-play");
   };
-  // keep the blurred background in step with the main clip
-  heroVid.addEventListener("timeupdate", () => { if (wide.matches && !heroBlur.paused && Math.abs(heroBlur.currentTime - heroVid.currentTime) > 0.5) heroBlur.currentTime = heroVid.currentTime; });
   heroBtn.addEventListener("click", () => { heroWanted = !heroWanted; heroSync(); });
   document.addEventListener("visibilitychange", heroSync);
-  wide.addEventListener("change", heroSync);
   if ("IntersectionObserver" in window) new IntersectionObserver(([e]) => { heroInView = e.isIntersecting; heroSync(); }).observe(heroVid);
   heroSync();
+  document.getElementById("hero-scroll").addEventListener("click", () =>
+    document.querySelector('[aria-labelledby="who-h"]').scrollIntoView({ behavior:"smooth", block:"start" }));
 
   /* nav: dropdown + mobile */
   const gToggle = document.getElementById("gallery-toggle"), gMenu = document.getElementById("gallery-menu");
@@ -1231,7 +1281,9 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
     heroTitle.style.setProperty("--fit", 1);
     const avail = heroTitle.clientWidth;
     if (!avail) return; // home page hidden
-    const widest = Math.max(...[...heroTitle.querySelectorAll(".line")].map(l => l.getBoundingClientRect().width));
+    // full extent of the title text: the widest line, or both lines when they sit side by side
+    const boxes = [...heroTitle.querySelectorAll(".line")].map(l => l.getBoundingClientRect());
+    const widest = Math.max(...boxes.map(b => b.right)) - Math.min(...boxes.map(b => b.left));
     if (widest > avail) heroTitle.style.setProperty("--fit", ((avail / widest) * 0.97).toFixed(3));
   }
   let fitFrame = 0;
