@@ -7,7 +7,7 @@
 <meta name="description" content="Naija FC Columbus — Nigerian football, brotherhood and community in Columbus, Ohio. One Team. Many Backgrounds. One Naija.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,300..900&family=Inter:wght@400;500;600&display=swap">
 <style>
 :root{
   color-scheme: light;
@@ -455,11 +455,22 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 /* hero title: two locked lines, scaled down by script (--fit) when they don't fit */
 .hero-title .line{display:block;width:max-content;white-space:nowrap}
 .h-xl.hero-title{font-size:calc(clamp(2.6rem,7.4vw,6.2rem) * var(--fit,1))}
+/* refined two-tone title: NAIJA FC semi-bold, COLUMBUS light, normal width, airy spacing */
+.h-xl.hero-title{font-weight:600;font-stretch:100%;letter-spacing:.1em}
+.hero-title .line + .line{font-weight:300;letter-spacing:.16em}
+@media (min-width:820px){
+  .hero-frame.has-video .h-xl.hero-title{font-size:calc(clamp(2.2rem,3.3vw,3rem) * var(--fit,1));letter-spacing:.14em;line-height:1.1}
+  .hero-frame.has-video .hero-title .line + .line{letter-spacing:.2em}
+  .hero-frame.has-video .hero-sub{font-size:clamp(1.05rem,1.45vw,1.35rem);font-weight:500;font-stretch:100%;letter-spacing:.01em}
+}
+@media (min-width:1100px){.hero-frame.has-video .hero-title .line + .line{margin-left:.35em}}
 @media (max-width:640px){
   .hero-meta{display:none}
   h1,h2,h3,h4{font-stretch:100%}
   .h-xl{font-size:clamp(1.9rem,9vw,2.6rem)!important;letter-spacing:-.01em}
   .h-xl.hero-title{font-size:calc(clamp(2rem,10.5vw,2.9rem) * var(--fit,1))!important}
+  .h-xl.hero-title{letter-spacing:.06em}
+  .hero-title .line + .line{letter-spacing:.1em}
   .h-lg{font-size:clamp(1.7rem,7.5vw,2.2rem)}
   .hero-frame{min-height:0}
   .hero-content{padding:4.5rem 1.4rem 1.6rem;gap:1rem}
